@@ -1,5 +1,5 @@
 public class Ejercicio4 {
-    public static void horario() {
+    public void horario() {
         /*
          *
          * Escribe un programa que muestre tu horario de clase.

@@ -1,5 +1,5 @@
 public class Ejercicio5 {
-    public static void horarioColores() {
+    public void horarioColores() {
         /*
          *
          * Modifica el programa anterior añadiendo colores.

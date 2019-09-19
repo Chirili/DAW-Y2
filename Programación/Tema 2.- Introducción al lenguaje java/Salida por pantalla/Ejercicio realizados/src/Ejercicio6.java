@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Ejercicio6 {
-    public static void Piramide() {
+    public void Piramide() {
         /*
         *
         * Escribe un programa que pinte por pantalla una pirámide rellena a base de asteriscos.

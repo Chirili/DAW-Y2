@@ -1,5 +1,5 @@
 public class Ejercicio3 {
-    public static void palabrasIngles() {
+    public void palabrasIngles() {
         /*
 
          * Escribe un programa que muestre por pantalla 10 palabras en inglés junto a su correspondiente traducción al castellano.

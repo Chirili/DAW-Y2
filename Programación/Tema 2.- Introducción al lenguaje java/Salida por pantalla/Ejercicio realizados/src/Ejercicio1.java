@@ -1,5 +1,5 @@
 public class Ejercicio1 {
-    public static void nombre() {
+    public void nombre() {
         /*
          * Escribe un programa que muestre tu nombre por pantalla.
          *
