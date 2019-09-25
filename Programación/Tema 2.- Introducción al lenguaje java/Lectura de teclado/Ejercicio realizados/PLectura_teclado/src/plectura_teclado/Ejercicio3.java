@@ -22,7 +22,7 @@ public class Ejercicio3 {
         
         result = pesetas / euros;
         
-        System.out.println("La cantidad de pesetas introducida "+pesetas+" su conversion a euros es la siguiente: "+resultado);
+        System.out.println("La cantidad de pesetas introducida "+pesetas+" su conversion a euros es la siguiente: "+result);
         
     }
 }

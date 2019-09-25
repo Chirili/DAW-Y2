@@ -34,7 +34,9 @@ public class Main extends Application {
         Ejercicio3 ej3 = new Ejercicio3();
         ej3.conversorPesetas();
         
-        
+        System.out.println("Ejercicio4: ");
+        Ejercicio4 ej4 = new Ejercicio4();
+        ej4.Operations();
         
         System.exit(0);
     }
