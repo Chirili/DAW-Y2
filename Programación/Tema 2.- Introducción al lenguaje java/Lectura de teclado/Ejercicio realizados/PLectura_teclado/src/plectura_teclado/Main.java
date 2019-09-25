@@ -38,6 +38,34 @@ public class Main extends Application {
         Ejercicio4 ej4 = new Ejercicio4();
         ej4.Operations();
         
+        System.out.println("Ejercicio5: ");
+        Ejercicio5 ej5 = new Ejercicio5();
+        ej5.areaRectangulo();
+        
+        System.out.println("Ejercicio6: ");
+        Ejercicio6 ej6 = new Ejercicio6();
+        ej6.areaTriangulo();
+        
+        System.out.println("Ejercicio7: ");
+        Ejercicio7 ej7 = new Ejercicio7();
+        ej7.totalFactura();
+        
+        System.out.println("Ejercicio8: ");
+        Ejercicio8 ej8 = new Ejercicio8();
+        ej8.salarioSemanal();
+        
+        System.out.println("Ejercicio9: ");
+        Ejercicio9 ej9 = new Ejercicio9();
+        ej9.volumenCono();
+        
+        System.out.println("Ejercicio10: ");
+        Ejercicio10 ej10 = new Ejercicio10();
+        ej10.conversionMB();
+        
+        System.out.println("Ejercicio11: ");
+        Ejercicio11 ej11 = new Ejercicio11();
+        ej11.conversionKB();
+        
         System.exit(0);
     }
 }

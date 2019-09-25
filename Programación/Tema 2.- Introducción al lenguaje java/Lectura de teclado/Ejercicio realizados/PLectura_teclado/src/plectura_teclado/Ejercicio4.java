@@ -11,6 +11,8 @@ import java.util.Scanner;
  */
 public class Ejercicio4 {
     public static void Operations(){
+        System.out.println("Operaciones con dos numeros elegidos");
+        
         int number1;
         int number2;
         double resultado;

@@ -14,6 +14,9 @@ import java.util.Scanner;
  */
 public class Ejercicio1 {
     public static void numerosMuliplicados(){
+        
+        System.out.println("Multiplicacion de numeros:");
+        
         Scanner sn = new Scanner(System.in);
         int number1;
         int number2;

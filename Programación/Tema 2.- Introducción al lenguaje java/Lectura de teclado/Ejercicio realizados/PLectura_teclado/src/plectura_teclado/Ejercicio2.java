@@ -9,6 +9,8 @@ import java.util.Scanner;
  */
 public class Ejercicio2 {
     public static void conversorPesetas(){
+        System.out.println("Conversor de euros a pesetas pesetas: ");
+        
         double euros;
         double pesetas = 166.387;
         double result;
