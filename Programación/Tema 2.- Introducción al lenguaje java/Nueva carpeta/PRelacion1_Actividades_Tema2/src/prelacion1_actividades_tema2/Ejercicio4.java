@@ -14,8 +14,8 @@ public class Ejercicio4 implements Ejercicio{
         
         
        public void toExecute() {
-        String ej4 = studentPercent();
-        System.out.println(ej4);
+        String str = studentPercent();
+        System.out.println(str);
     }
         
     public String studentPercent(){

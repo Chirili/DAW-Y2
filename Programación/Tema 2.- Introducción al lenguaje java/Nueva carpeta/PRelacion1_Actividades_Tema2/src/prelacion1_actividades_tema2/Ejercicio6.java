@@ -14,8 +14,8 @@ public class Ejercicio6 implements Ejercicio{
     utils uts = new utils();
     
     public void toExecute(){
-        String ej6 = imsCalc();
-        System.out.print("ej6");
+        String str = imsCalc();
+        System.out.print(str);
     }
     
     public String imsCalc(){

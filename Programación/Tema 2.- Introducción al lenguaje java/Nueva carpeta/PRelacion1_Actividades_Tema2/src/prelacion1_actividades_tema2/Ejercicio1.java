@@ -16,8 +16,8 @@ public class Ejercicio1 implements Ejercicio {
         utils uts = new utils();
     
     public void toExecute() {
-        String ej1 = intMultiplied();
-        System.out.println(ej1);
+        String str = intMultiplied();
+        System.out.println(str);
     }
 
     public String intMultiplied() {

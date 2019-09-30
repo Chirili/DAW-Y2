@@ -17,8 +17,8 @@ import java.util.Scanner;
 public class Ejercicio5 implements Ejercicio{
     
     public void toExecute(){
-        String ej5 = sphereRadio();
-        System.out.print(ej5);
+        String str = sphereRadio();
+        System.out.print(str);
     }
     
     public String sphereRadio(){

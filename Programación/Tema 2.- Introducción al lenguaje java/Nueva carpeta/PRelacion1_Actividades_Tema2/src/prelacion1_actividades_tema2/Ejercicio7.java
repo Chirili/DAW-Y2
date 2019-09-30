@@ -14,8 +14,8 @@ public class Ejercicio7 implements Ejercicio{
     utils uts = new utils();
     
     public void toExecute(){
-            String ej7 = hoursCalc();
-            System.out.print(ej7);
+            String str = hoursCalc();
+            System.out.print(str);
     }
     public String hoursCalc(){
             System.out.println("Cantidad de horas, dias y semanas de un total de horas:  ");

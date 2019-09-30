@@ -31,7 +31,7 @@ public class Main extends Application {
             utils uts = new utils();
             
             //Declaracion de las variables
-            int choice;
+            int choice,size;
             
             //Declaracion del hashmap
             HashMap <Integer , Ejercicio> ejercicios = new HashMap<>();
@@ -59,11 +59,25 @@ public class Main extends Application {
             ejercicios.put(7, ej7);
             
             //Ejercicio e1 = ejercicios.get(1);
-            System.out.print("Elige el ejercicio a mostrar:  ");
-            choice = uts.getInt();
-            
-            ejercicios.get(choice).toExecute();
-
+            do{
+                System.out.print("Elige el ejercicio a mostrar o pulsa 0 para salir: ");
+                choice = uts.getInt();
+                
+                if (choice != 0){
+                ejercicios.get(choice).toExecute();
+                    String choice2;
+                    do{
+                    System.out.print("Pulsa s para ver el siguiente ejercicio, a para ver el ejercicio anterior o 0 para salir: ");
+                    choice2 = uts.getString();
+                        if(choice2.equalsIgnoreCase("s")){
+                            choice ++;
+                            ejercicios.get(choice).toExecute();
+                        }
+                    }while(Integer.valueOf(choice2) != 0);
+                    
+                }
+                
+            }while(choice != 0);
+            System.exit(0);
         }
-
 }

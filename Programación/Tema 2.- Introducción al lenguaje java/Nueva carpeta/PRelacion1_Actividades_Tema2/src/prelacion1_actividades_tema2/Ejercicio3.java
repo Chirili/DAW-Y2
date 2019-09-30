@@ -15,8 +15,8 @@ public class Ejercicio3 implements Ejercicio{
     
     utils uts = new utils();
     public void toExecute() {
-        String ej3 = switchVariableData();
-        System.out.println(ej3);
+        String str = switchVariableData();
+        System.out.println(str);
     }
 
     public String switchVariableData() {

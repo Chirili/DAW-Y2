@@ -17,8 +17,8 @@ public class Ejercicio2 implements Ejercicio {
     utils uts = new utils();
     
     public void toExecute() {
-        String ej2 = realSum();
-        System.out.print(ej2);
+        String str = realSum();
+        System.out.print(str);
     }
 
     public String realSum() {
