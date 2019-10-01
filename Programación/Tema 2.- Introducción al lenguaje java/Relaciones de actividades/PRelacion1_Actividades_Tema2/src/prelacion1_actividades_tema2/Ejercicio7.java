@@ -30,7 +30,7 @@ public class Ejercicio7 implements Ejercicio{
              dias = total % (24*7) / 24;
              horas = total % 24;
              
-             return "Semanas: " + semanas + "\n Dias: " + dias + "Horas: "+ horas + "\n";
+             return "Semanas: " + semanas + "\n Dias: " + dias + "\n Horas: "+ horas + "\n";
 
         }
 }
