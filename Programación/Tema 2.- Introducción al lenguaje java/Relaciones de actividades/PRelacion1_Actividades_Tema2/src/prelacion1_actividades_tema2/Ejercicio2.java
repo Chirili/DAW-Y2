@@ -48,6 +48,6 @@ public class Ejercicio2 implements Ejercicio {
 
         total = numero1 + numero2 + numero3;
 
-        return " La suma de todos los numeros elegidos es la siguiente:  " + total;
+        return " La suma de todos los numeros elegidos es la siguiente:  " + total + "\n";
     }
 }

@@ -1,0 +1,113 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package prelacion1_ejercicios_condicionales;
+
+/**
+ *
+ * @author Andrés
+ */
+public class Ejercicio10 {
+    Utils uts = new Utils();
+    public String Horoscope(){
+        int day,month;
+        String horoscope = "";
+        System.out.print("Escribe el dia que naciste: ");
+        day = uts.getInt();
+        
+        System.out.print("Escribe el mes en le que naciste: ");
+        month = uts.getInt();
+        
+        switch(month) {
+      case 1:
+        if (day < 21) {
+          horoscope = "Capricornio";
+        } else {
+          horoscope = "Acuario";
+        }
+        break;
+      case 2:
+        if (day < 20) {
+          horoscope = "Acuario";
+        } else {
+          horoscope = "Piscis";
+        }
+        break;
+      case 3:
+        if (day < 21) {
+          horoscope = "Piscis";
+        } else {
+          horoscope = "Aries";
+        }
+        break;
+      case 4:
+        if (day < 21) {
+          horoscope = "Aries";
+        } else {
+          horoscope = "Tauro";
+        }
+        break;
+      case 5:
+        if (day < 20) {
+          horoscope = "Tauro";
+        } else {
+          horoscope = "Geminis";
+        }
+        break;
+      case 6:
+        if (day < 22) {
+          horoscope = "Geminis";
+        } else {
+          horoscope = "Cancer";
+        }
+        break;
+      case 7:
+        if (day < 22) {
+          horoscope = "Cancer";
+        } else {
+          horoscope = "Leo";
+        }
+        break;
+      case 8:
+        if (day < 24) {
+          horoscope = "Leo";
+        } else {
+          horoscope = "virgo";
+        }
+        break;
+      case 9:
+        if (day < 23) {
+          horoscope = "Virgo";
+        } else {
+          horoscope = "Libra";
+        }
+        break;
+      case 10:
+        if (day < 23) {
+          horoscope = "Libra";
+        } else {
+          horoscope = "Escorpio";
+        }
+        break;
+      case 11:
+        if (day < 23) {
+          horoscope = "Escorpio";
+        } else {
+          horoscope = "Sagitario";
+        }
+        break;
+      case 12:
+        if (day < 21) {
+          horoscope = "Sagitario";
+        } else {
+          horoscope = "Capricornio";
+        }
+        break;
+      default:
+    }
+        System.out.println("Su horoscopo es el siguiente:  "+ horoscope);
+        return "";
+    }
+}

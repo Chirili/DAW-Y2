@@ -35,7 +35,7 @@ public class Ejercicio6 implements Ejercicio{
             //Operaciones con las variables
             ims = peso/Math.pow(altura, 2);
             
-            System.out.println("Su ims total es de:  "+ims);
+            System.out.println("Su ims total es de:  "+ims + "\n");
             
             if (ims >= 18 && ims <= 25) {
                 return "Su IMS es saludable ";

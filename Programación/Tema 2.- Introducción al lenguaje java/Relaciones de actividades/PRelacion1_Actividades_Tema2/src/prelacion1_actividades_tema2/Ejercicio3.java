@@ -37,6 +37,6 @@ public class Ejercicio3 implements Ejercicio{
         a = b;
         b = c;
 
-        return "El valor de la primera variable introducida es el siguiente:  " + a + " y el valor de la segunda variable es el siguiente: " + b;
+        return "El valor de la primera variable introducida es el siguiente:  " + a + " y el valor de la segunda variable es el siguiente: " + b + "\n";
     }
 }

@@ -6,6 +6,7 @@
 package prelacion1_actividades_tema2;
 
 import com.sun.org.apache.xerces.internal.xs.ItemPSVI;
+import java.awt.AWTException;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,12 +27,12 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) throws AWTException{
         
             utils uts = new utils();
             
             //Declaracion de las variables
-            int choice,size;
+            int choice;
             
             //Declaracion del hashmap
             HashMap <Integer , Ejercicio> ejercicios = new HashMap<>();
@@ -60,24 +61,42 @@ public class Main extends Application {
             
             //Ejercicio e1 = ejercicios.get(1);
             do{
-                System.out.print("Elige el ejercicio a mostrar o pulsa 0 para salir: ");
-                choice = uts.getInt();
                 
-                if (choice != 0){
-                ejercicios.get(choice).toExecute();
+                System.out.print("Elige el numero de ejercicio entre el 1 y el 7 para mostrar o pulsa 0 para salir: ");
+                choice = uts.getInt();
+                uts.clearScreen();
+                
+                if (choice != 0 && choice < 8){
+                    
+                    ejercicios.get(choice).toExecute();
                     String choice2;
+                    String eb = "0";
+                    
                     do{
-                    System.out.print("Pulsa s para ver el siguiente ejercicio, a para ver el ejercicio anterior o 0 para salir: ");
+                        
+                    System.out.print("Pulsa s para ver el siguiente ejercicio, a para ver el ejercicio anterior o 0 para volver a la elección de ejercicios: ");
                     choice2 = uts.getString();
-                        if(choice2.equalsIgnoreCase("s")){
+                    uts.clearScreen();
+                        if(choice2.equalsIgnoreCase("s") && choice < 8){
+                            
                             choice ++;
                             ejercicios.get(choice).toExecute();
+                            
+                        }else if(choice2.equalsIgnoreCase("a") && choice > 1){
+                            
+                            choice --;
+                            ejercicios.get(choice).toExecute();
+                            
+                        }else {
+                            
+                            System.out.println("Numero elegido incorrecto intentalo de nuevo.");
+                            
                         }
-                    }while(Integer.valueOf(choice2) != 0);
+                    }while(!choice2.equals(eb));
                     
                 }
-                
             }while(choice != 0);
+            
             System.exit(0);
         }
 }

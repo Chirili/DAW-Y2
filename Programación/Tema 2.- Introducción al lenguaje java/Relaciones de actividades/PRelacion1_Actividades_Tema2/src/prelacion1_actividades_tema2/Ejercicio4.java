@@ -37,6 +37,6 @@ public class Ejercicio4 implements Ejercicio{
             porcentaje_niños = numero_niños*100/(numero_niños+numero_niñas);
             porcentaje_niñas = 100 - porcentaje_niños;
             
-            return "Porcentaje de niños:  "+porcentaje_niños+"%.\n"+ "Porcentaje de niñas: "+porcentaje_niñas+"%";
+            return "Porcentaje de niños:  "+porcentaje_niños+"%.\n"+ "Porcentaje de niñas: "+porcentaje_niñas+"% \n";
         }
 }

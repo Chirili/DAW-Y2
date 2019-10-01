@@ -36,7 +36,7 @@ public class Ejercicio5 implements Ejercicio{
             volumen = (4/3) * Math.PI * Math.pow(radio, 3);
             
             
-            return "El radio de la esfera elegido es el siguiente:  "+ radio + "\n La superficie de la esfera es la siguiente: " + superficie + "\n Volumen de la esfera es la siguiente:  "+ volumen;
+            return "El radio de la esfera elegido es el siguiente:  "+ radio + "\n La superficie de la esfera es la siguiente: " + superficie + "\n Volumen de la esfera es la siguiente:  "+ volumen + "\n";
         }
     public static double getDouble(){
         Scanner gd = new Scanner(System.in);

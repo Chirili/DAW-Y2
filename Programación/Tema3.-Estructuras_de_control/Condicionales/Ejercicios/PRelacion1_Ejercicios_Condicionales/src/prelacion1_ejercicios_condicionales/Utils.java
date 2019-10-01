@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package prelacion1_actividades_tema2;
+package prelacion1_ejercicios_condicionales;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import javax.sound.sampled.Line;
@@ -13,8 +16,20 @@ import javax.sound.sampled.Line;
  *
  * @author Andrés
  */
+public class Utils {
+    public void clearScreen() throws AWTException {
 
-public class utils {
+        try {
+            Robot robot = new Robot();
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_L);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyRelease(KeyEvent.VK_L);
+        } catch (AWTException a) {
+            a.printStackTrace();
+        }
+
+    }
 
     public double getDouble() throws InputMismatchException {
         do {
@@ -48,9 +63,9 @@ public class utils {
                 System.out.print("El valor introducido no corresponde con el tipo de variable String, vuelve a intentarlo: ");
             }
         } while (true);
-}
+    }
 
-public boolean getBoolean() {
+    public boolean getBoolean() {
         do {
             try {
                 Scanner gb = new Scanner(System.in);
@@ -60,10 +75,9 @@ public boolean getBoolean() {
             }
         } while (true);
 
+    }
 
-}
-
-public float getFloat() {
+    public float getFloat() {
         do {
             try {
                 Scanner gf = new Scanner(System.in);
@@ -75,7 +89,7 @@ public float getFloat() {
 
     }
 
-public long getLong() {
+    public long getLong() {
         do {
             try {
                 Scanner gl = new Scanner(System.in);
@@ -85,7 +99,8 @@ public long getLong() {
             }
         } while (true);
     }
-public short getShort() {
+
+    public short getShort() {
         do {
             try {
                 Scanner gs = new Scanner(System.in);
@@ -95,7 +110,8 @@ public short getShort() {
             }
         } while (true);
     }
-public byte  getByte() {
+
+    public byte getByte() {
         do {
             try {
                 Scanner gby = new Scanner(System.in);
@@ -105,4 +121,47 @@ public byte  getByte() {
             }
         } while (true);
     }
+    
+ /*
+    * Menu de ejercicios
+    
+     do{
+                
+                System.out.print("Elige el numero de ejercicio entre el 1 y el 7 para mostrar o pulsa 0 para salir: ");
+                choice = uts.getInt();
+                uts.clearScreen();
+                
+                if (choice != 0 && choice < 8){
+                    
+                    ejercicios.get(choice).toExecute();
+                    String choice2;
+                    String eb = "0";
+                    
+                    do{
+                        
+                    System.out.print("Pulsa s para ver el siguiente ejercicio, a para ver el ejercicio anterior o 0 para volver a la elección de ejercicios: ");
+                    choice2 = uts.getString();
+                    uts.clearScreen();
+                        if(choice2.equalsIgnoreCase("s") && choice < 8){
+                            
+                            choice ++;
+                            ejercicios.get(choice).toExecute();
+                            
+                        }else if(choice2.equalsIgnoreCase("a") && choice > 1){
+                            
+                            choice --;
+                            ejercicios.get(choice).toExecute();
+                            
+                        }else {
+                            
+                            System.out.println("Numero elegido incorrecto intentalo de nuevo.");
+                            
+                        }
+                    }while(!choice2.equals(eb));
+                    
+                }
+            }while(choice != 0);
+            
+            System.exit(0);
+    */
 }
