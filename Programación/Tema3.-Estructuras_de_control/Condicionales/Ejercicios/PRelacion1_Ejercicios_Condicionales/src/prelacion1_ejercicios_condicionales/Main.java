@@ -26,19 +26,35 @@ public class Main extends Application {
         
         int choice;
         
-        HashMap <Integer, Iejecicios> ejercicios = new HashMap<>();
+        HashMap <Integer, Iejercicios> ejercicios = new HashMap<>();
         
         Ejercicio1 ej1 = new Ejercicio1();
         Ejercicio2 ej2 = new Ejercicio2();
         Ejercicio3 ej3 = new Ejercicio3();
         Ejercicio4 ej4 = new Ejercicio4();
         Ejercicio5 ej5 = new Ejercicio5();
+        Ejercicio6 ej6 = new Ejercicio6();
+        Ejercicio7 ej7 = new Ejercicio7();
+        Ejercicio8 ej8 = new Ejercicio8();
+        Ejercicio9 ej9 = new Ejercicio9();
+        Ejercicio10 ej10 = new Ejercicio10();
+        Ejercicio11 ej11 = new Ejercicio11();
+        Ejercicio12 ej12 = new Ejercicio12();
+        Ejercicio13 ej13 = new Ejercicio13();
         
         ejercicios.put(1, ej1);
         ejercicios.put(2, ej2);
         ejercicios.put(3, ej3);
         ejercicios.put(4, ej4);
         ejercicios.put(5, ej5);
+        ejercicios.put(6, ej6);
+        ejercicios.put(7, ej7);
+        ejercicios.put(8, ej8);
+        ejercicios.put(9, ej9);
+        ejercicios.put(10, ej10);
+        ejercicios.put(11, ej11);
+        ejercicios.put(12, ej12);
+        ejercicios.put(13, ej13);
         
         
         

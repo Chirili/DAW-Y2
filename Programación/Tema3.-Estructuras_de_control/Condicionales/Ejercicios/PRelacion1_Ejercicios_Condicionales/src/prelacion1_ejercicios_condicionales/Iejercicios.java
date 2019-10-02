@@ -9,6 +9,6 @@ package prelacion1_ejercicios_condicionales;
  *
  * @author Andrés
  */
-public interface Iejecicios {
+public interface Iejercicios {
     public void toExecute();
 }

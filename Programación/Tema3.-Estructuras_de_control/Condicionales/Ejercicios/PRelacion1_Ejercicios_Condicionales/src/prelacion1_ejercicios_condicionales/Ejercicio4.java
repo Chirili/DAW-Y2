@@ -9,7 +9,7 @@ package prelacion1_ejercicios_condicionales;
  *
  * @author Andrés
  */
-public class Ejercicio4 implements Iejecicios {
+public class Ejercicio4 implements Iejercicios {
 
     Utils uts = new Utils();
 

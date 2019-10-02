@@ -9,9 +9,14 @@ package prelacion1_ejercicios_condicionales;
  *
  * @author usuario
  */
-public class Ejercicio11 {
+public class Ejercicio11 implements Iejercicios{
     
     Utils uts = new Utils();
+    
+    public void toExecute(){
+        String str = nightHours();
+        System.out.print(str);
+    }
     
     public String nightHours(){
         

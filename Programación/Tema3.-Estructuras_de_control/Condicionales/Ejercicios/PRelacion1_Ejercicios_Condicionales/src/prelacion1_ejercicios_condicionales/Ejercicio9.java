@@ -9,9 +9,14 @@ package prelacion1_ejercicios_condicionales;
  *
  * @author Andrés
  */
-public class Ejercicio9 {
+public class Ejercicio9 implements Iejercicios{
     
     Utils uts = new Utils();
+    
+    public void toExecute(){
+        String str = Equations2();
+        System.out.print(str);
+    }
     
     public String Equations2() {
         double a, b, c;

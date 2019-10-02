@@ -9,8 +9,15 @@ package prelacion1_ejercicios_condicionales;
  *
  * @author Andrés
  */
-public class Ejercicio10 {
+public class Ejercicio10 implements  Iejercicios{
+    
     Utils uts = new Utils();
+    
+    public void toExecute(){
+        String str =  Horoscope();
+        System.out.print(str);
+    }
+    
     public String Horoscope(){
         int day,month;
         String horoscope = "";

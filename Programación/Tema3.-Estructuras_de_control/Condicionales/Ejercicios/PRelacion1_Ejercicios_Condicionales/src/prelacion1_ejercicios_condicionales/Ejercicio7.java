@@ -9,12 +9,13 @@ package prelacion1_ejercicios_condicionales;
  *
  * @author Andrés
  */
-public class Ejercicio7 implements Iejecicios {
+public class Ejercicio7 implements Iejercicios {
 
     Utils uts = new Utils();
 
     public void toExecute() {
-
+        String str = averageNotes();
+        System.out.print(str);
     }
 
     public String averageNotes() {

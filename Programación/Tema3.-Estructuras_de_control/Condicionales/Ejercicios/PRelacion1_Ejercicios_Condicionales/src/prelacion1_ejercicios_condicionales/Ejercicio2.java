@@ -9,7 +9,7 @@ package prelacion1_ejercicios_condicionales;
  *
  * @author Andrés
  */
-public class Ejercicio2 implements Iejecicios{
+public class Ejercicio2 implements Iejercicios{
     Utils uts = new Utils();
     public void toExecute(){
         String str = Hours();
