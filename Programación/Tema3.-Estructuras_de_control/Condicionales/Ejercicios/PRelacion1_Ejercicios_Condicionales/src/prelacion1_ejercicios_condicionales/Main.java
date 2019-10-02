@@ -41,6 +41,8 @@ public class Main extends Application {
         Ejercicio11 ej11 = new Ejercicio11();
         Ejercicio12 ej12 = new Ejercicio12();
         Ejercicio13 ej13 = new Ejercicio13();
+        Ejercicio14 ej14 = new Ejercicio14();
+        Ejercicio15 ej15 = new Ejercicio15();
         
         ejercicios.put(1, ej1);
         ejercicios.put(2, ej2);
@@ -55,6 +57,9 @@ public class Main extends Application {
         ejercicios.put(11, ej11);
         ejercicios.put(12, ej12);
         ejercicios.put(13, ej13);
+        ejercicios.put(14, ej14);
+        ejercicios.put(15, ej15);
+        
         
         
         
