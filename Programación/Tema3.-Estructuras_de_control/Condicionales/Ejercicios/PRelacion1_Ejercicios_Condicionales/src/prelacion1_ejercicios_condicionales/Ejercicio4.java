@@ -30,7 +30,7 @@ public class Ejercicio4 implements Iejercicios {
             result = fsalary * 12;
             System.out.println("El salario total semanal es igual a :  " + result);
         } else if (choice > 40) {
-            
+
             fsalary = 40;
             ssalary = choice % - 40;
             result = (fsalary * 12) + (ssalary * 16);

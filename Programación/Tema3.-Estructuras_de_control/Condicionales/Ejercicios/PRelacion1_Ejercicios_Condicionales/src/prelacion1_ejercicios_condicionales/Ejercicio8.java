@@ -9,7 +9,8 @@ package prelacion1_ejercicios_condicionales;
  *
  * @author Andrés
  */
-public class Ejercicio8 implements Iejercicios{
+public class Ejercicio8 implements Iejercicios {
+
     Utils uts = new Utils();
 
     public void toExecute() {
@@ -33,15 +34,15 @@ public class Ejercicio8 implements Iejercicios{
         avg = (note1 + note2 + note3) / 3;
 
         if (avg < 5) {
-            System.out.println("Suspenso ");
+            System.out.println("La media es: " + avg + " Suspenso ");
         } else if (avg >= 5 && avg <= 6) {
-            System.out.println("Suficiente ");
+            System.out.println("La media es: " + avg + " Suficiente ");
         } else if (avg >= 6 && avg <= 7) {
-            System.out.println("Bien ");
+            System.out.println("La media es: " + avg + " Bien ");
         } else if (avg >= 7 && avg <= 8) {
-            System.out.println("Notable ");
+            System.out.println("La media es: " + avg + " Notable ");
         } else if (avg >= 9 && avg <= 10) {
-            System.out.println("Sobresaliente ");
+            System.out.println("La media es: " + avg + " Sobresaliente ");
         }
 
         return "\n";

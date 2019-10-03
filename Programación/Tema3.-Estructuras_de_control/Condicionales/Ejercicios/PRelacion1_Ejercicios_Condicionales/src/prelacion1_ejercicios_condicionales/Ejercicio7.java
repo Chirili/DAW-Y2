@@ -21,7 +21,8 @@ public class Ejercicio7 implements Iejercicios {
     public String averageNotes() {
 
         double note1, note2, note3, avg;
-
+        
+        System.out.println("Calcular la media de 3 notas:  ");
         System.out.print("Introduce la nota 1:  ");
         note1 = uts.getDouble();
 
@@ -32,6 +33,8 @@ public class Ejercicio7 implements Iejercicios {
         note3 = uts.getDouble();
 
         avg = (note1 + note2 + note3) / 3;
+        
+        System.out.print("La media de las 3 notas introducidas es la siguiente: "+avg);
 
         return "\n";
     }

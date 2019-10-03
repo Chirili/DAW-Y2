@@ -9,29 +9,45 @@ package prelacion1_ejercicios_condicionales;
  *
  * @author Andrés
  */
-public class Ejercicio1 implements Iejercicios{
+public class Ejercicio1 implements Iejercicios {
+
     Utils uts = new Utils();
-    public void toExecute(){
+
+    public void toExecute() {
         String str = weekDay();
         System.out.print(str);
     }
-    public String weekDay(){
-        
-        int choice;
-        
+
+    public String weekDay() {
+
+        String choice;
+
         System.out.print("Escribe un dia de la semana: ");
-        choice = uts.getInt();
-        if (choice == 1) {
-            System.out.println("Programacion ");
-        } else if(choice == 2 ) {
-            System.out.println("Daw");
-        }else if (choice == 3 ) {
-               System.out.println("Sistemas");
-        }else if(choice == 4 ){
-            System.out.println("Lenguaje de marcas ");
-        }else if (choice == 5) {
-            System.out.println("BADAT ");
-         }
+        choice = uts.getString();
+        switch (choice.toLowerCase()) {
+            case "lunes":
+                System.out.println("Programacion ");
+                break;
+            case "martes":
+                System.out.println("Daw");
+                break;
+            case "miercoles":
+                System.out.println("Sistemas");
+                break;
+            case "jueves":
+                System.out.println("Lenguaje de marcas ");
+                break;
+            case "viernes":
+                System.out.println("BADAT ");
+                break;
+            case "sabado":
+
+            case "domingo":
+                System.out.println("Sin clases ");
+            default:
+                System.out.println("Dia no valido ");
+                return "\n";
+        }
         return "\n";
     }
 }

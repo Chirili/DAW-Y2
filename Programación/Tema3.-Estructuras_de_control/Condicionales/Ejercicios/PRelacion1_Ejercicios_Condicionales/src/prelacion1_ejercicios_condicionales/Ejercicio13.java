@@ -22,6 +22,7 @@ public class Ejercicio13 implements Iejercicios {
 
         int num1, num2, num3, aux;
 
+        System.out.println("Elige el valor de 3 numeros para ordenarlos de menor a mayor:  ");
         System.out.print("Elige el valor del primer numero:  ");
         num1 = uts.getInt();
 
@@ -37,7 +38,7 @@ public class Ejercicio13 implements Iejercicios {
             num2 = aux;
         }
 
-        if (num2 > num3)  {
+        if (num2 > num3) {
             aux = num2;
             num2 = num3;
             num3 = aux;

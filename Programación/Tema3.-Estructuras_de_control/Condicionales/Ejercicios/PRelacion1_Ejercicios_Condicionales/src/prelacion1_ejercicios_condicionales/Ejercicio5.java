@@ -21,7 +21,7 @@ public class Ejercicio5 implements Iejercicios {
     public String Equations() {
 
         double a, b, x;
-
+        System.out.println("Elige el valor de las variables para una ecuacion de primer grado:  ");
         System.out.print("Introduce el valor de a: ");
         a = uts.getDouble();
 

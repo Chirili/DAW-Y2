@@ -14,8 +14,8 @@ public class Ejercicio3 implements Iejercicios {
     Utils uts = new Utils();
 
     public void toExecute() {
-            String str = weekDayNames();
-            System.out.print(str);
+        String str = weekDayNames();
+        System.out.print(str);
     }
 
     public String weekDayNames() {
@@ -25,22 +25,31 @@ public class Ejercicio3 implements Iejercicios {
         System.out.print("Elige un dia de la semana entre el 1 y el 7: ");
         choice = uts.getInt();
 
-        if (choice == 1) {
-            System.out.print("Lunes ");
-        } else if (choice == 2) {
-            System.out.print("Martes");
-        } else if (choice == 3) {
-            System.out.print("Miercoles");
-        } else if (choice == 4) {
-            System.out.print("Jueves");
-        } else if (choice == 5) {
-            System.out.print("Viernes");
-        } else if (choice == 6) {
-            System.out.print("Sabado");
-        } else if (choice == 7) {
-            System.out.print("Domingo");
+        switch (choice) {
+            case 1:
+                System.out.print("Lunes ");
+                break;
+            case 2:
+                System.out.print("Martes");
+                break;
+            case 3:
+                System.out.print("Miercoles");
+                break;
+            case 4:
+                System.out.print("Jueves");
+                break;
+            case 5:
+                System.out.print("Viernes");
+                break;
+            case 6:
+                System.out.print("Sabado");
+                break;
+            case 7:
+                System.out.print("Domingo");
+                break;
+            default:
+                System.out.println("Numero introducido incorrecto ");
         }
-
         return "\n";
     }
 }

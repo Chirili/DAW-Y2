@@ -43,6 +43,11 @@ public class Main extends Application {
         Ejercicio13 ej13 = new Ejercicio13();
         Ejercicio14 ej14 = new Ejercicio14();
         Ejercicio15 ej15 = new Ejercicio15();
+        Ejercicio16 ej16 = new Ejercicio16();
+        Ejercicio17 ej17 = new Ejercicio17();
+        Ejercicio18 ej18 = new Ejercicio18();
+        Ejercicio19 ej19 = new Ejercicio19();
+        Ejercicio20 ej20 = new Ejercicio20();
         
         ejercicios.put(1, ej1);
         ejercicios.put(2, ej2);
@@ -59,6 +64,11 @@ public class Main extends Application {
         ejercicios.put(13, ej13);
         ejercicios.put(14, ej14);
         ejercicios.put(15, ej15);
+        ejercicios.put(16, ej16);
+        ejercicios.put(17, ej17);
+        ejercicios.put(18, ej18);
+        ejercicios.put(19, ej19);
+        ejercicios.put(20, ej20);
         
         
         
@@ -77,10 +87,10 @@ public class Main extends Application {
                     
                     do{
                         
-                    System.out.print("Pulsa s para ver el siguiente ejercicio, a para ver el ejercicio anterior o 0 para volver a la elección de ejercicios: ");
+                    System.out.print("Pulsa S para ver el siguiente ejercicio, R para repetir el ejercicios y  A para ver el ejercicio anterior o 0 para volver a la elección de ejercicios: ");
                     choice2 = uts.getString();
                     uts.clearScreen();
-                        if(choice2.equalsIgnoreCase("s") && choice < 21){
+                        if(choice2.equalsIgnoreCase("s") && choice < 20){
                             
                             choice ++;
                             ejercicios.get(choice).toExecute();
@@ -90,10 +100,10 @@ public class Main extends Application {
                             choice --;
                             ejercicios.get(choice).toExecute();
                             
-                        }else {
-                            
-                            System.out.println("Numero elegido incorrecto intentalo de nuevo.");
-                            
+                        }else if(choice2.equalsIgnoreCase("r") && choice > 1){
+                            ejercicios.get(choice).toExecute();
+                        } else if (choice2 != "0") {
+                            System.out.println("Eleccion incorrecta intentalo de nuevo.");
                         }
                     }while(!choice2.equals(eb));
                     

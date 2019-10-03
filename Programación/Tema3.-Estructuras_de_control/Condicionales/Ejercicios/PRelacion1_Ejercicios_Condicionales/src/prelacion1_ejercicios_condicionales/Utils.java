@@ -23,6 +23,7 @@ public class Utils {
             Robot robot = new Robot();
             robot.keyPress(KeyEvent.VK_CONTROL);
             robot.keyPress(KeyEvent.VK_L);
+            robot.delay(300);
             robot.keyRelease(KeyEvent.VK_CONTROL);
             robot.keyRelease(KeyEvent.VK_L);
         } catch (AWTException a) {
