@@ -1,4 +1,4 @@
-package prelacion1_ejercicios_condicionales;
+package prelacion1_bucles;
 
 import java.awt.AWTException;
 import java.awt.Robot;
