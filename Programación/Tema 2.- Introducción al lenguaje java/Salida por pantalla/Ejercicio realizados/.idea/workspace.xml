@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="784c986f-c9fd-4279-b7c6-4705b41f6bd6" name="Default Changelist" comment="" />
+    <list default="true" id="784c986f-c9fd-4279-b7c6-4705b41f6bd6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Relaciones de actividades/PRelacion1_Actividades_Tema2/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Relaciones de actividades/PRelacion1_Actividades_Tema2/nbproject/private/private.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Tema3.-Estructuras_de_control/Bucles/Ejercicios/PRelacion1_Bucles/src/prelacion1_bucles/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Tema3.-Estructuras_de_control/Bucles/Ejercicios/PRelacion1_Bucles/src/prelacion1_bucles/Main.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
