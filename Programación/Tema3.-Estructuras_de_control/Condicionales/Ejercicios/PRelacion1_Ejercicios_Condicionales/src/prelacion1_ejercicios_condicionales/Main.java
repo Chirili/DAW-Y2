@@ -6,28 +6,34 @@
 package prelacion1_ejercicios_condicionales;
 
 import java.awt.AWTException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import org.w3c.dom.css.Counter;
 
 /**
  *
  * @author Andrés
  */
 public class Main extends Application {
+
     Utils uts = new Utils();
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         launch(args);
     }
-    public void start(Stage PrimaryStage) throws AWTException{
-        
+
+    public void start(Stage PrimaryStage) throws AWTException {
+
         int choice;
-        
-        HashMap <Integer, Iejercicios> ejercicios = new HashMap<>();
-        
+
+        HashMap<Integer, Iejercicios> ejercicios = new HashMap<>();
+
         Ejercicio1 ej1 = new Ejercicio1();
         Ejercicio2 ej2 = new Ejercicio2();
         Ejercicio3 ej3 = new Ejercicio3();
@@ -48,7 +54,7 @@ public class Main extends Application {
         Ejercicio18 ej18 = new Ejercicio18();
         Ejercicio19 ej19 = new Ejercicio19();
         Ejercicio20 ej20 = new Ejercicio20();
-        
+
         ejercicios.put(1, ej1);
         ejercicios.put(2, ej2);
         ejercicios.put(3, ej3);
@@ -69,48 +75,45 @@ public class Main extends Application {
         ejercicios.put(18, ej18);
         ejercicios.put(19, ej19);
         ejercicios.put(20, ej20);
-        
-        
-        
-        
-         do{
-                
-                System.out.print("Elige el numero de ejercicio entre el 1 y el 20 para mostrar o pulsa 0 para salir: ");
-                choice = uts.getInt();
-                uts.clearScreen();
-                
-                if (choice != 0 && choice < 21){
-                    
-                    ejercicios.get(choice).toExecute();
-                    String choice2;
-                    String eb = "0";
-                    
-                    do{
-                        
+
+        do {
+
+            System.out.print("Elige el numero de ejercicio entre el 1 y el 20 para mostrar o pulsa 0 para salir: ");
+            choice = uts.getInt();
+            uts.clearScreen();
+
+            if (choice != 0 && choice < 21) {
+
+                ejercicios.get(choice).toExecute();
+                String choice2;
+                String eb = "0";
+
+                do {
+
                     System.out.print("Pulsa S para ver el siguiente ejercicio, R para repetir el ejercicios y  A para ver el ejercicio anterior o 0 para volver a la elección de ejercicios: ");
                     choice2 = uts.getString();
                     uts.clearScreen();
-                        if(choice2.equalsIgnoreCase("s") && choice < 20){
-                            
-                            choice ++;
-                            ejercicios.get(choice).toExecute();
-                            
-                        }else if(choice2.equalsIgnoreCase("a") && choice > 1){
-                            
-                            choice --;
-                            ejercicios.get(choice).toExecute();
-                            
-                        }else if(choice2.equalsIgnoreCase("r") && choice > 1){
-                            ejercicios.get(choice).toExecute();
-                        } else if (choice2 != "0") {
-                            System.out.println("Eleccion incorrecta intentalo de nuevo.");
-                        }
-                    }while(!choice2.equals(eb));
-                    
-                }
-            }while(choice != 0);
-            
-            System.exit(0);
+                    if (choice2.equalsIgnoreCase("s") && choice < 20) {
+
+                        choice++;
+                        ejercicios.get(choice).toExecute();
+
+                    } else if (choice2.equalsIgnoreCase("a") && choice > 1) {
+
+                        choice--;
+                        ejercicios.get(choice).toExecute();
+
+                    } else if (choice2.equalsIgnoreCase("r") && choice > 1) {
+                        ejercicios.get(choice).toExecute();
+                    } else if (choice2 != "0") {
+                        System.out.println("Eleccion incorrecta intentalo de nuevo.");
+                    }
+                } while (!choice2.equals(eb));
+
+            }
+        } while (choice != 0);
+
+        System.exit(0);
     }
-    
+
 }
