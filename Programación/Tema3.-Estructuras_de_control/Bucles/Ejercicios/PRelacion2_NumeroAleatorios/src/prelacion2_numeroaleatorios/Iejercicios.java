@@ -9,6 +9,6 @@ package prelacion2_numeroaleatorios;
  *
  * @author usuario
  */
-public class Iejercicios {
-    
+public interface Iejercicios {
+    public void toExecute();
 }

@@ -9,6 +9,28 @@ package prelacion2_numeroaleatorios;
  *
  * @author usuario
  */
-public class Ejercicio1 {
+public class Ejercicio1 implements Iejercicios{
     
+    Utils uts = new Utils();
+    
+    public void toExecute(){
+        String str = diceSum();
+        System.out.print(str);
+    }
+    
+    public String diceSum(){
+        
+        int sum=0,number;
+        
+        for (int i = 0; i <= 2; i++){
+            
+            number = (int) (Math.random()*6)+1;
+            sum += number;
+            System.out.println(number);
+            
+        }
+        
+        System.out.println("La tirar de los 3 dados ha dado como resultado la suma de: "+ sum);
+        return "\n";
+    }
 }
