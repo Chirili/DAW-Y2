@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package prelacion2_numeroaleatorios;
+package prelacion1_estructuras_control;
 
 import java.awt.AWTException;
 import java.util.ArrayList;
@@ -41,12 +41,14 @@ public class Main extends Application {
         Ejercicio4 ej4 = new Ejercicio4();
         Ejercicio5 ej5 = new Ejercicio5();
         Ejercicio6 ej6 = new Ejercicio6();
+        Ejercicio7 ej7 = new Ejercicio7();
+        Ejercicio8 ej8 = new Ejercicio8();
         Ejercicio9 ej9 = new Ejercicio9();
         Ejercicio10 ej10 = new Ejercicio10();
-        Ejercicio11 ej11 = new Ejercicio11();
-        Ejercicio12 ej12 = new Ejercicio12();
-        Ejercicio13 ej13 = new Ejercicio13();
-        Ejercicio14 ej14 = new Ejercicio14();
+        //     Ejercicio11 ej11 = new Ejercicio11();
+        //    Ejercicio12 ej12 = new Ejercicio12();
+        //    Ejercicio13 ej13 = new Ejercicio13();
+        // Ejercicio14 ej14 = new Ejercicio14();
 
         ejercicios.put(1, ej1);
         ejercicios.put(2, ej2);
@@ -54,12 +56,14 @@ public class Main extends Application {
         ejercicios.put(4, ej4);
         ejercicios.put(5, ej5);
         ejercicios.put(6, ej6);
+        ejercicios.put(7, ej7);
+        ejercicios.put(8, ej8);
         ejercicios.put(9, ej9);
         ejercicios.put(10, ej10);
-        ejercicios.put(11, ej11);
-        ejercicios.put(12, ej12);
-        ejercicios.put(13, ej13);
-        ejercicios.put(14, ej14);
+        //     ejercicios.put(11, ej11);
+        //  ejercicios.put(12, ej12);
+        //   ejercicios.put(13, ej13);
+        //  ejercicios.put(14, ej14);
 
         do {
 
