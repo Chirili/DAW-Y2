@@ -48,7 +48,8 @@ public class Main extends Application {
         Ejercicio11 ej11 = new Ejercicio11();
         Ejercicio12 ej12 = new Ejercicio12();
         Ejercicio13 ej13 = new Ejercicio13();
-        // Ejercicio14 ej14 = new Ejercicio14();
+        Ejercicio20 ej20 = new Ejercicio20();
+        Ejercicio14 ej14 = new Ejercicio14();
 
         ejercicios.put(1, ej1);
         ejercicios.put(2, ej2);
@@ -63,7 +64,8 @@ public class Main extends Application {
         ejercicios.put(11, ej11);
         ejercicios.put(12, ej12);
         ejercicios.put(13, ej13);
-        //  ejercicios.put(14, ej14);
+         ejercicios.put(14, ej14);
+         ejercicios.put(20, ej20);
 
         do {
 
@@ -71,7 +73,7 @@ public class Main extends Application {
             choice = uts.getInt();
             uts.clearScreen();
 
-            if (choice != 0 && choice < 15) {
+            if (choice != 0 && choice <= 40) {
 
                 ejercicios.get(choice).toExecute();
                 String choice2;
@@ -82,7 +84,7 @@ public class Main extends Application {
                     System.out.print("Pulsa S para ver el siguiente ejercicio, R para repetir el ejercicios y  A para ver el ejercicio anterior o 0 para volver a la elección de ejercicios: ");
                     choice2 = uts.getString();
                     uts.clearScreen();
-                    if (choice2.equalsIgnoreCase("s") && choice < 14) {
+                    if (choice2.equalsIgnoreCase("s") && choice <= 40) {
 
                         choice++;
                         ejercicios.get(choice).toExecute();

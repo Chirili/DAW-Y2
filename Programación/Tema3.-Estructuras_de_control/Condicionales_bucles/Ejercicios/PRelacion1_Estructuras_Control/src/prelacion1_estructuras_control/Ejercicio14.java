@@ -13,9 +13,24 @@ public class Ejercicio14 implements Iejercicios{
     Utils uts = new Utils();
     
     public void toExecute(){
-        
+        String str = calcArea();
+        System.out.print(str);
     }
     
-    public String
+    public String calcArea(){
+        
+        double length, width;
+        
+        System.out.print("Introduce la longitud de la habitacion: ");
+        length = uts.getDouble();
+        
+        System.out.print("Introduce la anchura de la habitacion: ");
+        width = uts.getDouble();
+        
+        
+        
+        
+        return "\n";
+    }
     
 }
