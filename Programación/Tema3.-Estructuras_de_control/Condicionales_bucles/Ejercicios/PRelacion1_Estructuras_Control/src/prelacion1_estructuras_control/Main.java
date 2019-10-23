@@ -48,9 +48,15 @@ public class Main extends Application {
         Ejercicio11 ej11 = new Ejercicio11();
         Ejercicio12 ej12 = new Ejercicio12();
         Ejercicio13 ej13 = new Ejercicio13();
-        Ejercicio20 ej20 = new Ejercicio20();
         Ejercicio14 ej14 = new Ejercicio14();
         Ejercicio15 ej15 = new Ejercicio15();
+        Ejercicio16 ej16 = new Ejercicio16();
+        Ejercicio17 ej17 = new Ejercicio17();
+        Ejercicio18 ej18 = new Ejercicio18();
+        //Ejercicio19 ej19 = new Ejercicio19();
+        Ejercicio20 ej20 = new Ejercicio20();
+        Ejercicio21 ej21 = new Ejercicio21();
+        Ejercicio22 ej22 = new Ejercicio22();
 
         ejercicios.put(1, ej1);
         ejercicios.put(2, ej2);
@@ -66,8 +72,14 @@ public class Main extends Application {
         ejercicios.put(12, ej12);
         ejercicios.put(13, ej13);
          ejercicios.put(14, ej14);
-         ejercicios.put(20, ej20);
          ejercicios.put(15, ej15);
+         ejercicios.put(16, ej16);
+         ejercicios.put(17, ej17);
+         ejercicios.put(18, ej18);
+         //ejercicios.put(19, ej19);
+         ejercicios.put(20, ej20);
+         ejercicios.put(21, ej21);
+         ejercicios.put(22, ej22);
 
         do {
 
