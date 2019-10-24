@@ -53,10 +53,26 @@ public class Main extends Application {
         Ejercicio16 ej16 = new Ejercicio16();
         Ejercicio17 ej17 = new Ejercicio17();
         Ejercicio18 ej18 = new Ejercicio18();
-        //Ejercicio19 ej19 = new Ejercicio19();
+        Ejercicio19 ej19 = new Ejercicio19();
         Ejercicio20 ej20 = new Ejercicio20();
         Ejercicio21 ej21 = new Ejercicio21();
         Ejercicio22 ej22 = new Ejercicio22();
+        Ejercicio24 ej24 = new Ejercicio24();
+        Ejercicio25 ej25 = new Ejercicio25();
+        Ejercicio26 ej26 = new Ejercicio26();
+        Ejercicio27 ej27 = new Ejercicio27();
+        Ejercicio28 ej28 = new Ejercicio28();
+        Ejercicio29 ej29 = new Ejercicio29();
+        Ejercicio30 ej30 = new Ejercicio30();
+        Ejercicio31 ej31 = new Ejercicio31();
+        Ejercicio32 ej32 = new Ejercicio32();
+        Ejercicio33 ej33 = new Ejercicio33();
+        Ejercicio34 ej34 = new Ejercicio34();
+        Ejercicio35 ej35 = new Ejercicio35();
+        Ejercicio36 ej36 = new Ejercicio36();
+        Ejercicio37 ej37 = new Ejercicio37();
+        Ejercicio38 ej38 = new Ejercicio38();
+        Ejercicio39 ej39 = new Ejercicio39();
 
         ejercicios.put(1, ej1);
         ejercicios.put(2, ej2);
@@ -76,10 +92,25 @@ public class Main extends Application {
          ejercicios.put(16, ej16);
          ejercicios.put(17, ej17);
          ejercicios.put(18, ej18);
-         //ejercicios.put(19, ej19);
+         ejercicios.put(19, ej19);
          ejercicios.put(20, ej20);
          ejercicios.put(21, ej21);
          ejercicios.put(22, ej22);
+         ejercicios.put(24, ej24);
+         ejercicios.put(25, ej25);
+         ejercicios.put(26, ej26);
+         ejercicios.put(27, ej27);
+         ejercicios.put(28, ej28);
+         ejercicios.put(30, ej30);
+         ejercicios.put(31, ej31);
+         ejercicios.put(32, ej32);
+         ejercicios.put(33, ej33);
+         ejercicios.put(34, ej34);
+         ejercicios.put(35, ej35);
+         ejercicios.put(36, ej36);
+         ejercicios.put(37, ej37);
+         ejercicios.put(38, ej38);
+         ejercicios.put(39, ej39);
 
         do {
 
