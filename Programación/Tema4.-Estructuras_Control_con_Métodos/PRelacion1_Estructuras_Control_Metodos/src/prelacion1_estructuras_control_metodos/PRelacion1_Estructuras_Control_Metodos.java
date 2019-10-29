@@ -25,6 +25,9 @@ public class PRelacion1_Estructuras_Control_Metodos {
         Ejercicio1 ej1 = new Ejercicio1();
         Ejercicio2 ej2 = new Ejercicio2();
         Ejercicio3 ej3 = new Ejercicio3();
+        Ejercicio6 ej6 = new Ejercicio6();
+        Ejercicio7 ej7 = new Ejercicio7();
+        minumero ej8 = new minumero();
         Prueba p = new Prueba();
 
         do {
@@ -43,6 +46,21 @@ public class PRelacion1_Estructuras_Control_Metodos {
                     choice = ej3.selectNumber();
                 case 4:
                     System.out.println(p.prueba("asdfasdf"));
+                    break;
+                case 6:
+                    int ej6Number;
+                    System.out.print("Introduce un numero entero para transformarlo en numero romano: ");
+                    ej6Number = sc.nextInt();
+                    System.out.print(ej6.decimalToRomano(ej6Number));
+                    break;
+                case 7:
+                    ej7.multiplesOfFive();
+                    break;
+                case 8:
+                    int nChoice;
+                    System.out.print("Introduce un numero con digitos pares para saber si es vampiro: ");
+                    nChoice = sc.nextInt();
+                    ej8.esVampiro(nChoice);
                     break;
             }
 
