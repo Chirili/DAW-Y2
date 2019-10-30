@@ -72,11 +72,7 @@ public class Main {
                     
                     System.out.print(ej5.calcLuckyNumber(day, month, year));
                 case 8:
-                    int nChoice;
-                    System.out.print("Introduce un numero de 4, 6 u 8 cifras para saber si es vampiro: ");
-                    nChoice = sc.nextInt();
-                    
-                    ej8.esVampiro(nChoice);
+                    ej8.selectNumber();
             }
 
         } while (choice != 0);
