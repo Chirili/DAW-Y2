@@ -6,8 +6,8 @@
 package prelacion1_estructuras_control_metodos;
 
 /**
- *
- * @author usuario
+ *  Transforma el siguiente bucle for en un bucle while
+ * @author Andres
  */
 public class Ejercicio1 {
     

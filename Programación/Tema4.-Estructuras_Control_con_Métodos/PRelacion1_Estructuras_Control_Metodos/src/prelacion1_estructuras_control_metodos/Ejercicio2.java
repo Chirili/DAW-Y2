@@ -6,8 +6,8 @@
 package prelacion1_estructuras_control_metodos;
 
 /**
- *
- * @author usuario
+ * Realiza un programa que muestre por pantalla los 5 primeros número pares.
+ * @author Andres
  */
 public class Ejercicio2 {
     private int count,i;
