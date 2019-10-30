@@ -15,15 +15,13 @@ import java.util.Vector;
 public class minumero {
 
     private int nLength;
-    private boolean isVampire = false;
 
     /*
-    * Pasamos el numero que el usuario introduzca lo condicionamos para que sea par
-    * si la condicion se cumple se lo pasamos al metodo que corresponda para hacer
-    * los calculos correspondientes
+    * Recogemos el numero que ha introducido el usuario por teclado y lo condicionamos
+    * en funcion de la longitud del numero se hara un calculo u otro
      */
     public void esVampiro(int nChoice) {
-
+        //Variable encarga de recoger la cantidad de digitos que está formado el numero introducido
         nLength = (int) (Math.log10(nChoice) + 1);
 
         if (nLength == 4 || nLength == 6 || nLength == 8) {
@@ -33,6 +31,7 @@ public class minumero {
                     calcHundredOfVampireNumbers(nChoice);
                     break;
                 case 6:
+                    calcThousandsOfVampireNumbers(nChoice);
                     break;
                 case 8:
                     break;
@@ -44,32 +43,114 @@ public class minumero {
         }
     }
 
+    public int calcThousandsOfVampireNumbers(int nChoice) {
+        int vector1 = 0,
+                vector2 = 0,
+                rvector1 = 0,
+                rvector2 = 0,
+                count = 0;
+        boolean isVampire = false;
+        Vector<Integer> firstVectorChoice = new Vector(2);
+        Vector<Integer> secondVectorChoice = new Vector(2);
+        int ifV1, ifV2, ifV3, isV1, isV2, isV3, resultf,resultv,compare;
+        String sfV1, sfV2, sfV3, ssV1, ssV2, ssV3,vectorString1,vectorString2;
+        vector1 = nChoice % 1000;
+        vector2 = nChoice / 1000;
+
+        for (int i = 0; i <= 2; i++) {
+
+            rvector1 = vector1 % 10;
+            vector1 = vector1 / 10;
+
+            rvector2 = vector2 % 10;
+            vector2 = vector2 / 10;
+
+            firstVectorChoice.add(i, rvector1);
+            secondVectorChoice.add(i, rvector2);
+
+        }
+        
+        while (isVampire != false || count <= 5) {
+
+            int a = 0, b = 1, c = 2;
+            int d = 5, e = 4, f = 3;
+            
+            for(int i = 0; i<=2;i+=2){
+                for(int j = 0;j<=2;j+=2){
+                    
+                    ifV1 =  firstVectorChoice.get(i);
+                    ifV2 = firstVectorChoice.get(b);
+                    ifV3 = firstVectorChoice.get(c);
+                    
+                    isV1 = secondVectorChoice.get(j);
+                    isV2 = secondVectorChoice.get(j);
+                    isV3 = secondVectorChoice.get(j);
+                   
+                    sfV1= String.valueOf(ifV1);
+                    sfV2= String.valueOf(ifV2);
+                    sfV3= String.valueOf(ifV3);
+                    ssV1 = String.valueOf(isV1);
+                    ssV2 = String.valueOf(isV2);
+                    ssV3 = String.valueOf(isV3);
+                    
+                    vectorString1 = sfV1 + sfV2 + sfV3;
+                    vectorString2 = ssV1 + ssV2 + ssV3;
+                    
+                    resultf = Integer.parseInt(vectorString1);
+                    resultv = Integer.parseInt(vectorString2);
+                    
+                    compare = resultf * resultv;
+                    
+                    if(compare == nChoice){
+                        isVampire = true;
+                    }else {
+                        isVampire = false;
+                    }
+                }
+            }
+            if (isVampire = true){
+                System.out.println("El numero introducido es un numero vampiro.");
+            }else {
+                System.out.println("El numero itnroducido no es un numero vampiro.");
+            }
+        }
+        return vector1;
+    }
+
     /*
-    * Este metodo se encarga de coger los numeros de 4 cifras y multiplicarlos hasta encontrar
-    * la multiplicacion que sea igual al numero introducido por teclado, 
-    * cuando la encuentra la pasa  al metodo compareChoiceVampire que se encarga de comprobar
-    * si son iguales los numeros
+    * Este metodo calcula los numeros de 4 cifras, se encarga de multiplicar dos numeros de dos cifras
+    * que son los colmillos del numero elegido, cuando encuentra que la multiplicacion de los numeros es
+    * igual al numero introducido por teclado lo condiciona y lo pasa a otro metodo para calcular si de verdad
+    * es vampiro o no.
      */
     public int calcHundredOfVampireNumbers(int nChoice) {
+        boolean isVampire = false;
         int result = 0;
         for (int i = 10; i <= 99; i++) {
 
-            if (isVampire == true) {//Si encuentra un numero vampiro salimos del bucle
+            if (isVampire == true) {//Si encuentra un numero vampiro salimos del bucle, ya que no me interesa seguir multiplicando
                 break;
             }
+
             for (int j = 99; j >= 10; j--) {
                 result = i * j;
-                /* Si la multiplicacion entre i y j da como es igual al numero introducido puede ser un posible numero vampiro
-                    asi que entramos en la condicion
-                */
+
+                if (isVampire == true) {//Si encuentra un numero vampiro salimos del bucle, ya que no me interesa seguir multiplicando
+                    break;
+                }
+                /* Si la multiplicacion entre i y j da como resultado igual al numero introducido puede ser un posible numero vampiro
+                 *  asi que entramos en la condicion, dentro de esta condicion llamamos al metodo compareChoiceVampire
+                 * para que nos diga si el numero es vampiro o no
+                 */
+
                 if (nChoice == result) {
-                    //Si compareChoiceVampire devuelve true entonces tenemos un numero vampiro sino no es vampiro
+                    //Si compareChoiceVampire devuelve true entonces tenemos un numero vampiro sino, no es vampiro
                     if (compareChoiceVampire(nChoice, i, j) == true) {
-                        System.out.println("El numero introducido " + nChoice + " es un numero vampiro: ");
+                        System.out.println("¡El numero introducido " + nChoice + " es un numero vampiro! ");
                         System.out.println("La multiplicacion de " + i + " y " + j + ", da como resultado: " + result);
                         isVampire = true;
-                    }else {
-                        System.out.println("No es un numero vampiro");
+                    } else {
+                        System.out.println("El numero que has introducido no es un numero vampiro.");
                         isVampire = true;
                     }
                 }
@@ -77,31 +158,31 @@ public class minumero {
         }
         return result;
     }
-    
+
     /*
     * Este metodo pasa los valores de las variables a los metodos calcNChoice y calcVampireNumber
     * cuando recibe los vectores de esos metodos, los recorre comparandolos, y devuelve un valor booleano
-    * true = vampiro
+    * true =  es vampiro
     * false = no es vampiro
-    */
+     */
     public boolean compareChoiceVampire(int nChoice, int i, int j) {
         Vector userChoice = new Vector(8);
         Vector vampireNumber = new Vector(8);
 
         boolean areEquals = true;
-        
+
         userChoice = calcNChoice(nChoice);
         vampireNumber = calcVampireNumber(i, j);
-        
-        for (int n = 0; n <=8;n++){
-            if (userChoice.get(n) != vampireNumber.get(n)){
-                areEquals=false;
+
+        for (int n = 0; n <= 8; n++) {
+            if (userChoice.get(n) != vampireNumber.get(n)) {
+                areEquals = false;
             }
         }
-        
-        if (areEquals){
+
+        if (areEquals) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
@@ -116,9 +197,10 @@ public class minumero {
             cChoice.add(i);
         }
         /*
-        * Vamos desmontando el numero elegido por el usuario luego en cada case lo que se hace es:
-        *  recuperar en una variable de tipo entero el valor de la posicion de dicho vector y aumentarla en uno
-        * para despues comparar este vector con el vector del numero vampiro
+        * Vamos desmontando digito a digito el numero elegido por el usuario, conforme se va desmontando va entrando en el switch,
+        * en el switch en cada case lo que se hace es recuperar el valor de dicha posicion(por ejemplo, si el primer numero de digits es igual a 1,
+        * recuperamos el valor de la posicion que es igual a 1, lo incrementamos, y lo volvemos a meter, entonces en la posicion el numero será 2)
+        * Con esto podemos comparar dos numeros y asi averiguar si son vampiros.
          */
         for (int n = 0; n <= 3; n++) {
             digits = nChoice % 10;
@@ -127,7 +209,7 @@ public class minumero {
                 case 0:
                     /*
                     * Entramos en la posicion del vector y recuperamos el valor dicha posicion
-                    * incrementamos ese valor y lo volvemos a introducir en la posicion del vector
+                    * incrementamos ese valor y lo volvemos a introducir en la posicion correspondiente
                      */
                     elements = (int) cChoice.elementAt(0);
                     elements++;
@@ -188,7 +270,7 @@ public class minumero {
         int digits, elements, finalNumber;
         String number1, number2, result;
         Vector cVampire = new Vector(8);
-        
+
         for (int n = 0; n <= 9; n++) {
             cVampire.add(n);
         }
