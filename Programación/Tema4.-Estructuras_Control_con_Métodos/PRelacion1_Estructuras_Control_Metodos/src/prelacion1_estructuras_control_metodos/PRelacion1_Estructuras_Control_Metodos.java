@@ -56,12 +56,6 @@ public class PRelacion1_Estructuras_Control_Metodos {
                 case 7:
                     ej7.multiplesOfFive();
                     break;
-                case 8:
-                    int nChoice;
-                    System.out.print("Introduce un numero con digitos pares para saber si es vampiro: ");
-                    nChoice = sc.nextInt();
-                    ej8.esVampiro(nChoice);
-                    break;
             }
 
         } while (choice != 0);

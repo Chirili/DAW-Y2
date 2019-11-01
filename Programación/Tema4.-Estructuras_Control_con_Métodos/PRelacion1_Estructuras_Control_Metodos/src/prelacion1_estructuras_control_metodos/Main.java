@@ -70,9 +70,7 @@ public class Main {
                     System.out.print("Año de nacimiento: ");
                     year = sc.nextInt();
                     
-                    System.out.print(ej5.calcLuckyNumber(day, month, year));
-                case 8:
-                    ej8.selectNumber();
+                    ej5.calcLuckyNumber(day, month, year);
             }
 
         } while (choice != 0);
