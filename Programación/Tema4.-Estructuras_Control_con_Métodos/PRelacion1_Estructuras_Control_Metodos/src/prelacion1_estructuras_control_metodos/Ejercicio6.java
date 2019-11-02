@@ -6,13 +6,17 @@
 package prelacion1_estructuras_control_metodos;
 
 /**
- *
+ * Realiza una clase con un método decimalToRomano que trasnforme número en formato decimal a números en formato romano
  * @author usuario
  */
 public class Ejercicio6 {
 
     private String numbers;
-
+    /*
+    * El numero que se introduzca entrara en el bucle do while
+    * e ira condicionandose de modo que se vayan concatenando letras y en
+    * funcion de la letra se iran restando esa cantidad que corresponda.
+    */
     public String decimalToRomano(int nChoice) {
         numbers = "";
         do {
