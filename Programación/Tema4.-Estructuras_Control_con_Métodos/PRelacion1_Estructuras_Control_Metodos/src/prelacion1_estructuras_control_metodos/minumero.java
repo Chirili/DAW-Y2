@@ -21,9 +21,8 @@ public class minumero {
     private int nChoice;
     private int partLength;
     private boolean isVampire = false;
-    private int index = 0, secondIndex = 0;
+    private int index = 0;
     private int finalArr1[] = new int[0];
-    private int finalArr2[] = new int[0];
 
     /*
     * Recogemos el numero que ha introducido el usuario por teclado y lo condicionamos
@@ -31,7 +30,7 @@ public class minumero {
      */
     public void selectNumber() {
         Scanner sc = new Scanner(System.in);
-        int tusk1, tusk2;
+        int id;
 
         do {
             System.out.println("Introduce un numero par que sea 4 o mayor que el mismo, para saber si es vampiro o no: ");
@@ -43,25 +42,17 @@ public class minumero {
                 switch (nLength) {
                     //Partimos el numero en 2 en funcion de la cantidad de digitos que tenga, para despues operarlos
                     case 4:
-                        tusk1 = nChoice / 100;
-                        tusk2 = nChoice % 100;
-                        calcVampireNumber(tusk1, tusk2);
+                        calcVampireNumber(id = 4, nChoice);
 
                         break;
                     case 6:
-                        tusk1 = nChoice / 1000;
-                        tusk2 = nChoice % 1000;
-                        calcVampireNumber(tusk1, tusk2);
+                        calcVampireNumber(id = 6, nChoice);
                         break;
                     case 8:
-                        tusk1 = nChoice / 10000;
-                        tusk2 = nChoice % 10000;
-                        calcVampireNumber(tusk1, tusk2);
+                        calcVampireNumber(id = 8, nChoice);
                         break;
                     case 10:
-                        tusk1 = nChoice / 10000;
-                        tusk2 = nChoice % 10000;
-                        calcVampireNumber(tusk1, tusk2);
+                        calcVampireNumber(id = 10, nChoice);
                     default:
 
                 }
@@ -71,28 +62,22 @@ public class minumero {
         } while ((nChoice % 2) != 0 && nChoice > 2);
     }
 
-    public int calcVampireNumber(int tusk1, int tusk2) {
-        int possibilities = 1;
-        int id = 0, result = 0;
+    public int calcVampireNumber(int id, int nChoice) {
+        int possibilities = 2;
+        int result = 0;
         //Calculamos la cantidad de digitos de una parte, es indistinto cual se coja porque son las dos del mismo tamaño
-        partLength = (int) (Math.log10(tusk1) + 1);
-        
-        for (int i = 1; i <= partLength; i++) {
-            possibilities *= i;
+        for (int i = 3; i <= id; i++){
+            possibilities*= i;
         }
+        
         Arrays.fill(finalArr1, 0);
-        Arrays.fill(finalArr2, 0);
         
         index = 0;
-        secondIndex = 0;
         
-        finalArr1 = Arrays.copyOf(finalArr1, possibilities);
-        finalArr2 = Arrays.copyOf(finalArr2, possibilities);
-        
+        finalArr1 = Arrays.copyOf(finalArr1, possibilities);        
 
         //Declaramos el array en funcion del tamaño del colmillo. Ya que va contener todas las combinaciones para ese colmillo.
         int vampireArr1[] = new int[partLength];
-        int vampireArr2[] = new int[partLength];
 
         /*
         * Este bucle lo que hace es hacer un calculo para saber cuantas combinaciones son posibles hacer con la cantidad de digitos
@@ -102,45 +87,20 @@ public class minumero {
         int tempArr1[] = new int[0];
         int tempArr2[] = new int[0];
 
-        int vector1 = 0, vector2;
+        int vector1 = 0;
 
         // Este bucle recibe un colmillo y va separando digito a digito y lo va añadiendo al array declarado anteriormente
         for (int i = 0; i < partLength; i++) {
-            vector1 = tusk1 % 10;
-            tusk1 = tusk1 / 10;
-
-            vector2 = tusk2 % 10;
-            tusk2 = tusk2 / 10;
 
             vampireArr1[i] = vector1;
-            vampireArr2[i] = vector2;
 
         }
         
         
 
         permute(vampireArr1, 0, 1);
-        permute(vampireArr2, 0, 2);
-
-        for (int i = 0; i <= possibilities-1 ; i++) {
-            if (isVampire == true){
-                break;
-            }
-            for (int j = 0; j <= possibilities-1; j++) {
-                result = finalArr1[i] * finalArr2[j];
-
-                if (result == nChoice) {
-                    System.out.println("El numero introducido es vampiro");
-                    isVampire = true;
-                    break;
-                }
-            }
-        }
-
-        if (result != nChoice){
-            System.out.println("El numero que has introducido no es vampiro");
-        }
-        return vector1;
+        
+        return 0;
     }
 
     public void permute(int[] a, int k, int id) {
@@ -163,10 +123,6 @@ public class minumero {
                 finalResult = Integer.parseInt(result);
                 finalArr1[index] = finalResult;
                 index++;
-            } else {
-                finalResult = Integer.parseInt(result);
-                finalArr2[secondIndex] = finalResult;
-                secondIndex++;
             }
         } else {
 

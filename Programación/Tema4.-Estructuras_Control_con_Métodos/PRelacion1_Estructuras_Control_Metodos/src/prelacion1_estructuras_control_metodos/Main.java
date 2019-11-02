@@ -71,6 +71,8 @@ public class Main {
                     year = sc.nextInt();
                     
                     ej5.calcLuckyNumber(day, month, year);
+                case 8:
+                    ej8.selectNumber();
             }
 
         } while (choice != 0);
