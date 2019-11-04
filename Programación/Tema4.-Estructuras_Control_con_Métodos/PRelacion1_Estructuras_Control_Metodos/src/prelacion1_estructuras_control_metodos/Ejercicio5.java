@@ -15,7 +15,9 @@ public class Ejercicio5 {
     public void calcLuckyNumber(int day, int month, int year){
         
         sDigits = day+month+year;
-        
+        /*
+        * Se divide en digitos que sale de la suma del dia, el mes y el año.
+        */
         dig1 = sDigits%10;
         sDigits = sDigits/10;
         dig2 = sDigits%10;
@@ -28,6 +30,9 @@ public class Ejercicio5 {
         dig1 = 0;
         dig2 = 0;
         nLength = (int) (Math.log10(lNumber) + 1);
+        /*
+        * Si la longitud del numero es 1, tenemos el numero de la suerte sino habrá que sumarlo.
+        */
         if(nLength == 1){
             dig1 = lNumber;
             System.out.println("Tu numero de la suerte es: "+dig1);
