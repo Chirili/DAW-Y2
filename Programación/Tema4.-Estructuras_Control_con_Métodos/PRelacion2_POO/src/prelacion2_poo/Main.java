@@ -27,10 +27,10 @@ public class Main {
 
         //Instancia de las clases
         Temperatura tmp = new Temperatura();
-        //Ejercicio2 ej2 = new Ejercicio2();
-        //Ejercicio3 ej3 = new Ejercicio3();
-        //Ejercicio4 ej4 = new Ejercicio4();
-        //Ejercicio5 ej5 = new Ejercicio5();
+        Coche ej2 = new Coche();
+        pajaro ej3 = new pajaro();
+        satelite ej4 = new satelite();
+        rebajas ej5 = new rebajas();
         //Ejercicio6 ej6 = new Ejercicio6();
         //Ejercicio7 ej7 = new Ejercicio7();
         //minumero ej8 = new minumero();
@@ -46,35 +46,26 @@ public class Main {
                    tmp.selectConverter();
                     break;
                 case 2:
-                    //ej2.printPairNumbers();
+                     System.out.println(ej2.getVelocidad());
                     break;
                 case 3:
-                    int ej3Number;
-                    //ej3Number = ej3.selectNumber();
-                    //System.out.println(ej3.isAmstrongNumber(ej3Number));
+                    ej3.setEdad(20);
+                    ej3.setcolor('R');
+                    ej3.printEdad();
                     break;
                 case 4:
-                    int a,b,c;
-                    System.out.println("Por favor introduce el valor para las variables a, b y c: ");
-                    System.out.print("Introduce el valor de la variable a: ");
-                    a = sc.nextInt();
-                    System.out.print("Introduce el valor de la variable b: ");
-                    b = sc.nextInt();
-                    System.out.print("Introduce el valor de la variable a: ");
-                    c = sc.nextInt();
-                    //System.out.print(ej4.compareValues(a, b, c));
+                    ej4.setPosicion(10.3, 50.4, 60.3);
+                    ej4.printPosicion();
                     break;
                 case 5:
-                    int day,month,year;
-                    System.out.println("Introduce tu fecha de nacimiento para sabe cual es tu numero de la suerte");
-                    System.out.print("Dia de nacimiento: ");
-                    day = sc.nextInt();
-                    System.out.print("Mes de nacimiento(en numeros): ");
-                    month = sc.nextInt();
-                    System.out.print("Año de nacimiento: ");
-                    year = sc.nextInt();
-                    
-                   // ej5.calcLuckyNumber(day, month, year);
+                    double originalPrice,discountedPrice,discount;
+                    System.out.println("Vamos a calcular cuanto descuento se le ha aplicado a tu producto:");
+                    System.out.print("Introduce el precio original del producto: ");
+                    originalPrice = sc.nextDouble();
+                    System.out.print("Introduce el precio del producto con el descuento: ");
+                    discountedPrice = sc.nextDouble();
+                    discount = ej5.descubrePorcentaje(originalPrice, discountedPrice);
+                    System.out.println("El porcentaje de descuento aplicado al producto es un: "+discount+"%");
                 case 8:
                     //ej8.selectNumber();
             }
