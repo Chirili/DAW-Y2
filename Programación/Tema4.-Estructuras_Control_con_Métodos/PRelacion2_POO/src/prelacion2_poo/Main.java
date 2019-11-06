@@ -28,9 +28,9 @@ public class Main {
         //Instancia de las clases
         Temperatura tmp = new Temperatura();
         Coche ej2 = new Coche();
-        pajaro ej3 = new pajaro();
-        satelite ej4 = new satelite();
-        rebajas ej5 = new rebajas();
+        Pajaro ej3 = new Pajaro();
+        Satelite ej4 = new Satelite();
+        Rebajas ej5 = new Rebajas();
         //Ejercicio6 ej6 = new Ejercicio6();
         //Ejercicio7 ej7 = new Ejercicio7();
         //minumero ej8 = new minumero();

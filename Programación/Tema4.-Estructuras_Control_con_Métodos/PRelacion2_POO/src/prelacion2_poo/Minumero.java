@@ -10,14 +10,14 @@ package prelacion2_poo;
  * (realiza un método para doble,otro para triple y otro para cuádruple). Haz que la clase tenga un método main y comprueba los distintos métodos.
  * @author Andres
  */
-public class minumero {
+public class Minumero {
      private double doble;
      private double triple;
      private double cuadruple;
     
     public static void main(String[] args){
 
-       minumero mnum = new minumero(5,10,15);
+       Minumero mnum = new Minumero(5,10,15);
        
        System.out.println(mnum.getDoble());
        System.out.println(mnum.getTriple());
@@ -25,21 +25,21 @@ public class minumero {
        
    }
     
-   minumero(double calcDoble, double calcTriple, double calcCuadruple){
-       doble = calcDoble(calcDoble);
-       triple = calcTriple(calcTriple);
-       cuadruple = calcCuadruple(calcCuadruple);
+   Minumero(double calcDoble, double calcTriple, double calcCuadruple){
+       this.doble = calcDoble(calcDoble);
+       this.triple = calcTriple(calcTriple);
+       this.cuadruple = calcCuadruple(calcCuadruple);
    }
    
    
    public double getDoble(){
-       return doble;
+       return this.doble;
    }
    public double getTriple(){
-       return triple;
+       return this.triple;
    }
    public double getCuadruple(){
-       return cuadruple;
+       return this.cuadruple;
    }
    public double calcDoble(double numero){
        numero *=  2;

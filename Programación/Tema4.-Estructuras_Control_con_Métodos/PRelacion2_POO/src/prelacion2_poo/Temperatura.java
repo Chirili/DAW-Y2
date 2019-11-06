@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package prelacion2_poo;
 
 import java.util.Scanner;
@@ -16,34 +11,47 @@ import java.util.Scanner;
  */
 public class Temperatura {
 
+    double temp;
+    final double fahrenTemp1 = 0;
+    final double fahrenTemp2 = 40;
+    final double fahrenTemp3 = 70;
+    final double celsiTemp1 = 0;
+    final double celsiTemp2 = 15;
+    final double celsiTemp3 = 20;
+
     public void selectConverter() {
-        Scanner sc = new Scanner(System.in);
-        double temp;
-        final double fahrenTemp1 = 0;
-        final double fahrenTemp2 = 40;
-        final double fahrenTemp3 = 70;
-        final double celsiTemp1 = 0;
-        final double celsiTemp2 = 15;
-        final double celsiTemp3 = 20;
-        
+
         /*
-        * Con el bucle for vamos recorriendo el array y le vamos pasando cada uno de los resultados al metodo correspondiente
-        * para que nos devuelva una temperatura convertida la cual se almacena en una variable y se imprime por pantalla
-        */
-        temp=celsiusToFahrenheit(celsiTemp1);
-        System.out.println(printCelsius(temp,celsiTemp1));
-        temp=celsiusToFahrenheit(celsiTemp2);
-        System.out.println(printCelsius(temp,celsiTemp2));
-        temp=celsiusToFahrenheit(celsiTemp3);
-        System.out.println(printCelsius(temp,celsiTemp3));
-        
-        temp=fahrenheitToCelsius(fahrenTemp1);
-        System.out.println(printCelsius(temp,fahrenTemp1));
-        temp=fahrenheitToCelsius(fahrenTemp2);
-        System.out.println(printCelsius(temp,fahrenTemp2));
-        temp=fahrenheitToCelsius(fahrenTemp3);
-        System.out.println(printCelsius(temp,fahrenTemp3));
+        * La variable temp es igual al resultado del calculo del valor pasado por parametro al metodo correspondiente
+        * Despues se imprime por pantalla
+        * 
+        * Otra manera de hacerlo seria utilizando un array y rellenando el array con valores
+        * luego pasarselo a los metodos con un bucle for:
+        * final double [] fahrenTemp1 = {0, 40, 70}
+        *  for (int i = 0; i < fahrenTemp.length;i++){
+        *   this.temp = celsiusToFahrenheit(fahrenTemp[i]);
+        *   System.out.println(printFahrenheit(this.temp, fahrenTemp[i]));
+        *   }
+         */
+        this.temp = celsiusToFahrenheit(this.celsiTemp1);
+        System.out.println(printCelsius(this.celsiTemp1, this.temp));
+        this.temp = celsiusToFahrenheit(this.celsiTemp2);
+        System.out.println(printCelsius(this.celsiTemp2, this.temp));
+        this.temp = celsiusToFahrenheit(this.celsiTemp3);
+        System.out.println(printCelsius(this.celsiTemp3, this.temp));
+
+        temp = fahrenheitToCelsius(this.fahrenTemp1);
+        System.out.println(printFahrenheit(this.fahrenTemp1, this.temp));
+        this.temp = fahrenheitToCelsius(this.fahrenTemp2);
+        System.out.println(printFahrenheit(this.fahrenTemp2, this.temp));
+        this.temp = fahrenheitToCelsius(this.fahrenTemp3);
+        System.out.println(printFahrenheit(this.fahrenTemp3, this.temp));
+
     }
+
+    /*
+    *   Metodo que se encarga de convertir los grados Fahrenheit en grados Celsius
+     */
     public double fahrenheitToCelsius(double temp) {
         double fahrenheit;
 
@@ -62,13 +70,13 @@ public class Temperatura {
 
     public String printFahrenheit(double fahrenheit, double temp) {
         String str;
-        str = temp + " grados Fahrenheit son " + fahrenheit + " Grados Celsius";
+        str = fahrenheit + " grados Fahrenheit son " + this.temp + " Grados Celsius";
         return str;
     }
 
-    public String printCelsius(double fahrenheit, double temp) {
+    public String printCelsius(double celsius, double temp) {
         String str;
-        str = temp + " grados Celsius son " + fahrenheit + " Grados Fahrenheit";
+        str = celsius + " grados Celsius son " + this.temp + " Grados Fahrenheit";
         return str;
     }
 }
