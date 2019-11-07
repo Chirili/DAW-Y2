@@ -24,7 +24,9 @@ public class Minumero {
        System.out.println(mnum.getCuadruple());
        
    }
-    
+    /*
+    * Constructor de Minumero que recibe 3 valores por parametro y se lo pasa a los metodos para realizar las operaciones.
+    */
    Minumero(double calcDoble, double calcTriple, double calcCuadruple){
        this.doble = calcDoble(calcDoble);
        this.triple = calcTriple(calcTriple);
