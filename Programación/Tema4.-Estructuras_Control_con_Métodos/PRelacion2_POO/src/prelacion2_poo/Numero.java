@@ -6,41 +6,55 @@
 package prelacion2_poo;
 
 /**
+ * 8.-Realiza una clase númeroque almacene un número entero y tenga las
+ * siguientes características:
+ *  Constructor por defecto que inicializa a 0 el número interno.
+ *  Constructor que inicializa el número interno
+ *  Método aniade que permite sumarle un número al valor interno
+ *  Método resta que resta un número al valor interno
+ *  Método getValor. Devuelve el valor interno
+ *  Método  getDoble. Devuelve el doble del valor interno
+ *  Método getTriple. Devuelve el  triple del valor interno
+ *  Método setNumero. Inicializa de nuevo el valor  interno
  *
  * @author Andres
  */
 public class Numero {
+
     private double numeroInterno;
 
-    Numero(){
+    Numero() {
         this.numeroInterno = 0;
     }
-    
-    Numero(double initNumber){
+
+    Numero(double initNumber) {
         this.numeroInterno = initNumber;
     }
-    
-    public void aniade(double sumNumber){
+
+    public void aniade(double sumNumber) {
         this.numeroInterno = sumNumber;
     }
-    
-    public void resta(double deductNumber){
+
+    public void resta(double deductNumber) {
         this.numeroInterno = deductNumber;
     }
-    
-    public double getValor(){
+
+    //getValor retorna el valor de la propiedad numeroInterno
+    public double getValor() {
         return this.numeroInterno;
     }
-    
-    public double getDoble(){
-        return this.numeroInterno*2;
+
+    //getDoble retorna el valor de la propiedad numeroInterno multiplicado por 2
+    public double getDoble() {
+        return this.numeroInterno * 2;
     }
-    
-    public double getTriple(){
-        return this.numeroInterno*3;
+
+    //getDoble retorna el valor de la propiedad numeroInterno multiplicado por 3
+    public double getTriple() {
+        return this.numeroInterno * 3;
     }
-    
-    public void setNumero(double number){
+
+    public void setNumero(double number) {
         this.numeroInterno = number;
     }
 }
