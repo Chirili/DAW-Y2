@@ -13,12 +13,12 @@ public class Ejercicio1 implements Iejercicios{
     
     Utils uts = new Utils();
     
-    public void toExecute(){
-        String str = diceSum();
-        System.out.print(str);
-    }
+//    public void toExecute(){
+//        String str = diceSum();
+//        System.out.print(str);
+//    }
     
-    public String diceSum(){
+    public void toExecute(){
         
         int sum=0,number;
         
@@ -31,6 +31,5 @@ public class Ejercicio1 implements Iejercicios{
         }
         
         System.out.println("La tirar de los 3 dados ha dado como resultado la suma de: "+ sum);
-        return "\n";
     }
 }

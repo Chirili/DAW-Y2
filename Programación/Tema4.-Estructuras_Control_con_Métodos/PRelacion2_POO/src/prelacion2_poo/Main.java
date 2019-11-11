@@ -43,10 +43,37 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                   tmp.selectConverter();
+                    tmp.selectConverter();
                     break;
                 case 2:
-                     System.out.println(ej2.getVelocidad());
+                    String uchoice = null;
+                    do {
+                        System.out.print("Estamos en un coche introduce a para acelerar y f para frenar, cualquier letra para salir:");
+                        uchoice = sc.next();
+
+                        if (uchoice.equalsIgnoreCase("a")) {
+                            int velocidad;
+                            System.out.print("Cuanto quieres acelerar: ");
+                            velocidad = sc.nextInt();
+                            ej2.acelera(velocidad);
+
+                            if (ej2.getVelocidadMarchaAtras() > ej2.getVelocidad()) {
+                                System.out.println("Velocidad actual marcha atras: " + ej2.getVelocidadMarchaAtras());
+                            }
+                            {
+                                System.out.println("Velocidad actual: " + ej2.getVelocidad());
+                            }
+                        } else if (uchoice.equalsIgnoreCase("f")) {
+                            int velocidad;
+                            System.out.print("Cuanto quieres frenar: ");
+                            velocidad = sc.nextInt();
+                            ej2.frenar(velocidad);
+                            System.out.println("Velocidad actual marcha atrás: " + ej2.getVelocidadMarchaAtras());
+                        } else {
+                            System.out.println("Error letra introducida no correcta");
+                            break;
+                        }
+                    } while (!uchoice.equalsIgnoreCase("0"));
                     break;
                 case 3:
                     ej3.setEdad(20);
@@ -58,16 +85,18 @@ public class Main {
                     ej4.printPosicion();
                     break;
                 case 5:
-                    double originalPrice,discountedPrice,discount;
+                    double originalPrice,
+                     discountedPrice,
+                     discount;
                     System.out.println("Vamos a calcular cuanto descuento se le ha aplicado a tu producto:");
                     System.out.print("Introduce el precio original del producto: ");
                     originalPrice = sc.nextDouble();
                     System.out.print("Introduce el precio del producto con el descuento: ");
                     discountedPrice = sc.nextDouble();
                     discount = ej5.descubrePorcentaje(originalPrice, discountedPrice);
-                    System.out.println("El porcentaje de descuento aplicado al producto es un: "+discount+"%");
+                    System.out.println("El porcentaje de descuento aplicado al producto es un: " + discount + "%");
                 case 8:
-                    //ej8.selectNumber();
+                //ej8.selectNumber();
             }
 
         } while (choice != 0);

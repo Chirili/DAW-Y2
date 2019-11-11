@@ -21,14 +21,20 @@ import java.util.Scanner;
 public class Coche {
 
     private int velocidad;//Variable que recoge la velocidad del coche
-
+    private int velocidadMarchaAtras;
     // Constructor de la clase Coche
     Coche() {
         this.velocidad = 0;
+        this.velocidadMarchaAtras = 0;
     }
-
+    
+    
     public int getVelocidad() {
         return this.velocidad;
+    }
+    
+    public int getVelocidadMarchaAtras() {
+        return this.velocidadMarchaAtras;
     }
 
     /*
@@ -44,6 +50,12 @@ public class Coche {
     * cuanto se quiere disminuir la velocidad.
      */
     public void frenar(int menos) {
-        this.velocidad -= menos;
+       int result;
+       result = this.velocidad -= menos;
+        if(result < 0){
+            System.out.println("Parando el coche...");
+            result = result * (-1);
+            this.velocidadMarchaAtras = result;
+        }
     }
 }
