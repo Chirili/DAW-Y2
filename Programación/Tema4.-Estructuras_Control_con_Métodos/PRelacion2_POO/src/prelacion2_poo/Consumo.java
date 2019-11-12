@@ -19,16 +19,33 @@ public class Consumo {
     private double consumoEuros;
     
     Consumo(){
-        this.kms=250;
-        this.Litros=50;
-        this.vmed= 80;
-        this.pgas=1.200;
+        this.kms=0;
+        this.Litros=0;
+        this.vmed= 0;
+        this.pgas=0;
     }
     public int getTiempo(double travelKilometers){
         this.time = (int) (this.kms / this.vmed);
         return this.time;
     }
-    
+    public double getKms(){
+        return kms;
+    }
+    public double getLitros(){
+        return Litros;
+    }
+    public double getPgas(){
+        return pgas;
+    }
+    public double getVmed(){
+        return vmed;
+    }
+    public double getConsumoMedio(){
+        return consumoMedio;
+    }
+    public double getConsumoEuros(){
+        return consumoEuros;
+    }
     public void consumoMedio(){
         this.consumoMedio = (this.Litros / this.kms) * 100;
     }

@@ -31,10 +31,7 @@ public class Main {
         Pajaro ej3 = new Pajaro();
         Satelite ej4 = new Satelite();
         Rebajas ej5 = new Rebajas();
-        //Ejercicio6 ej6 = new Ejercicio6();
-        //Ejercicio7 ej7 = new Ejercicio7();
-        //minumero ej8 = new minumero();
-        //Prueba p = new Prueba();
+        Consumo ej14 = new Consumo();
 
         do {
 
@@ -79,6 +76,7 @@ public class Main {
                     ej3.setEdad(20);
                     ej3.setcolor('R');
                     ej3.printEdad();
+                    System.out.println(ej3.getColor());
                     break;
                 case 4:
                     ej4.setPosicion(10.3, 50.4, 60.3);
@@ -96,7 +94,41 @@ public class Main {
                     discount = ej5.descubrePorcentaje(originalPrice, discountedPrice);
                     System.out.println("El porcentaje de descuento aplicado al producto es un: " + discount + "%");
                 case 8:
-                //ej8.selectNumber();
+                Numero number1 = new Numero();
+                Numero number2 = new Numero(30);
+                number1.setNumero(20);
+                number1.aniade(30);
+                number1.resta(15);
+                System.out.println("Valor del numero: "+number1.getValor());
+                System.out.println("Doble del valor del numero: "+number1.getDoble());
+                System.out.println("Triple del valor del numero: "+number1.getTriple());
+                
+                number2.aniade(10);
+                number2.resta(30);
+                System.out.println("Valor del numero: "+number2.getValor());
+                System.out.println("Doble del valor del numero: "+number2.getDoble());
+                System.out.println("Triple del valor del numero: "+number2.getTriple());
+                break;
+                case 14:
+                    double uChoice;
+                    System.out.println("Vamos a calcular una serie de parametros de un viaje.");
+                    System.out.print("Cantidad de kilometros recorridos: ");
+                    uChoice = sc.nextDouble();
+                    ej14.setKms(uChoice);
+    
+                    System.out.print("Cantidad de litros de gasolina gastados: ");
+                    uChoice = sc.nextDouble();
+                    ej14.setLitros(uChoice);
+                    System.out.print("Velocidad media durante el viaje: ");
+                    uChoice = sc.nextDouble();
+                    ej14.setVmed(uChoice);
+                    System.out.print("Dime el precio de la gasolina: ");
+                    uChoice = sc.nextDouble();
+                    ej14.setPgas(uChoice);
+                    
+                    System.out.println("Duración del viaje: "+ej14.getTiempo(ej14.getKms())+"horas "+ "con la velocidad media de "+ej14.getVmed()+"km/h y la distancia total del viaje de: "+ej14.getKms()+ "kms");
+                    System.out.println("El consumo medio del viaje cada 100km ha sido de: "+ej14.getConsumoMedio());
+                    System.out.println("Gastos en gasolina en el viaje: "+ ej14.getConsumoEuros());
             }
 
         } while (choice != 0);

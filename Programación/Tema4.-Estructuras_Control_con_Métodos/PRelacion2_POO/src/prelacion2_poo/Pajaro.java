@@ -26,6 +26,11 @@ public class Pajaro {
     public void setcolor(char c) {//Metodo setter encargado de actualizar el color del pajaro.
         this.color = c;
     }
+    //this = a propiedad que es la clase
+    public char getColor(){
+        return this.color;
+    }
+    
     private char color;//Contiene el color del pajaro
     private int edad;// Contiene la edad del pajaro
 }
