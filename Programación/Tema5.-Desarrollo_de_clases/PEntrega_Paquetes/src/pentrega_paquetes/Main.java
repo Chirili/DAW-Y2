@@ -20,15 +20,17 @@ public class Main {
         
         Menu mainMenu = new Menu();
         
-        mainMenu.setMenuTittle("Elije el ejercicio a visualizar");
+        mainMenu.setMenuTittle("Elije el ejercicio a visualizar, puedes elegir tanto el numero como el nombre:");
         System.out.println(mainMenu.getMenuTittle());
+        mainMenu.addChoice("Entrega Paquetes.");
+        mainMenu.addChoice("Cancion.");
+        mainMenu.addChoice("Salir.");
+        mainMenu.printChoices();
+        mainMenu.menuScan();
+        mainMenu.addMenuKey("1","Entrega Paquetes");
+        mainMenu.addMenuKey("2","Cancion");
+        mainMenu.addMenuKey("3","Salir");
         
-        
-            System.out.println("1. Entrega Paquetes.");
-            System.out.println("2.Cancion");
-            System.out.println("3. Salir");
-            System.out.print("Eleccion: ");
-            
     }
     
 }

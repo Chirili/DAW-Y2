@@ -3,19 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Utils;
+package menus;
 
 /**
  *
- * @author Andres
+ * @author usuario
  */
-public class Sumar {
-    private int result;
-    public int sumar(int num1, int num2) {
-        this.result= num1 + num2;
+public interface Iejercicios {
 
-        return this.result;
-    }
-    
-    
 }
