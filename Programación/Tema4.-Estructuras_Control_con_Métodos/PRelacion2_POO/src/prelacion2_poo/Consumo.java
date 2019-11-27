@@ -18,16 +18,12 @@ public class Consumo {
     private int time;
     private double consumoMedio;
     private double consumoEuros;
-
-    /*
-    *   Constructor de consumo que inicializa las propiedades de la clase
-    *   estos valores son de ejemplo
-     */
-    Consumo() {
-        this.kms = 250;
-        this.Litros = 50;
-        this.vmed = 80;
-        this.pgas = 1.200;
+    
+    Consumo(){
+        this.kms=0;
+        this.Litros=0;
+        this.vmed= 0;
+        this.pgas=0;
     }
 
      /*
@@ -47,8 +43,25 @@ public class Consumo {
         this.time = (int) (this.kms / this.vmed);
         return this.time;
     }
-
-    public void consumoMedio() {
+    public double getKms(){
+        return kms;
+    }
+    public double getLitros(){
+        return Litros;
+    }
+    public double getPgas(){
+        return pgas;
+    }
+    public double getVmed(){
+        return vmed;
+    }
+    public double getConsumoMedio(){
+        return consumoMedio;
+    }
+    public double getConsumoEuros(){
+        return consumoEuros;
+    }
+    public void consumoMedio(){
         this.consumoMedio = (this.Litros / this.kms) * 100;
     }
 
