@@ -68,6 +68,9 @@ public class Temperatura {
         return celsius;
     }
 
+    /*
+    *   Estos metodos pintan por pantalla los resultados
+    */
     public String printFahrenheit(double fahrenheit, double temp) {
         String str;
         str = fahrenheit + " grados Fahrenheit son " + this.temp + " Grados Celsius";

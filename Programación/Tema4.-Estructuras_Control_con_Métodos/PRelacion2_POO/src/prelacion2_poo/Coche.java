@@ -42,7 +42,12 @@ public class Coche {
     * cuanto se quiere aumentar la velocidad.
      */
     public void acelera(int mas) {
+        if(this.velocidadMarchaAtras>this.velocidad){
+        this.velocidadMarchaAtras-=  mas;
         this.velocidad += mas;
+        }else{
+            this.velocidad += mas;
+        }
     }
 
     /*

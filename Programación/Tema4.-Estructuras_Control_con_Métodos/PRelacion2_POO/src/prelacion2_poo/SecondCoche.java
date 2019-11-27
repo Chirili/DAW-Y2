@@ -13,10 +13,19 @@ public class SecondCoche {
     private String marca;
     private String modelo;
     
+    /*
+    *   Primer constructor basico que inicializa las propiedades
+    */
     SecondCoche(){
         this.marca = "Ford";
         this.modelo = "XA";
     }
+    
+    
+    /*
+    *   Segundo constructor que tambien inicializa las propiedades pero con los valores
+    *   que recibe por parametros
+    */
     SecondCoche(String modelo, String marca){
         this.marca = marca;
         this.modelo = modelo;

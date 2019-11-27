@@ -59,7 +59,7 @@ public class Main {
 
                             if (ej2.getVelocidadMarchaAtras() > ej2.getVelocidad()) {
                                 System.out.println("Velocidad actual marcha atras: " + ej2.getVelocidadMarchaAtras());
-                            }
+                            }else
                             {
                                 System.out.println("Velocidad actual: " + ej2.getVelocidad());
                             }

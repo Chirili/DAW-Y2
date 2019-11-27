@@ -12,11 +12,17 @@ package prelacion2_poo;
 public class Peso {
 
     private double objectWeight;
-
+    
+    /*
+    * Constructor de peso, necesita que le pasemos un peso y la medida para convertirlo
+    */
     Peso(double peso, String medida) {
         this.objectWeight = peso / calcConversionFactor(medida);
     }
 
+    /*
+    *   Este metodo recoge el valor medida y lo mete en un switch para aplicar un factor de conversion u otro
+    */
     private double calcConversionFactor(String medida) {
         double conversionFactor = 0;
 
@@ -55,6 +61,9 @@ public class Peso {
         System.out.println("5 onzas son: "+p2.getPeso("OZ")+" kg");
     }
 
+    /*
+    *    Getters para recoger los valores
+    */
     public double getLibras() {
         return this.objectWeight / this.calcConversionFactor("LB");
     }

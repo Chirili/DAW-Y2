@@ -33,7 +33,9 @@ public class Minumero {
        this.cuadruple = calcCuadruple(calcCuadruple);
    }
    
-   
+   /*
+   * Getters para devolver los valores
+   */
    public double getDoble(){
        return this.doble;
    }
@@ -43,6 +45,10 @@ public class Minumero {
    public double getCuadruple(){
        return this.cuadruple;
    }
+   
+   /*
+   * Metodos que se encargan de calcular los valores correspondientes
+   */
    public double calcDoble(double numero){
        numero *=  2;
        

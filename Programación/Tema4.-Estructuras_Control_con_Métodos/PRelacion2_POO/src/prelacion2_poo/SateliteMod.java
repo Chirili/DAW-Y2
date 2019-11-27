@@ -15,12 +15,19 @@ public class SateliteMod {
     private double paralelo;
     private double distancia_tierra;
 
+    /*
+    *   Constructor de satelite que recibe por parametros 3 valores e inicializa las propiedades
+    */
     SateliteMod(double m, double p, double d) {
         this.meridiano = m;
         this.paralelo = p;
         this.distancia_tierra = d;
     }
 
+    
+    /*
+    *   Constructor de la clase SateliteMod que inicializa las propiedades de la clase
+    */
     SateliteMod() {
         this.meridiano = this.paralelo = this.distancia_tierra = 0;
     }
@@ -55,6 +62,9 @@ public class SateliteMod {
         this.distancia_tierra = d;
     }
 
+    /*
+    * Imprime por pantalla la posicion del satelite
+    */
     public void printPosicion() {
         System.out.println("El satélite se encuentra en el paralelo " + this.paralelo + " Meridiano " + this.meridiano + " a una distancia de la tierra de " + this.distancia_tierra + " Kilómetros");
     }

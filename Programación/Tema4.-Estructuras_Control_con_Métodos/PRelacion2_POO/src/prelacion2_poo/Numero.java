@@ -31,12 +31,18 @@ public class Numero {
         this.numeroInterno = initNumber;
     }
 
+    /*
+    *   Metodo que suma a la propiedad numeroInterno el valor pasado por parametro
+    */
     public void aniade(double sumNumber) {
-        this.numeroInterno = sumNumber;
+        this.numeroInterno += sumNumber;
     }
 
+    /*
+    *   Metodo que resta a la propiedad numeroInterno el valor pasado por parametro
+    */
     public void resta(double deductNumber) {
-        this.numeroInterno = deductNumber;
+        this.numeroInterno -= deductNumber;
     }
 
     //getValor retorna el valor de la propiedad numeroInterno
