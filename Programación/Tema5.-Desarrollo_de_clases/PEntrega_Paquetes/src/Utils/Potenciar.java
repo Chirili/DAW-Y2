@@ -10,6 +10,13 @@ package Utils;
  * @author Andres
  */
 public class Potenciar {
+    
+    /**
+     * Eleva el primer parametro al segundo y devuelve un resultado.
+     * @param base
+     * @param exponente
+     * @return 
+     */
 
     public int potenciar(int base, int exponente) {
         int potencia;

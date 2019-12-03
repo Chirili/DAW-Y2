@@ -10,7 +10,14 @@ package Utils;
  * @author Andres
  */
 public class Sumar {
+    
     private int result;
+    /**
+     * Suma los dos parametros y devuelve un resultado
+     * @param num1
+     * @param num2
+     * @return 
+     */
     public int sumar(int num1, int num2) {
         this.result= num1 + num2;
 

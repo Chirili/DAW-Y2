@@ -16,20 +16,13 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws AWTException{
+    public static void main(String[] args){
         
-        Menu mainMenu = new Menu();
+        Sumar sm = new Sumar();
+        Potenciar pt = new Potenciar();
         
-        mainMenu.setMenuTittle("Elije el ejercicio a visualizar, puedes elegir tanto el numero como el nombre:");
-        System.out.println(mainMenu.getMenuTittle());
-        mainMenu.addChoice("Entrega Paquetes.");
-        mainMenu.addChoice("Cancion.");
-        mainMenu.addChoice("Salir.");
-        mainMenu.printChoices();
-        mainMenu.menuScan();
-        mainMenu.addMenuKey("1","Entrega Paquetes");
-        mainMenu.addMenuKey("2","Cancion");
-        mainMenu.addMenuKey("3","Salir");
+        System.out.println("Resultado de la suma: "+sm.sumar(1, 1));
+        System.out.println("Resultado de la potencia: "+pt.potenciar(2, 3));
         
     }
     
