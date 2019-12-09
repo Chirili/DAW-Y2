@@ -115,6 +115,7 @@ public class Main {
                                             if (cf.getCapacidadActual() < 100 && cf.getCapacidadActual() > 0) {
                                                 System.out.println("Vaya la ultima taza no la he podido llenar del todo...");
                                                 System.out.println("Solo he podido rellenar: " + cf.getCapacidadActual() + "c.c");
+                                                Thread.sleep(1500);
                                                 cf.vaciarCafetera();
                                             }
                                         }
@@ -135,14 +136,89 @@ public class Main {
                                             if (cf.getCapacidadActual() < 100 && cf.getCapacidadActual() > 0) {
                                                 System.out.println("Vaya la ultima taza no la he podido llenar del todo...");
                                                 System.out.println("Solo he podido rellenar: " + cf.getCapacidadActual());
+                                                Thread.sleep(1500);
                                                 cf.vaciarCafetera();
                                             }
                                         }
                                     }
                                     break;
                                 case 2:
+                                    System.out.println("Voy a empezar a añadir cafe a las tazas:");
+                                    System.out.print("¿Quieres rellenarlas todas? Si o no:");
+                                    fillSelect = uts.getString();
+                                    if (fillSelect.equalsIgnoreCase("si")) {
+                                        for (int i = 1; i < cf.getCapacidadActual(); i++) {
+                                            System.out.println("Rellenando la taza " + i + "...");
+                                            Thread.sleep(1000);
+                                            cf.setCapacidadActual(cf.getCapacidadActual() - 250);
+                                            if (cf.getCapacidadActual() < 250 && cf.getCapacidadActual() > 0) {
+                                                System.out.println("Vaya la ultima taza no la he podido llenar del todo...");
+                                                System.out.println("Solo he podido rellenar: " + cf.getCapacidadActual() + "c.c");
+                                                Thread.sleep(1500);
+                                                cf.vaciarCafetera();
+                                            }
+                                        }
+                                    } else if (fillSelect.equalsIgnoreCase("no")) {
+                                        do {
+                                            if ((cf.getCapacidadActual() % 250) == 0) {
+
+                                                System.out.print("¿Cuantas tazas quieres rellenar? Solo puedes rellenar " + cf.getCapacidadActual() / 250 + " tazas: ");
+                                            } else {
+                                                System.out.print("Cuantas tazas quieres rellenar? Solo puedes rellenar " + cf.getCapacidadActual() / 250 + " tazas y un poco de la ultima: ");
+                                            }
+                                            cupsToFill = uts.getInt();
+                                        } while (cupsToFill > cf.getCapacidadActual() / 250);
+                                        for (int i = 1; i <= cupsToFill; i++) {
+                                            System.out.println("Rellenando la taza " + i + "...");
+                                            Thread.sleep(1000);
+                                            cf.setCapacidadActual(cf.getCapacidadActual() - 250);
+                                            if (cf.getCapacidadActual() < 250 && cf.getCapacidadActual() > 0) {
+                                                System.out.println("Vaya la ultima taza no la he podido llenar del todo...");
+                                                System.out.println("Solo he podido rellenar: " + cf.getCapacidadActual());
+                                                Thread.sleep(1500);
+                                                cf.vaciarCafetera();
+                                            }
+                                        }
+                                    }
                                     break;
                                 case 3:
+                                    System.out.println("Voy a empezar a añadir cafe a las tazas:");
+                                    System.out.print("¿Quieres rellenarlas todas? Si o no:");
+                                    fillSelect = uts.getString();
+                                    if (fillSelect.equalsIgnoreCase("si")) {
+                                        for (int i = 1; i < cf.getCapacidadActual(); i++) {
+                                            System.out.println("Rellenando la taza " + i + "...");
+                                            Thread.sleep(1000);
+                                            cf.setCapacidadActual(cf.getCapacidadActual() - 500);
+                                            if (cf.getCapacidadActual() < 500 && cf.getCapacidadActual() > 0) {
+                                                System.out.println("Vaya la ultima taza no la he podido llenar del todo...");
+                                                System.out.println("Solo he podido rellenar: " + cf.getCapacidadActual() + "c.c");
+                                                Thread.sleep(1500);
+                                                cf.vaciarCafetera();
+                                            }
+                                        }
+                                    } else if (fillSelect.equalsIgnoreCase("no")) {
+                                        do {
+                                            if ((cf.getCapacidadActual() % 500) == 0) {
+
+                                                System.out.print("¿Cuantas tazas quieres rellenar? Solo puedes rellenar " + cf.getCapacidadActual() / 500 + " tazas: ");
+                                            } else {
+                                                System.out.print("Cuantas tazas quieres rellenar? Solo puedes rellenar " + cf.getCapacidadActual() / 500 + " tazas y un poco de la ultima: ");
+                                            }
+                                            cupsToFill = uts.getInt();
+                                        } while (cupsToFill > cf.getCapacidadActual() / 500);
+                                        for (int i = 1; i <= cupsToFill; i++) {
+                                            System.out.println("Rellenando la taza " + i + "...");
+                                            Thread.sleep(1000);
+                                            cf.setCapacidadActual(cf.getCapacidadActual() - 500);
+                                            if (cf.getCapacidadActual() < 500 && cf.getCapacidadActual() > 0) {
+                                                System.out.println("Vaya la ultima taza no la he podido llenar del todo...");
+                                                System.out.println("Solo he podido rellenar: " + cf.getCapacidadActual());
+                                                Thread.sleep(1500);
+                                                cf.vaciarCafetera();
+                                            }
+                                        }
+                                    }
                                     break;
                             }
                         } while (selectCup > 3);
