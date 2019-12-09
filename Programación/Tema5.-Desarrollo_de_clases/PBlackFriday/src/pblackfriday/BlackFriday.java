@@ -66,29 +66,38 @@ public class BlackFriday {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-    public void defaultMenu(){
-        Utils uts = new Utils();
-        int menuChoice;
-        do{
-        System.out.println("1. Ver precio.");
-        System.out.println("2. Ver colores disponibles.");
-        System.out.println("3. Comprar.");
-        System.out.println("0. Salir.");
-        menuChoice = uts.getInt();
-        switch(menuChoice){
-            case 1:
-                System.out.println("Precio de la impresora: "+getPrecio());
+    public void calcColor(){
+        switch(this.color){
+            case "Blanco":
+                this.precio += 10;
                 break;
-            case 2:
+            case "Rosa":
+                this.precio += 15;
                 break;
-            case 3:
-                break;
-            case 0:
+            case "Azul":
+                this.precio += 25;
                 break;
         }
-        }while(menuChoice > 3);
     }
-    public void menuBuy(){
-        
+    public void calcPrice(){
+        switch(this.modelo){
+            case "Multifuncion 6332":
+                this.precio = 59.90;
+                break;
+            case "Multifuncion 3720 WIFI e impresion movil":
+                this.precio = 79.90;
+                break;
+            case "Multifuncion WIFI 3735 WIFI":
+                this.precio = 69.90;
+                break;
+            case "Multifuncion Laser":
+                this.precio = 179;
+                break;
+        }
+    }
+    public String toString(){
+        System.out.println("Has elegido el modelo de impresora: "+this.modelo);
+        System.out.println("El color seleccionado para la impresora es: "+this.color);
+        return "El precio final de la impresora es de: "+this.precio+ " euros";
     }
 }
