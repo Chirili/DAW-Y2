@@ -13,6 +13,13 @@ import javax.sound.sampled.Line;
  */
 public class Utils {
 
+    /**
+     * Este metodo limpia la consola, basicamente lo que hace es pulsar las
+     * teclas CTRL+L, tengo puesto un delay porque se ejecuta tan rapido que a
+     * veces borra las lineas que van despues de este metodo
+     *
+     * @throws AWTException
+     */
     public void clearScreen() throws AWTException {
 
         try {
@@ -28,6 +35,12 @@ public class Utils {
 
     }
 
+    /**
+     * getDouble se encarga de recoger los datos de tipo double
+     *
+     * @return
+     * @throws InputMismatchException
+     */
     public double getDouble() throws InputMismatchException {
         do {
             try {
@@ -39,6 +52,11 @@ public class Utils {
         } while (true);
     }
 
+    /**
+     * getInt se encarga de recoger los datos de tipo int
+     *
+     * @return
+     */
     public int getInt() {
         do {
             try {
@@ -51,6 +69,11 @@ public class Utils {
 
     }
 
+    /**
+     * getString se encarga de recoger los datos de tipo String
+     *
+     * @return
+     */
     public String getString() {
         do {
             try {
@@ -62,6 +85,11 @@ public class Utils {
         } while (true);
     }
 
+    /**
+     * getBoolean se encarga de recoger los datos de tipo boolean
+     *
+     * @return
+     */
     public boolean getBoolean() {
         do {
             try {
@@ -74,6 +102,11 @@ public class Utils {
 
     }
 
+    /**
+     * getFloat se encarga de recoger los datos de tipo Float
+     *
+     * @return
+     */
     public float getFloat() {
         do {
             try {
@@ -86,6 +119,11 @@ public class Utils {
 
     }
 
+    /**
+     * getLong se encarga de recoger los datos de tipo Long
+     *
+     * @return
+     */
     public long getLong() {
         do {
             try {
@@ -97,6 +135,11 @@ public class Utils {
         } while (true);
     }
 
+    /**
+     * getShort se encarga de recoger los datos de tipo short
+     *
+     * @return
+     */
     public short getShort() {
         do {
             try {
@@ -108,6 +151,11 @@ public class Utils {
         } while (true);
     }
 
+    /**
+     * getByte se encarga de recoger los datos de tipo Byte
+     *
+     * @return
+     */
     public byte getByte() {
         do {
             try {
@@ -118,7 +166,14 @@ public class Utils {
             }
         } while (true);
     }
-    public String toString(String msg){
+
+    /**
+     * Metodo toString para imprimir lo que se le pase por parametro
+     *
+     * @param msg
+     * @return
+     */
+    public String toString(String msg) {
         return msg;
     }
 }

@@ -24,34 +24,36 @@ public class Main {
         do {
             System.out.println("Bienvenido al black friday en impresoras:");
             System.out.println("A continuacion se te mostrarán distintos modelos de impresora,elige una:");
-            System.out.println("1. Modelo Multifuncion 6332.");
-            System.out.println("2. Modelo Multifuncion 3720 WIFI e impresion movil.");
-            System.out.println("3. Modelo Multifuncion WIFI 3735 WIFI.");
-            System.out.println("4. Modelo Multifuncion Laser.");
+            System.out.println("a. Modelo Multifuncion 6332.");
+            System.out.println("b. Modelo Multifuncion 3720 WIFI e impresion movil.");
+            System.out.println("c. Modelo Multifuncion WIFI 3735 WIFI.");
+            System.out.println("d. Modelo Multifuncion Laser.");
             System.out.println("0. Salir.");
             System.out.print("Eleccion: ");
-            uChoice = uts.getInt();
+            selectColor = uts.getString();
 
-            switch (uChoice) {
-                case 1:
+            switch (selectColor) {
+                case "a":
                     bf.setModelo("Multifuncion 6332");
                     break;
-                case 2:
+                case "b":
                     bf.setModelo("Multifuncion 3720 WIFI e impresion movil");
                     break;
-                case 3:
+                case "c":
                     bf.setModelo("Multifuncion WIFI 3735 WIFI");
                     break;
-                case 4:
+                case "d":
                     bf.setModelo("Multifuncion Laser");
                     break;
-                case 0:
+                case "0":
                     break;
+                default:
+                    System.out.println("Por favor introduce una letra del de la A a la D o un 0");
             }
-        } while (uChoice > 4);
-        if (uChoice > 0) {
+        } while (!selectColor.equalsIgnoreCase("a") && !selectColor.equalsIgnoreCase("b") && !selectColor.equalsIgnoreCase("c") && !selectColor.equalsIgnoreCase("d") && !selectColor.equalsIgnoreCase("0"));
+
+        if (!selectColor.equals("0")) {
             bf.calcPrice();
-            System.out.println(bf.getPrecio());
             System.out.println("Por defecto las impresoras tienen el color negro:");
             do {
                 System.out.print("¿Deseas cambiarle el color:? Si o no: ");
@@ -86,8 +88,7 @@ public class Main {
             } else {
                 System.out.println(bf.toString());
             }
-        }
-        else {
+        } else {
             System.out.println("Adios...");
         }
     }

@@ -20,7 +20,7 @@ public class Nif {
     private static String letter;
 
     /**
-     * Constructor por defecto del dni
+     * Constructor por defecto de Nif
      */
     Nif() {
         this.dni = 0;
@@ -28,8 +28,9 @@ public class Nif {
     }
 
     /**
-     * Constructor con un parametro del nif
-     * @param dni 
+     * Constructor con un parametro de Nif
+     *
+     * @param dni
      */
     Nif(int dni) {
         this.dni = dni;
@@ -38,7 +39,8 @@ public class Nif {
 
     /**
      * Setter de dni
-     * @param dni 
+     *
+     * @param dni
      */
     public static void setDni(int dni) {
         Nif.dni = dni;
@@ -46,23 +48,25 @@ public class Nif {
 
     /**
      * Getter del dni
-     * @return 
+     *
+     * @return
      */
     public int getDni() {
         return this.dni;
     }
 
-
     /**
-     * Metodo para calcular la letra del DNI, recibe por parametro los digitos del dni y realiza los calculos correspondientes
-     * @param nif 
+     * Metodo para calcular la letra del DNI, recibe por parametro los digitos
+     * del dni y realiza los calculos correspondientes
+     *
+     * @param nif
      */
-    private static void calcNifLetter(int nif){
+    private static void calcNifLetter(int nif) {
         int calcNif = nif % 23;
-        switch(calcNif){
+        switch (calcNif) {
             case 0:
-                    letter = "T";
-                    break;
+                letter = "T";
+                break;
             case 1:
                 letter = "R";
                 break;
@@ -131,18 +135,20 @@ public class Nif {
                 break;
         }
     }
-    
+
     /**
-     * Metodo encargado de pintar por pantalla del dni correctamente formado
+     * Metodo toString para pintar el Nif bien formado
      */
-    public static void showNif(){
-        System.out.println("DNI: "+String.format("%08d", Integer.parseInt(String.valueOf(dni)))+"-"+Nif.letter);
+    public String toString() {
+        String DNI = ("DNI: " + String.format("%08d", Integer.parseInt(String.valueOf(dni))) + "-" + Nif.letter);
+        return DNI;
     }
-    
+
     /**
-     * Metodo que lee por teclado los digitos del dni, llama al metodo para calcular la letra y que se encarga de mostrar el dni
+     * Metodo que lee por teclado los digitos del dni, llama al metodo para
+     * calcular la letra y al que se encarga de mostrar el dni
      */
-    public static void leer() {
+    public void leer() {
         Utils uts = new Utils();
         int dni;
         String dniConverted;
@@ -156,20 +162,8 @@ public class Nif {
             }
             Nif.setDni(Integer.parseInt(dniConverted));
             calcNifLetter(Integer.parseInt(dniConverted));
-            
+
         } while (dniConverted.length() != 8);
     }
-    
-        public static void main(String[] args) {
-            //Prueba con el constructor con parametros
-            Nif nif1 = new Nif(12345678);
-            nif1.showNif();
-            
-            Nif nif2 = new Nif();
-            
-            //Prueba con la entrada por teclado
-            nif2.leer();
-            nif2.showNif();
-        
-    }
+
 }
