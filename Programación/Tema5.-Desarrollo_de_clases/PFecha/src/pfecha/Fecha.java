@@ -89,7 +89,11 @@ public class Fecha {
         } while (checker != true);
     }
 
-    
+    /**
+     * Metodo que comprueba si el año pasado por parametro es bisiesto
+     * @param año
+     * @return de true o false en funcion si es bisiesto o no el año
+     */
     public boolean bisiesto(int año) {
         if ((año % 4) == 0) {
             return true;
@@ -97,6 +101,10 @@ public class Fecha {
             return false;
         }
     }
+    /**
+     * 
+     * @return 
+     */
     public int diasMes(){
        YearMonth ym = YearMonth.of(this.año, this.mes);
        return ym.lengthOfMonth();
