@@ -34,7 +34,7 @@ public class Main {
             System.out.println("2.- Ver en formato corto la fecha.");
             System.out.println("3.- Ver el nombre del dia elegido.");
             System.out.println("4.- Ver en formato largo la fecha introducida.");
-            System.out.println("5.- Comprobar si el año introducido es bisiesto.");
+            System.out.println("5.- Comprobar si el anio introducido es bisiesto.");
             System.out.println("6.- Ver los dias transcurridos entre el 1/1/1900 y la fecha introducida.");
             System.out.println("7.- Ver los dias del mes introducido");
             System.out.println("8.- Introduce un numero de dias y mira como la fecha avanza desde el 1/1/1900.");
@@ -70,9 +70,9 @@ public class Main {
                 case 5:
                     uts.clearScreen();
                     if (f.bisiesto() == true) {
-                        System.out.println("El año que has introducido es bisiesto.");
+                        System.out.println("El anio que has introducido es bisiesto.");
                     } else {
-                        System.out.println("El año que has introducido no es bisiesto");
+                        System.out.println("El anio que has introducido no es bisiesto");
                     }
                 case 6:
                     System.out.println("La cantidad de dias transcurridos entre el 1/1/199 y" + " el " + f.toString() + " son de: " + f.diasTranscurridos() + " dias");
@@ -80,7 +80,7 @@ public class Main {
                 case 7:
                     //Esto solo se usa para mostrar el nombre del mes, se quita y funciona perfecto solo que no te muestra el nombre del mes
                     Calendar c = Calendar.getInstance();
-                    c.set(f.getAño(), f.getMes() - 1, f.getDia());
+                    c.set(f.getAnio(), f.getMes() - 1, f.getDia());
                     Locale lc = new Locale("es", "ES");
 
                     String mes = c.getDisplayName(Calendar.MONTH, Calendar.LONG, lc);

@@ -29,7 +29,7 @@ public class Fecha implements Cloneable {
      */
     private int dia;
     private int mes;
-    private int año;
+    private int anio;
 
     /**
      * Constructor predeterminado
@@ -37,20 +37,19 @@ public class Fecha implements Cloneable {
     Fecha() {
         this.dia = 31;
         this.mes = 1;
-        this.año = 1900;
+        this.anio = 1900;
     }
 
     /**
-     * Constructor parametrizado con el dia, el mes y el año
-     *
+anio     *
      * @param dia
      * @param mes
-     * @param año
+     * @param anio
      */
-    Fecha(int dia, int mes, int año) {
+    Fecha(int dia, int mes, int anio) {
         this.dia = dia;
         this.mes = mes;
-        this.año = año;
+        this.anio = anio;
     }
 
     /**
@@ -59,25 +58,25 @@ public class Fecha implements Cloneable {
     public void leer() {
         Utils uts = new Utils();
         System.out.println("Aviso:");
-        System.out.println("Si introduces un numero de dia, mes o año que no correspondan con los siguientes se establecerán sus numeros por defecto: 1 para mes y dia y 1900 para año");
+        System.out.println("Si introduces un numero de dia, mes o anio que no correspondan con los siguientes se establecerán sus numeros por defecto: 1 para mes y dia y 1900 para anio");
         System.out.print("Introduce un dia del 1 al 31: ");
         this.dia = uts.getInt();
 
         System.out.print("Introduce un mes del 1 al 12: ");
         this.mes = uts.getInt();
-        System.out.print("Introduce un año del 1900 al 2050: ");
-        this.año = uts.getInt();
+        System.out.print("Introduce un anio del 1900 al 2050: ");
+        this.anio = uts.getInt();
         valida();
     }
 
     /**
-     * Metodo que comprueba si el año pasado por parametro es bisiesto
+     * Metodo que comprueba si el anio pasado por parametro es bisiesto
      *
-     * @param año
-     * @return de true o false en funcion si es bisiesto o no el año
+     * @param anio
+     * @return de true o false en funcion si es bisiesto o no el anio
      */
     public boolean bisiesto() {
-        if ((this.año % 4) == 0) {
+        if ((this.anio % 4) == 0) {
             return true;
         } else {
             return false;
@@ -89,26 +88,26 @@ public class Fecha implements Cloneable {
      * @return
      */
     public int diasMes() {
-        YearMonth ym = YearMonth.of(this.año, this.mes);
+        YearMonth ym = YearMonth.of(this.anio, this.mes);
         return ym.lengthOfMonth();
     }
 
     /**
      * Metodo encargado de validar si la fecha se ha escrito correctamente: -
-     * Primero se comprueba si el año es correcto sino se pone a 1900. - Segundo
+     * Primero se comprueba si el anio es correcto sino se pone a 1900. - Segundo
      * se comprueba si el mes es correcto sino se pone a 1. - Tercero se
      * comprueba si el dia introducido es correcto con el mes introducido
-     * incluso si es bisiesto el año y sino lo establece a 1
+     * incluso si es bisiesto el anio y sino lo establece a 1
      */
     public void valida() {
 
-        if (this.año < 1900 || this.año > 2050) {
-            this.año = 1900;
+        if (this.anio < 1900 || this.anio > 2050) {
+            this.anio = 1900;
         }
         if (this.mes < 1 || this.mes > 12) {
             this.mes = 1;
         }
-        YearMonth ym = YearMonth.of(this.año, this.mes);
+        YearMonth ym = YearMonth.of(this.anio, this.mes);
         System.out.println(ym.isValidDay(dia));
         if (ym.isValidDay(dia) == false) {
             this.dia = 1;
@@ -121,7 +120,7 @@ public class Fecha implements Cloneable {
      * @return devuelve un String con la forma corta de la clase
      */
     public String corta() {
-        String fecha = this.dia + "-" + this.mes + "-" + this.año;
+        String fecha = this.dia + "-" + this.mes + "-" + this.anio;
         return fecha;
     }
 
@@ -133,7 +132,7 @@ public class Fecha implements Cloneable {
      */
     public int diasTranscurridos() {
         LocalDate fDate = LocalDate.of(1900, 1, 1);
-        LocalDate sDate = LocalDate.of(this.año, this.mes, this.dia);
+        LocalDate sDate = LocalDate.of(this.anio, this.mes, this.dia);
         int dias = (int) DAYS.between(fDate, sDate);
         return dias;
     }
@@ -146,7 +145,7 @@ public class Fecha implements Cloneable {
     public String diaSemana() {
         Calendar c = Calendar.getInstance();
         c.set(Calendar.MONTH, this.mes);
-        c.set(Calendar.YEAR, this.año);
+        c.set(Calendar.YEAR, this.anio);
         c.set(Calendar.DAY_OF_WEEK, this.dia);
         Locale lc = new Locale("es", "ES");
         return c.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, lc);
@@ -161,13 +160,13 @@ public class Fecha implements Cloneable {
 
         Calendar c = Calendar.getInstance();
         c.set(Calendar.MONTH, this.mes - 1);
-        c.set(Calendar.YEAR, this.año);
+        c.set(Calendar.YEAR, this.anio);
         c.set(Calendar.DAY_OF_WEEK, this.dia);
         Locale lc = new Locale("es", "ES");
 
         String mes = c.getDisplayName(Calendar.MONTH, Calendar.LONG, lc);
 
-        String lFecha = diaSemana() + " " + this.dia + " de " + mes + " de " + this.año;
+        String lFecha = diaSemana() + " " + this.dia + " de " + mes + " de " + this.anio;
 
         return lFecha;
     }
@@ -200,7 +199,7 @@ public class Fecha implements Cloneable {
      * @return devuelve true si son iguales o false si no lo son
      */
     public boolean igualQue(String fecha) {
-        LocalDate fDate = LocalDate.of(this.año, this.mes, this.dia);
+        LocalDate fDate = LocalDate.of(this.anio, this.mes, this.dia);
         LocalDate sDate = LocalDate.parse(fecha);
         if (fDate.equals(sDate) == true) {
             return true;
@@ -217,7 +216,7 @@ public class Fecha implements Cloneable {
      * @return devuelve un int con los numeros de dias transcurridos
      */
     public int diasEntre(String fecha) {
-        LocalDate fDate = LocalDate.of(this.año, this.mes, this.dia);
+        LocalDate fDate = LocalDate.of(this.anio, this.mes, this.dia);
         LocalDate sDate = LocalDate.parse(fecha);
         int dias = (int) DAYS.between(fDate, sDate);
         return dias;
@@ -248,7 +247,7 @@ public class Fecha implements Cloneable {
             }
         } while (month < 1 || month > 12);
         do {
-            System.out.print("Introduce un año entre 1900 y 2050: ");
+            System.out.print("Introduce un anio entre 1900 y 2050: ");
             year = uts.getInt();
             if (year < 1900 || year > 2050) {
                 System.out.println("Numero incorrecto: por favor introduce un numero entre el 1900 y el 2050");
@@ -263,12 +262,12 @@ public class Fecha implements Cloneable {
      * clase
      */
     public void siguiente() {
-        LocalDate actualDate = LocalDate.of(this.año, this.mes, this.dia);
+        LocalDate actualDate = LocalDate.of(this.anio, this.mes, this.dia);
         LocalDate nextDay = actualDate.plusDays(1);
 
         this.mes = nextDay.getMonthValue();
         this.dia = nextDay.getDayOfMonth();
-        this.año = nextDay.getYear();
+        this.anio = nextDay.getYear();
     }
 
     /**
@@ -276,12 +275,12 @@ public class Fecha implements Cloneable {
      * clase
      */
     public void anterior() {
-        LocalDate actualDate = LocalDate.of(this.año, this.mes, this.dia);
+        LocalDate actualDate = LocalDate.of(this.anio, this.mes, this.dia);
         LocalDate nextDay = actualDate.plusDays(-1);
 
         this.mes = nextDay.getMonthValue();
         this.dia = nextDay.getDayOfMonth();
-        this.año = nextDay.getYear();
+        this.anio = nextDay.getYear();
     }
 
     /**
@@ -292,7 +291,7 @@ public class Fecha implements Cloneable {
      * @return devuele true si es anterior o false si no lo es
      */
     public boolean menorQue(String fecha) {
-        LocalDate fDate = LocalDate.of(this.año, this.mes, this.dia);
+        LocalDate fDate = LocalDate.of(this.anio, this.mes, this.dia);
         LocalDate sDate = LocalDate.parse(fecha);
         if (fDate.isAfter(sDate) == true) {
             return true;
@@ -309,7 +308,7 @@ public class Fecha implements Cloneable {
      * @return devuelve true si es posterior o false si no lo es
      */
     public boolean mayorQue(String fecha) {
-        LocalDate fDate = LocalDate.of(this.año, this.mes, this.dia);
+        LocalDate fDate = LocalDate.of(this.anio, this.mes, this.dia);
         LocalDate sDate = LocalDate.parse(fecha);
         if (fDate.isBefore(sDate) == true) {
             return true;
@@ -339,7 +338,7 @@ public class Fecha implements Cloneable {
      * @return de un String con la fecha de la clase
      */
     public String toString() {
-        String fecha = String.valueOf(this.dia) + "/" + String.valueOf(this.mes) + "/" + String.valueOf(this.año);
+        String fecha = String.valueOf(this.dia) + "/" + String.valueOf(this.mes) + "/" + String.valueOf(this.anio);
         return fecha;
     }
 
@@ -362,11 +361,11 @@ public class Fecha implements Cloneable {
         this.mes = mes;
     }
 
-    public int getAño() {
-        return año;
+    public int getAnio() {
+        return anio;
     }
 
-    public void setAño(int año) {
-        this.año = año;
+    public void setAnio(int anio) {
+        this.anio = anio;
     }
 }
