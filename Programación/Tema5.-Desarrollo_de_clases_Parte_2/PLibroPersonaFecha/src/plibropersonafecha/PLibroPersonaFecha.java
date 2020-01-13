@@ -5,9 +5,11 @@
  */
 package plibropersonafecha;
 
+import models.*;
+
 /**
  *
- * @author usuario
+ * @author Andres
  */
 public class PLibroPersonaFecha {
 
@@ -15,7 +17,11 @@ public class PLibroPersonaFecha {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Persona autor = new Persona("Daniel", "Liang", "Y.");
+        Fecha fechaEdicion = new Fecha("Lunes","Noviembre",2001,16);
+        Place lugar = new Place("USA", "Prentice Hall, New Jersey");
+        Book b = new Book("Introduction to Java Programming",autor,"0-13-031997-X",784,3,fechaEdicion,lugar);
+        System.out.println(b);
     }
-    
+
 }
