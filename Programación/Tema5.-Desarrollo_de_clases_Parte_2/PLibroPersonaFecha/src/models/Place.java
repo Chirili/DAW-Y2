@@ -5,6 +5,8 @@
  */
 package models;
 
+import Utils.Utils;
+
 /**
  *
  * @author Andres
@@ -21,17 +23,32 @@ public class Place {
     }
 
     //Constructor parametrizado
-
     public Place(String countryName, String cityName) {
         this.countryName = countryName;
         this.cityName = cityName;
     }
 
-
     //Constructor copia
     public Place(Place p) {
         this.countryName = p.countryName;
         this.cityName = p.cityName;
+    }
+
+    public void getPlaceData() {
+        Utils uts = new Utils();
+
+        String sd;
+        int id;
+
+        System.out.println("Informacion sobre el lugar de edicion del libro: ");
+        System.out.print("Pais donde fue editado: ");
+        sd = uts.getString();
+        setCountryName(sd);
+
+        System.out.print("Ciudad donde fue editado: ");
+        sd = uts.getString();
+        setCityName(sd);
+
     }
 
     /**
@@ -41,7 +58,7 @@ public class Place {
      */
     @Override
     public String toString() {
-        return this.cityName + this.countryName;
+        return this.cityName+", " + this.countryName;
     }
 
     /**

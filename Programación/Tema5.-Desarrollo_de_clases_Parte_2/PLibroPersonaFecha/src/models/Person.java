@@ -5,42 +5,62 @@
  */
 package models;
 
+import Utils.Utils;
+
 /**
  *
  * @author usuario
  */
-public class Persona {
+public class Person {
 
     private String name;
     private String firstName;
     private String lastName;
 
     //Constructor por defecto
-
-    public Persona() {
+    public Person() {
         this.name = "";
         this.firstName = "";
         this.lastName = "";
     }
-    
 
     //Constructor parametrizado
-    public Persona(String name, String firstName, String lastName) {    
+    public Person(String name, String firstName, String lastName) {
         this.name = name;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
     //Constructor copia
-    public Persona(Persona p) {
+    public Person(Person p) {
         this.name = p.name;
         this.firstName = p.firstName;
         this.lastName = p.lastName;
     }
 
+    public void getPersonData() {
+        Utils uts = new Utils();
+
+        String sd;
+
+        System.out.println("Informacion del autor del libro: ");
+        System.out.print("Nombre del autor: ");
+        sd = uts.getString();
+        setName(sd);
+
+        System.out.print("Primer apellido del autor: ");
+        sd = uts.getString();
+        setFirstName(sd);
+
+        System.out.print("Segundo apellido del autor: ");
+        sd = uts.getString();
+        setLastName(sd);
+    }
+
     /**
      * Metodo toString para imprimir por pantalla los atributos de la clase
-     * @return 
+     *
+     * @return
      */
     @Override
     public String toString() {
@@ -49,7 +69,8 @@ public class Persona {
 
     /**
      * Getters y setters de la clas Persona
-     * @return 
+     *
+     * @return
      */
     public String getName() {
         return name;

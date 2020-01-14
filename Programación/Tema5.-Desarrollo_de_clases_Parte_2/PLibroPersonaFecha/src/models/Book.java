@@ -2,6 +2,7 @@ package models;
 
 import Utils.Utils;
 import java.awt.AWTException;
+
 /**
  *
  * @author Andres
@@ -9,26 +10,26 @@ import java.awt.AWTException;
 public class Book {
 
     private String bookTitle;
-    private Persona publisher;
+    private Person publisher;
     private String isbn;
     private int pages;
     private int edicion;
-    private Fecha fechaEdicion;
+    private Date fechaEdicion;
     private Place place;
 
     //Constructor por defecto
     public Book() {
         this.bookTitle = "Sin titulo";
-        this.publisher = new Persona("NombreAutor","Ape1","Ape2");
+        this.publisher = new Person("NombreAutor", "Ape1", "Ape2");
         this.isbn = "";
         this.pages = 1;
         this.edicion = 2;
-        this.fechaEdicion = new Fecha("DiaSemana","NombreMes",1990,1);
-        this.place = new Place("NombrePais","Nombreciudad");
+        this.fechaEdicion = new Date("DiaSemana", "NombreMes", 1990, 1);
+        this.place = new Place("NombrePais", "Nombreciudad");
     }
 
     //Constructor parametrizado
-    public Book(String bookTitle, Persona publisher, String isbn, int pages, int edicion, Fecha fechaEdicion, Place place) {
+    public Book(String bookTitle, Person publisher, String isbn, int pages, int edicion, Date fechaEdicion, Place place) {
         this.bookTitle = bookTitle;
         this.publisher = publisher;
         this.isbn = isbn;
@@ -37,7 +38,7 @@ public class Book {
         this.fechaEdicion = fechaEdicion;
         this.place = place;
     }
-    
+
     //Constructor copia
     Book(Book b) {
         this.bookTitle = b.bookTitle;
@@ -49,64 +50,42 @@ public class Book {
         this.place = b.place;
     }
 
-    
-    public void getData() throws AWTException{
+    public void getData() throws AWTException {
         Utils uts = new Utils();
-        
+
         // Informacion de Book
         System.out.print("¿Cual es el titulo del libro?: ");
         String bt = uts.getString();
         this.bookTitle = bt;
-        
+
         System.out.print("¿En que edicion se encuentra el libro?: ");
         int eb = uts.getInt();
         this.edicion = eb;
-        
+
         System.out.print("¿De cuantas paginas se compone el libro?: ");
         int pb = uts.getInt();
         this.pages = pb;
-        
+
         System.out.print("¿Cual es el ISBN del libro?: ");
         String ib = uts.getString();
         this.isbn = ib;
-        
-         uts.clearScreen();
+
+        uts.clearScreen();
 
         //Informacion de Persona
-        System.out.println("Informacion del autor del libro: ");
-        System.out.print("Nombre del autor: ");
-        String an = uts.getString();
-        publisher.setName(an);
-        
-        System.out.print("Primer apellido del autor: ");
-        String afn = uts.getString();
-        publisher.setFirstName(afn);
-        
-        System.out.print("Segundo apellido del autor: ");
-        String asn = uts.getString();
-        publisher.setLastName(asn);
-        
+        publisher.getPersonData();
+
         uts.clearScreen();
-        
-        //Informacion de la Fecha
-        System.out.println("Informacion sobre la fecha de edicion del libro: ");
-        System.out.println("Dia de la semana(EJ: Lunes): ");
-        String dw = uts.getString();
-        fechaEdicion.setDayOfWeek(dw);
-        
-        System.out.print("Nombre del mes: ");
-        String nm = uts.getString();
-        fechaEdicion.setNameOfMonth(nm);
-        
-        System.out.print("Dia del mes: ");
-        int d = uts.getInt();
-        fechaEdicion.setDay(d);
-        
-        System.out.print("Año de edicion: ");
-        int y = uts.getInt();
-        fechaEdicion.setYear(y);
-        
+
+        //Recoger informacion de Date en su metodo correspondiente
+        fechaEdicion.getDateData();
+
+        uts.clearScreen();
+
+        //Informacion del lugar
+        place.getPlaceData();
     }
+
     /**
      * Metodo toString para pintar todos los datos por pantalla
      *
@@ -114,7 +93,7 @@ public class Book {
      */
     @Override
     public String toString() {
-        return "Titulo: " + this.bookTitle + "\n" + this.edicion + "a. edicion\n" + "Autor: " + this.publisher + "\n ISBN: " + this.isbn + "\n" + this.place + ", " + this.fechaEdicion + "\n Numero de paginas: " + this.pages;
+        return "Titulo: " + this.bookTitle + "\n" + this.edicion + "a. edicion\n" + "Autor: " + this.publisher + "\nISBN: " + this.isbn + "\n" + this.place + ", " + this.fechaEdicion + "\nNumero de paginas: " + this.pages;
     }
 
     /**
@@ -130,11 +109,11 @@ public class Book {
         this.bookTitle = bookTitle;
     }
 
-    public Persona getPublisher() {
+    public Person getPublisher() {
         return publisher;
     }
 
-    public void setPublisher(Persona publisher) {
+    public void setPublisher(Person publisher) {
         this.publisher = publisher;
     }
 
@@ -162,11 +141,11 @@ public class Book {
         this.edicion = edicion;
     }
 
-    public Fecha getFechaEdicion() {
+    public Date getFechaEdicion() {
         return fechaEdicion;
     }
 
-    public void setFechaEdicion(Fecha fechaEdicion) {
+    public void setFechaEdicion(Date fechaEdicion) {
         this.fechaEdicion = fechaEdicion;
     }
 
