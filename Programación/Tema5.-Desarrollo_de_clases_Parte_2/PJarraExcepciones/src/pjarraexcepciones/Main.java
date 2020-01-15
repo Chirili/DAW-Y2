@@ -5,6 +5,7 @@
  */
 package pjarraexcepciones;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import models.Jarra;
 import models.JarraException;
@@ -44,7 +45,7 @@ public class Main {
             System.out.println("JB " + jarraB.toString());
         }catch(JarraException e){
             System.out.println("ERROR: Algun parametro no es numero ");
-        }catch (NumberFormatException e) {
+        }catch (InputMismatchException e) {
             System.out.println("ERROR:  Algun  parametro  no  es  un numero");
         }catch(RuntimeException e){
             System.out.println("ERROR:  Algun parametro  no  es  un numero");
