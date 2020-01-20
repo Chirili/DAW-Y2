@@ -7,7 +7,7 @@ package pempleado;
 
 import Utils.Utils;
 import java.awt.AWTException;
-import models.Empleado;
+import models.*;
 
 /**
  *
@@ -23,35 +23,50 @@ public class Main {
         String nif, nombre, apellidos, checkData;
         int horas_extras, num_hijos = 0;
         double sueldo_base, pago_horas_extras;
-        boolean casado, hijos, checker;
+        boolean casado, hijos;
         Utils uts = new Utils();
 
         System.out.println("Programa encargado de la gestion de empleados. ");
         System.out.println("A continuación tendrás que introducir toda la informacion referente a tu persona: ");
+
         do {
+
             System.out.print("Introduce tu nombre: ");
             nombre = uts.getString();
+
             System.out.print("Introduce tus apellidos: ");
             apellidos = uts.getString();
+
             System.out.print("Introduce tu nif: ");
             nif = uts.getString();
+
             System.out.print("Introduce tu sueldo base: ");
             sueldo_base = uts.getDouble();
+
             System.out.print("Introduce las horas extras trabajadas: ");
             horas_extras = uts.getInt();
+
             System.out.print("Introduce el pago por las horas extras trabajadas: ");
             pago_horas_extras = uts.getDouble();
-            Empleado ep1 = new Empleado(nif, nombre, sueldo_base, pago_horas_extras, horas_extras);
+
+            Persona p = new Persona(nif, nombre, apellidos);
+            Empleado ep = new Empleado(sueldo_base, pago_horas_extras, horas_extras, p);
+
             do {
+
                 System.out.print("¿Estas casado? Escribe si o no: ");
                 checkData = uts.getString();
+
             } while (!checkData.equalsIgnoreCase("si") && !checkData.equalsIgnoreCase("no"));
+
             if (checkData.equalsIgnoreCase("si")) {
                 casado = true;
             } else {
                 casado = false;
             }
-            ep1.setCasado(casado);
+
+            p.setCasado(casado);
+
             do {
                 System.out.print("¿Tienes hijos? Escribe si o no: ");
                 checkData = uts.getString();
@@ -62,12 +77,15 @@ public class Main {
                     System.out.println("¿Cuandos hijos tienes? Escribe un numero: ");
                     num_hijos = uts.getInt();
                 } while (num_hijos < 1 || num_hijos > 5);
-                ep1.setNum_Hijos(num_hijos);
+                p.setNum_hijos(num_hijos);
             } else {
                 hijos = false;
             }
-            ep1.setHijos(hijos);
+
+            p.setHijos(hijos);
+
             uts.clearScreen();
+
             System.out.println("Datos introducidos: ");
             System.out.println("Nombre: " + nombre);
             System.out.println("Apellidos: " + apellidos);
@@ -75,6 +93,7 @@ public class Main {
             System.out.println("Sueldo base: " + sueldo_base);
             System.out.println("Horas extras trabajadas: " + horas_extras);
             System.out.println("Pago por las horas extras trabajadas: " + horas_extras);
+
             if (casado == true) {
                 System.out.println("Casado: si");
             } else {
@@ -86,12 +105,15 @@ public class Main {
             } else {
                 System.out.println("Tiene hijos: no");
             }
+
             do {
                 System.out.print("¿Son correctos estos datos? Escribe si o no: ");
                 checkData = uts.getString();
             } while (!checkData.equalsIgnoreCase("si") && !checkData.equalsIgnoreCase("no"));
+
             uts.clearScreen();
-            Empleado ep2 = (Empleado) ep1.clone();
+            Empleado ep2 = (Empleado) ep.clone();
+
             do {
                 System.out.println("Elige el empleado a visualizar:");
                 System.out.println("1.- Empleado 1");
@@ -108,14 +130,14 @@ public class Main {
                             System.out.println("3.- Salir ");
                             System.out.print("Eleccion: ");
                             userChoice = uts.getInt();
-                            switch (choice) {
+                            switch (userChoice) {
                                 case 1:
                                     System.out.println("Información simple del primer empleado: ");
-                                    ep1.println();
+                                    ep.println();
                                     break;
                                 case 2:
                                     System.out.println("Informacion completa del segundo empleado");
-                                    ep1.printAll();
+                                    ep.printAll();
                                     break;
                             }
                         } while (userChoice != 3);
