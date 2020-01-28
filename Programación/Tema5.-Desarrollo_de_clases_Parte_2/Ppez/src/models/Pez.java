@@ -14,20 +14,21 @@ import java.util.Objects;
 public abstract class Pez implements Cloneable {
 
     private String nombre;
+    private static int numpeces;
 
     public Pez() {
         this.nombre = "";
+        añadirPeces();
     }
 
     public Pez(String nombre) {
         this.nombre = nombre;
+        añadirPeces();
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 83 * hash + Objects.hashCode(this.nombre);
-        return hash;
+    public Pez(Pez p){
+        this.nombre = p.getNombre();
+        añadirPeces();
     }
 
     @Override
@@ -53,6 +54,7 @@ public abstract class Pez implements Cloneable {
         Object obj = null;
         try {
             obj = (Pez) super.clone();
+            añadirPeces();
         } catch (CloneNotSupportedException ex) {
             System.out.println("No se puede duplicar");
         }
@@ -62,7 +64,14 @@ public abstract class Pez implements Cloneable {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    
+    public void añadirPeces(){
+        this.numpeces += 1;
+    }
 
+    public int getNumPeces() {
+        return this.numpeces;
+    }
     public String getNombre() {
         return this.nombre;
     }
