@@ -18,16 +18,7 @@ public class PCongeladosAire extends ProductosCongelados {
     private int pDioxidoCarbono;
     private int pVaporAgua;
 
-    public PCongeladosAire(int pNitrogeno, int pOxigeno, int pDioxidoCarbono, int pVaporAgua, String fechaEnvasado, String paisOrigen, int temperaturaMantenimiento) {
-        super(fechaEnvasado, paisOrigen, temperaturaMantenimiento);
-        this.pNitrogeno = pNitrogeno;
-        this.pOxigeno = pOxigeno;
-        this.pDioxidoCarbono = pDioxidoCarbono;
-        this.pVaporAgua = pVaporAgua;
-    }
-
-    public PCongeladosAire(int pNitrogeno, int pOxigeno, int pDioxidoCarbono, int pVaporAgua, String fechaEnvasado, String paisOrigen, int temperaturaMantenimiento, String fechaCaducidad, int numeroLote) {
-        super(fechaEnvasado, paisOrigen, temperaturaMantenimiento, fechaCaducidad, numeroLote);
+    public PCongeladosAire(int pNitrogeno, int pOxigeno, int pDioxidoCarbono, int pVaporAgua) {
         this.pNitrogeno = pNitrogeno;
         this.pOxigeno = pOxigeno;
         this.pDioxidoCarbono = pDioxidoCarbono;
@@ -36,7 +27,8 @@ public class PCongeladosAire extends ProductosCongelados {
 
     /**
      * Getters y setters de la clase PCongeladosAire
-     * @return 
+     *
+     * @return
      */
     public int getpNitrogeno() {
         return pNitrogeno;
@@ -70,5 +62,4 @@ public class PCongeladosAire extends ProductosCongelados {
         this.pVaporAgua = pVaporAgua;
     }
 
-    
 }

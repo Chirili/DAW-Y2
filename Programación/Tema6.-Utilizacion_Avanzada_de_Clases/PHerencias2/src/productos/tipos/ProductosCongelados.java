@@ -5,7 +5,7 @@
  */
 package productos.tipos;
 
-import productos.Productos;
+import java.time.LocalDate;
 import productos.Productos;
 
 /**
@@ -14,33 +14,21 @@ import productos.Productos;
  */
 public abstract class ProductosCongelados extends Productos {
 
-    private String fechaEnvasado;
+    private LocalDate fechaEnvasado;
     private String paisOrigen;
     private int temperaturaMantenimiento;
 
-    public ProductosCongelados(String fechaEnvasado, String paisOrigen, int temperaturaMantenimiento) {
-        this.fechaEnvasado = fechaEnvasado;
-        this.paisOrigen = paisOrigen;
-        this.temperaturaMantenimiento = temperaturaMantenimiento;
-    }
-
-    public ProductosCongelados(String fechaEnvasado, String paisOrigen, int temperaturaMantenimiento, String fechaCaducidad, int numeroLote) {
-        super(fechaCaducidad, numeroLote);
-        this.fechaEnvasado = fechaEnvasado;
-        this.paisOrigen = paisOrigen;
-        this.temperaturaMantenimiento = temperaturaMantenimiento;
-    }
-
     /**
      * Getters y setters de la clase ProductosCongelados
-     * @return 
+     *
+     * @return
      */
-    public String getFechaEnvasado() {
+    public LocalDate getFechaEnvasado() {
         return fechaEnvasado;
     }
 
-    public void setFechaEnvasado(String fechaEnvasado) {
-        this.fechaEnvasado = fechaEnvasado;
+    public void setFechaEnvasado(LocalDate l) {
+        this.fechaEnvasado = l;
     }
 
     public String getPaisOrigen() {
@@ -58,7 +46,5 @@ public abstract class ProductosCongelados extends Productos {
     public void setTemperaturaMantenimiento(int temperaturaMantenimiento) {
         this.temperaturaMantenimiento = temperaturaMantenimiento;
     }
-    
-    
 
 }

@@ -5,6 +5,7 @@
  */
 package productos.tipos;
 
+import java.time.LocalDate;
 import productos.Productos;
 import productos.Productos;
 
@@ -15,25 +16,25 @@ import productos.Productos;
 public class ProductosRefrigerados extends Productos {
 
     private int codigoSupervision;
-    private String fechaEnvasado;
+    private LocalDate fechaEnvasado;
     private int temperaturaMantenimiento;
     private String paisOrigen;
 
     public ProductosRefrigerados() {
         this.codigoSupervision = 0;
-        this.fechaEnvasado = "";
+        this.fechaEnvasado = LocalDate.of(1,1,1);
         this.temperaturaMantenimiento = 0;
         this.paisOrigen = "";
     }
 
-    public ProductosRefrigerados(int codigoSupervision, String fechaEnvasado, int temperaturaMantenimiento, String paisOrigen) {
+    public ProductosRefrigerados(int codigoSupervision, LocalDate fechaEnvasado, int temperaturaMantenimiento, String paisOrigen) {
         this.codigoSupervision = codigoSupervision;
         this.fechaEnvasado = fechaEnvasado;
         this.temperaturaMantenimiento = temperaturaMantenimiento;
         this.paisOrigen = paisOrigen;
     }
 
-    public ProductosRefrigerados(int codigoSupervision, String fechaEnvasado, int temperaturaMantenimiento, String paisOrigen, String fechaCaducidad, int numeroLote) {
+    public ProductosRefrigerados(int codigoSupervision, LocalDate fechaEnvasado, int temperaturaMantenimiento, String paisOrigen, LocalDate fechaCaducidad, int numeroLote) {
         super(fechaCaducidad, numeroLote);
         this.codigoSupervision = codigoSupervision;
         this.fechaEnvasado = fechaEnvasado;
@@ -54,11 +55,11 @@ public class ProductosRefrigerados extends Productos {
         this.codigoSupervision = codigoSupervision;
     }
 
-    public String getFechaEnvasado() {
+    public LocalDate getFechaEnvasado() {
         return fechaEnvasado;
     }
 
-    public void setFechaEnvasado(String fechaEnvasado) {
+    public void setFechaEnvasado(LocalDate fechaEnvasado) {
         this.fechaEnvasado = fechaEnvasado;
     }
 

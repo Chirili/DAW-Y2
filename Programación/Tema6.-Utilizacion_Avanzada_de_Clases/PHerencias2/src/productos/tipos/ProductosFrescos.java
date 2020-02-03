@@ -5,6 +5,8 @@
  */
 package productos.tipos;
 
+import java.time.LocalDate;
+import java.time.Month;
 import productos.Productos;
 import productos.Productos;
 
@@ -14,20 +16,20 @@ import productos.Productos;
  */
 public class ProductosFrescos extends Productos {
 
-    private String fechaEnvasado;
+    private LocalDate fechaEnvasado;
     private String paisOrigen;
 
     public ProductosFrescos() {
-        this.fechaEnvasado = "";
+        this.fechaEnvasado = LocalDate.of(1,1, 1);
         this.paisOrigen = "";
     }
 
-    public ProductosFrescos(String fechaEnvasado, String paisOrigen) {
+    public ProductosFrescos(LocalDate fechaEnvasado, String paisOrigen) {
         this.fechaEnvasado = fechaEnvasado;
         this.paisOrigen = paisOrigen;
     }
 
-    public ProductosFrescos(String fechaEnvasado, String paisOrigen, String fechaCaducidad, int numeroLote) {
+    public ProductosFrescos(LocalDate fechaEnvasado, String paisOrigen, LocalDate fechaCaducidad, int numeroLote) {
         super(fechaCaducidad, numeroLote);
         this.fechaEnvasado = fechaEnvasado;
         this.paisOrigen = paisOrigen;
@@ -37,11 +39,11 @@ public class ProductosFrescos extends Productos {
      * Getters y setters de la clase ProductosFrescos
      * @return 
      */
-    public String getFechaEnvasado() {
+    public LocalDate getFechaEnvasado() {
         return fechaEnvasado;
     }
 
-    public void setFechaEnvasado(String fechaEnvasado) {
+    public void setFechaEnvasado(LocalDate fechaEnvasado) {
         this.fechaEnvasado = fechaEnvasado;
     }
 

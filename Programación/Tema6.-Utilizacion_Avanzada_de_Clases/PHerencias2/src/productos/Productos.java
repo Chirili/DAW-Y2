@@ -18,21 +18,21 @@ public abstract class Productos {
     private int numeroLote;
 
     public Productos() {
-        this.fechaCaducidad = "";
+        this.fechaCaducidad = LocalDate.of(1, 1, 1);
         this.numeroLote = 0;
     }
 
-    public Productos(String fechaCaducidad, int numeroLote) {
-        this.fechaCaducidad = fechaCaducidad;
+    public Productos(LocalDate l, int numeroLote) {
+        this.fechaCaducidad = l;
         this.numeroLote = numeroLote;
     }
 
-    public String getFechaCaducidad() {
+    public LocalDate getFechaCaducidad() {
         return fechaCaducidad;
     }
 
-    public void setFechaCaducidad(String fechaCaducidad) {
-        this.fechaCaducidad = fechaCaducidad;
+    public void setFechaCaducidad(LocalDate l) {
+        this.fechaCaducidad = l;
     }
 
     public int getNumeroLote() {

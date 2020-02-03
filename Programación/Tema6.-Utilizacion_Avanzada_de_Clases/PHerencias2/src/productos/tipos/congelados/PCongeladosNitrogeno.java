@@ -11,19 +11,12 @@ import productos.tipos.ProductosCongelados;
  *
  * @author usuario
  */
-public class PCongeladosNitrogeno extends ProductosCongelados{
+public class PCongeladosNitrogeno extends ProductosCongelados {
 
     private String metodoCongelacion;
     private int tiempoExposicion;
 
-    public PCongeladosNitrogeno(String metodoCongelacion, int tiempoExposicion, String fechaEnvasado, String paisOrigen, int temperaturaMantenimiento) {
-        super(fechaEnvasado, paisOrigen, temperaturaMantenimiento);
-        this.metodoCongelacion = metodoCongelacion;
-        this.tiempoExposicion = tiempoExposicion;
-    }
-
-    public PCongeladosNitrogeno(String metodoCongelacion, int tiempoExposicion, String fechaEnvasado, String paisOrigen, int temperaturaMantenimiento, String fechaCaducidad, int numeroLote) {
-        super(fechaEnvasado, paisOrigen, temperaturaMantenimiento, fechaCaducidad, numeroLote);
+    public PCongeladosNitrogeno(String metodoCongelacion, int tiempoExposicion) {
         this.metodoCongelacion = metodoCongelacion;
         this.tiempoExposicion = tiempoExposicion;
     }
@@ -43,7 +36,5 @@ public class PCongeladosNitrogeno extends ProductosCongelados{
     public void setTiempoExposicion(int tiempoExposicion) {
         this.tiempoExposicion = tiempoExposicion;
     }
-    
-    
-    
+
 }

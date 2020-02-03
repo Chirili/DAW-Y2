@@ -5,6 +5,7 @@
  */
 package productos.tipos.congelados;
 
+import java.time.LocalDate;
 import productos.tipos.ProductosCongelados;
 
 /**
@@ -15,13 +16,7 @@ public class PCongeladosAgua extends ProductosCongelados {
 
     private int gramosSal;
 
-    public PCongeladosAgua(int gramosSal, String fechaEnvasado, String paisOrigen, int temperaturaMantenimiento) {
-        super(fechaEnvasado, paisOrigen, temperaturaMantenimiento);
-        this.gramosSal = gramosSal;
-    }
-
-    public PCongeladosAgua(int gramosSal, String fechaEnvasado, String paisOrigen, int temperaturaMantenimiento, String fechaCaducidad, int numeroLote) {
-        super(fechaEnvasado, paisOrigen, temperaturaMantenimiento, fechaCaducidad, numeroLote);
+    public PCongeladosAgua(int gramosSal) {
         this.gramosSal = gramosSal;
     }
 

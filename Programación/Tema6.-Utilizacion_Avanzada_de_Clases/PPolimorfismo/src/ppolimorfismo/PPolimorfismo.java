@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pherencias2;
-
+package ppolimorfismo;
+import models.*;
 /**
  *
  * @author usuario
  */
-public class PHerencias2 {
+public class PPolimorfismo {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Portatil p = new Portatil();
+        System.out.println(p);
     }
     
 }
