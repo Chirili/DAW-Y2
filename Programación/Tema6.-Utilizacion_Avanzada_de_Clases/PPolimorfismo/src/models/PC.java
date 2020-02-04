@@ -11,15 +11,16 @@ import Utils.Utils;
  *
  * @author Andres
  */
-public abstract class PC {
+public class PC {
 
     protected int memoria;
 
     public PC() {
-
+        this.memoria = 0;
     }
+    
 
-    protected void capturar() {
+    public void capturar() {
         Utils uts = new Utils();
         System.out.print("Dime la cantidad de memoria del PC: ");
         setMemoria(uts.getInt());

@@ -16,23 +16,31 @@ public abstract class Punto {
     protected int x;
     protected int y;
 
+    /**
+     * Constructor parametrizado de Punto que recibe por parametros el valor de
+     * x e y
+     *
+     * @param x
+     * @param y
+     */
     public Punto(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
+    //Metodo encargado de recoger por teclado los valores de x e y
     public void capturarPunto() {
         Utils uts = new Utils();
-        
-        System.out.print("Dime el valor de x: ");
+
+        System.out.print("Dame el valor de x: ");
         estableceX(uts.getInt());
-        
-        System.out.print("Dime el valor de y: ");
+
+        System.out.print("Dame el valor de y: ");
         estableceY(uts.getInt());
     }
 
     /**
-     * Getters y setters
+     * Getters y setters de Punto
      *
      * @return
      */
@@ -54,7 +62,7 @@ public abstract class Punto {
 
     @Override
     public String toString() {
-        return "Valor de x: "+this.x+"\nValor de y: "+this.y;
+        return "Valor de x: " + this.x + "\nValor de y: " + this.y;
     }
 
 }

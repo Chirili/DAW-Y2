@@ -11,21 +11,21 @@ import Utils.Utils;
  *
  * @author usuario
  */
-public class Portatil extends PC {
+public class Portatil extends PC{
 
     private double duracionBat;
 
+
     public Portatil() {
-        super();
-        super.capturar();
-        capturar();
+       this. capturar();
     }
 
-    @Override
     public void capturar() {
         Utils uts = new Utils();
-        System.out.print("Dime la duracion del bat del portatil: ");
+        super.capturar();
+        System.out.print("Dime la duracion de la bateria del portatil: ");
         setDuracionBat(uts.getDouble());
+        
     }
 
     public void setDuracionBat(double duracionBat) {
