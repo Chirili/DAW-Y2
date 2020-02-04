@@ -20,6 +20,7 @@ public class ProductosRefrigerados extends Productos {
     private int temperaturaMantenimiento;
     private String paisOrigen;
 
+    //Constructor por defecto de ProductosRefrigerados
     public ProductosRefrigerados() {
         this.codigoSupervision = 0;
         this.fechaEnvasado = LocalDate.of(1,1,1);
@@ -27,6 +28,7 @@ public class ProductosRefrigerados extends Productos {
         this.paisOrigen = "";
     }
 
+    //Constructor parametrizado de ProductosRefrigerados
     public ProductosRefrigerados(int codigoSupervision, LocalDate fechaEnvasado, int temperaturaMantenimiento, String paisOrigen) {
         this.codigoSupervision = codigoSupervision;
         this.fechaEnvasado = fechaEnvasado;
@@ -34,6 +36,7 @@ public class ProductosRefrigerados extends Productos {
         this.paisOrigen = paisOrigen;
     }
 
+     //Constructor parametrizado, con los parametros del constructor padre
     public ProductosRefrigerados(int codigoSupervision, LocalDate fechaEnvasado, int temperaturaMantenimiento, String paisOrigen, LocalDate fechaCaducidad, int numeroLote) {
         super(fechaCaducidad, numeroLote);
         this.codigoSupervision = codigoSupervision;
@@ -77,6 +80,14 @@ public class ProductosRefrigerados extends Productos {
 
     public void setPaisOrigen(String paisOrigen) {
         this.paisOrigen = paisOrigen;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+"\nCodigo de supervision: "+this.codigoSupervision+
+                "\nFecha de envasado: "+this.fechaEnvasado+
+                "\nTemperatura de mantenimiento del producto(º): "+this.temperaturaMantenimiento+
+                "\nPais de origen del producto: "+this.paisOrigen;
     }
 
 }

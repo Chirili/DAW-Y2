@@ -17,22 +17,28 @@ public abstract class Productos {
     private LocalDate fechaCaducidad;
     private int numeroLote;
 
+    //Constructor por defecto de Productos
     public Productos() {
-        this.fechaCaducidad = LocalDate.of(1, 1, 1);
+        this.fechaCaducidad = LocalDate.of(1,1,1);
         this.numeroLote = 0;
     }
 
-    public Productos(LocalDate l, int numeroLote) {
-        this.fechaCaducidad = l;
+    //Constructor parametrizado de Productos
+    public Productos(LocalDate fechaCaducidad, int numeroLote) {
+        this.fechaCaducidad = fechaCaducidad;
         this.numeroLote = numeroLote;
     }
 
+    /**
+     * Getters y setters de la clase Productos
+     * @return 
+     */
     public LocalDate getFechaCaducidad() {
         return fechaCaducidad;
     }
 
-    public void setFechaCaducidad(LocalDate l) {
-        this.fechaCaducidad = l;
+    public void setFechaCaducidad(LocalDate fechaCaducidad) {
+        this.fechaCaducidad = fechaCaducidad;
     }
 
     public int getNumeroLote() {
@@ -43,4 +49,10 @@ public abstract class Productos {
         this.numeroLote = numeroLote;
     }
 
+    @Override
+    public String toString() {
+        return "Fecha de caducidad del producto: "+ this.fechaCaducidad + "\nNumero de lote del producto: "+this.numeroLote;
+    }
+
+    
 }

@@ -6,7 +6,6 @@
 package productos.tipos;
 
 import java.time.LocalDate;
-import java.time.Month;
 import productos.Productos;
 import productos.Productos;
 
@@ -19,16 +18,19 @@ public class ProductosFrescos extends Productos {
     private LocalDate fechaEnvasado;
     private String paisOrigen;
 
+    //Constructor por defecto de ProductosFrescos
     public ProductosFrescos() {
-        this.fechaEnvasado = LocalDate.of(1,1, 1);
+        this.fechaEnvasado = LocalDate.of(1, 1, 1);
         this.paisOrigen = "";
     }
 
+     //Constructor parametrizado de ProductosFrescos
     public ProductosFrescos(LocalDate fechaEnvasado, String paisOrigen) {
         this.fechaEnvasado = fechaEnvasado;
         this.paisOrigen = paisOrigen;
     }
 
+     //Constructor parametrizado, con los parametros del constructor padre
     public ProductosFrescos(LocalDate fechaEnvasado, String paisOrigen, LocalDate fechaCaducidad, int numeroLote) {
         super(fechaCaducidad, numeroLote);
         this.fechaEnvasado = fechaEnvasado;
@@ -55,4 +57,10 @@ public class ProductosFrescos extends Productos {
         this.paisOrigen = paisOrigen;
     }
 
+    @Override
+    public String toString() {
+        return super.toString()+"\nFecha de envasado del producto: "+this.fechaEnvasado+"\nPais de origen del producto: "+this.paisOrigen;
+    }
+
+    
 }

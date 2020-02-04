@@ -16,7 +16,14 @@ public class PCongeladosAgua extends ProductosCongelados {
 
     private int gramosSal;
 
-    public PCongeladosAgua(int gramosSal) {
+    //Constructor parametrizado, con los parametros del constructor padre
+    public PCongeladosAgua(int gramosSal, LocalDate fechaEnvasado, String paisOrigen, int temperaturaMantenimiento) {
+        super(fechaEnvasado, paisOrigen, temperaturaMantenimiento);
+        this.gramosSal = gramosSal;
+    }
+     //Constructor parametrizado, con los parametros del constructor padre y del abuelo
+    public PCongeladosAgua(int gramosSal, LocalDate fechaEnvasado, String paisOrigen, int temperaturaMantenimiento, LocalDate fechaCaducidad, int numeroLote) {
+        super(fechaEnvasado, paisOrigen, temperaturaMantenimiento, fechaCaducidad, numeroLote);
         this.gramosSal = gramosSal;
     }
 
@@ -32,4 +39,10 @@ public class PCongeladosAgua extends ProductosCongelados {
         this.gramosSal = gramosSal;
     }
 
+    @Override
+    public String toString() {
+        return super.toString()+"\nGramos de sal: "+this.gramosSal;
+    }
+
+    
 }

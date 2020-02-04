@@ -7,6 +7,7 @@ package productos.tipos;
 
 import java.time.LocalDate;
 import productos.Productos;
+import productos.Productos;
 
 /**
  *
@@ -18,17 +19,31 @@ public abstract class ProductosCongelados extends Productos {
     private String paisOrigen;
     private int temperaturaMantenimiento;
 
+    //Constructor parametrizado de ProductosCongelados
+    public ProductosCongelados(LocalDate fechaEnvasado, String paisOrigen, int temperaturaMantenimiento) {
+        this.fechaEnvasado = fechaEnvasado;
+        this.paisOrigen = paisOrigen;
+        this.temperaturaMantenimiento = temperaturaMantenimiento;
+    }
+
+    //Constructor parametrizado, con los parametros del constructor padre
+    public ProductosCongelados(LocalDate fechaEnvasado, String paisOrigen, int temperaturaMantenimiento, LocalDate fechaCaducidad, int numeroLote) {
+        super(fechaCaducidad, numeroLote);
+        this.fechaEnvasado = fechaEnvasado;
+        this.paisOrigen = paisOrigen;
+        this.temperaturaMantenimiento = temperaturaMantenimiento;
+    }
+
     /**
      * Getters y setters de la clase ProductosCongelados
-     *
-     * @return
+     * @return 
      */
     public LocalDate getFechaEnvasado() {
         return fechaEnvasado;
     }
 
-    public void setFechaEnvasado(LocalDate l) {
-        this.fechaEnvasado = l;
+    public void setFechaEnvasado(LocalDate fechaEnvasado) {
+        this.fechaEnvasado = fechaEnvasado;
     }
 
     public String getPaisOrigen() {
@@ -46,5 +61,12 @@ public abstract class ProductosCongelados extends Productos {
     public void setTemperaturaMantenimiento(int temperaturaMantenimiento) {
         this.temperaturaMantenimiento = temperaturaMantenimiento;
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+"\nFecha de envasado: "+this.fechaEnvasado+"\nPais de origen: "+this.paisOrigen+"\nTemperatura de mantenimiento: "+this.temperaturaMantenimiento;
+    }
+    
+    
 
 }
