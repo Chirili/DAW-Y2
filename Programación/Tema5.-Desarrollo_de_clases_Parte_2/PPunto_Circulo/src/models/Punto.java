@@ -11,58 +11,57 @@ import Utils.Utils;
  *
  * @author Andres
  */
-public abstract class Punto {
+public class Punto {
 
     protected int x;
     protected int y;
 
-    /**
-     * Constructor parametrizado de Punto que recibe por parametros el valor de
-     * x e y
-     *
-     * @param x
-     * @param y
-     */
+    public Punto(){
+        
+    }
     public Punto(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    //Metodo encargado de recoger por teclado los valores de x e y
+    public Punto(Punto p){
+        this.x = p.x;
+        this.y = p.y;
+    }
     public void capturarPunto() {
         Utils uts = new Utils();
-
-        System.out.print("Dame el valor de x: ");
-        estableceX(uts.getInt());
-
-        System.out.print("Dame el valor de y: ");
-        estableceY(uts.getInt());
+        
+        System.out.print("Dime el valor de x: ");
+        setX(uts.getInt());
+        
+        System.out.print("Dime el valor de y: ");
+        setY(uts.getInt());
     }
 
     /**
-     * Getters y setters de Punto
+     * Getters y setters
      *
      * @return
      */
-    public int obtieneX() {
+    public int getX() {
         return x;
     }
 
-    public void estableceX(int x) {
+    public void setX(int x) {
         this.x = x;
     }
 
-    public int obtieneY() {
+    public int getY() {
         return y;
     }
 
-    public void estableceY(int y) {
+    public void setY(int y) {
         this.y = y;
     }
 
     @Override
     public String toString() {
-        return "Valor de x: " + this.x + "\nValor de y: " + this.y;
+        return "Valor de x: "+this.x+"\nValor de y: "+this.y;
     }
 
 }

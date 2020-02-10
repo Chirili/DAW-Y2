@@ -13,16 +13,15 @@ import Utils.Utils;
  */
 public class PC {
 
-    protected int memoria;
+    private int memoria;
 
     public PC() {
-        this.memoria = 0;
+
     }
-    
 
     public void capturar() {
         Utils uts = new Utils();
-        System.out.print("Dime la cantidad de memoria del PC: ");
+        System.out.print("Dime la cantidad de memoria del equipo: ");
         setMemoria(uts.getInt());
     }
 
@@ -33,6 +32,10 @@ public class PC {
      */
     public void setMemoria(int memoria) {
         this.memoria = memoria;
+    }
+    
+    public int getMemoria(){
+        return this.memoria;
     }
 
     @Override

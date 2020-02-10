@@ -4,9 +4,7 @@
  * and open the template in the editor.
  */
 package models;
-
 import Utils.Utils;
-
 /**
  *
  * @author Andres
@@ -15,37 +13,20 @@ public abstract class Persona {
 
     protected int identidad;
 
-     // Consutrctor por defecto de Persona
     public Persona() {
-        this.identidad = 0;
-    }
 
-    /**
-     * Constructor parametrizado de Persona que recibe el numero de identidad
-     * por parametro
-     *
-     * @param identidad
-     */
-    public Persona(int identidad) {
+    }
+    public Persona(int identidad){
         this.identidad = identidad;
     }
-
-    /**
-     * He asociado el atributo numero de identidad como el DNI de la persona asi
-     * que lo he condicionado un poco
-     */
-    public void capturarPersona() {
+    
+    public void capturarPersona(){
         Utils uts = new Utils();
-        do {
-            System.out.print("Introduce el numero de indentidad de persona: ");
-            establecerPersona(uts.getInt());
-            if (String.valueOf(this.identidad).length() > 8) {
-                System.out.println("Introduce 8 digitos o menos, los cuales corresponden a tu numero de identidad.");
-            }
-        } while (String.valueOf(this.identidad).length() > 8);
-
+        System.out.print("Introduce el numero de indentidad de persona: ");
+        establecerPersona(uts.getInt());
     }
 
+    
     /**
      * Getters y setters de la clase Persona
      *
@@ -61,7 +42,8 @@ public abstract class Persona {
 
     @Override
     public String toString() {
-        return "Numero de indentidad de la persona: " + this.identidad;
+        return "Numero de indentidad de la persona: "+this.identidad;
     }
+    
 
 }

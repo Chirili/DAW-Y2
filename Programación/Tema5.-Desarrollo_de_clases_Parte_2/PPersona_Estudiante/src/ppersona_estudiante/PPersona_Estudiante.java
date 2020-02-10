@@ -17,6 +17,7 @@ public class PPersona_Estudiante {
     public static void main(String[] args) {
         Estudiante e1 = new Estudiante(12345678,123456);
         Estudiante e2 = new Estudiante();
+        e2.capturarPersona();
         e2.capturarEstudiante();
         
         System.out.println("Datos del estudiante 1: ");
