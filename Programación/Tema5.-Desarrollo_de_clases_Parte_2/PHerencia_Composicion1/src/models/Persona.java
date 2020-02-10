@@ -14,11 +14,11 @@ import Utils.Utils;
 public class Persona {
 
     private int identidad;
-    private char[] nombreCompleto;
+    private String nombreCompleto;
 
     public Persona() {
         this.identidad = 0;
-        this.nombreCompleto = new char[60];
+        this.nombreCompleto = "";
     }
 
     public void capturarPersona() {
@@ -26,9 +26,9 @@ public class Persona {
 
         System.out.print("Dime la identidad de la persona: ");
         this.identidad = uts.getInt();
-
+        
         System.out.print("Dime el nombre completo de la persona: ");
-        this.nombreCompleto = uts.getString().toCharArray();
+        this.nombreCompleto = uts.getString().substring(0, 60);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class Persona {
      *
      * @return
      */
-    public void setPersona(int identidad, char[] nombreCompleto) {
+    public void setPersona(int identidad, String nombreCompleto) {
         this.identidad = identidad;
         this.nombreCompleto = nombreCompleto;
     }
@@ -55,11 +55,11 @@ public class Persona {
         this.identidad = identidad;
     }
 
-    public char[] getNombreCompleto() {
+    public String getNombreCompleto() {
         return nombreCompleto;
     }
 
-    public void setNombreCompleto(char[] nombreCompleto) {
+    public void setNombreCompleto(String nombreCompleto) {
         this.nombreCompleto = nombreCompleto;
     }
 }

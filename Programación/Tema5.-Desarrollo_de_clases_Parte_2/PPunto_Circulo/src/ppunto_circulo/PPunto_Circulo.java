@@ -39,15 +39,11 @@ public class PPunto_Circulo {
                     System.out.println(c);
                     break;
                 case 3:
-                    if(p.getX() < 0 && p.getY() > 0){
-                        System.out.println("El centro del circulo se encuentra en el cuadrante 1.");
-                    }else if(p.getX() > 0 && p.getY() > 0){
-                        System.out.println("El centro del circulo se encuentra en el cuadrante 2.");
-                    }else if(p.getX() > 0 && p.getY()< 0){
-                        System.out.println("El centro del circulo se encuentra en el cuadrante 3.");
-                    }else if(p.getX() < 0 && p.getY() < 0){
-                        System.out.println("El centro del circulo se encuentra en el cuadrante 4.");
-                    }
+                    int cuadrante;
+                    cuadrante = (p.getX() < 0 && p.getY() > 0) ? 1: 
+                            (p.getX() > 0 && p.getY() > 0) ? 2:
+                            (p.getX() > 0 && p.getY()< 0) ? 3:4;
+                    System.out.println("El centro del circulo se encuentra en el cuadrante "+cuadrante+".");
                     break;
             }
         }while(choice != 0);
