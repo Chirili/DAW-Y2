@@ -11,24 +11,27 @@ import Utils.Utils;
  *
  * @author Andres
  */
-public class Persona {
+public abstract class Persona {
 
     private int identidad;
     private String nombreCompleto;
 
+    //Constructor por defecto
     public Persona() {
         this.identidad = 0;
         this.nombreCompleto = "";
     }
 
+    //Metodo encargado de capturar toda la informacion relacionada con la persona
     public void capturarPersona() {
         Utils uts = new Utils();
 
         System.out.print("Dime la identidad de la persona: ");
         this.identidad = uts.getInt();
-        
-        System.out.print("Dime el nombre completo de la persona: ");
-        this.nombreCompleto = uts.getString().substring(0, 60);
+        do {
+            System.out.print("Dime el nombre completo de la persona: ");
+            this.nombreCompleto = uts.getString();
+        } while (this.nombreCompleto.length() > 60);
     }
 
     @Override

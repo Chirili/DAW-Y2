@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pherencia_composicion1;
+package pherencia_composicion2;
 
 /**
  *
- * @author Andres
+ * @author usuario
  */
-public class PHerencia_Composicion1 {
+public class Main {
 
     /**
      * @param args the command line arguments
