@@ -60,25 +60,43 @@ public class Main {
                             //Si todos los televisores estan dentro de la misma factura, tenemos un array de televisores, sino tenemos un array de facturas
                             if (pFactura.equalsIgnoreCase("si")) {
                                 for (int i = 0; i < arrayTelevisores.length; i++) {
-                                    Tv tv1 = new Tv();
-                                    tv1.capturarTv();
-                                    arrayTelevisores[i] = tv1;
-                                    System.out.print("Escribe si para salir, y cualquier otra cosa para continuar: ");
-                                    pFactura = uts.getString();
-                                    if (pFactura.equalsIgnoreCase("si")) {
-                                        break;
+
+                                    if (arrayTelevisores[i] == null) {
+                                        System.out.println("Televisor " + (i + 1));
+                                        Tv tv1 = new Tv();
+                                        tv1.capturarTv();
+                                        arrayTelevisores[i] = tv1;
+                                        System.out.print("Escribe si para salir, y cualquier otra cosa para continuar: ");
+                                        pFactura = uts.getString();
+                                        if (pFactura.equalsIgnoreCase("si")) {
+                                            break;
+                                        }
                                     }
                                 }
                                 do {
-                                    System.out.print("¿Tienen algun descuento los televisores? Escribe si o no: ");
+                                    System.out.print("¿Quieres aplicar algun descuento los televisores? Escribe si o no: ");
                                     pFactura = uts.getString();
                                     if (pFactura.equalsIgnoreCase("si")) {
                                         System.out.println("Elige a que televisores aplicar el descuento: ");
-                                        for(int i = 0; i < arrayTelevisores; i++){
-                                            System.out.println(i+1+". "+arrayTelevisores[i].);
+                                        int contador = 0;
+                                        for (Tv televisor : arrayTelevisores) {
+                                            if (televisor != null && televisor.isDecuentoAplicado() == false) {
+                                                System.out.println(contador + 1 + ". " + televisor.getModelo());
+                                                contador++;
+                                            }
                                         }
+                                        int dtv;
+                                        do {
+                                            System.out.print("Eleccion: ");
+                                            dtv = uts.getInt();
+                                        } while (dtv > arrayTelevisores.length || dtv <= 0);
+                                        double descuento = fcT.capturarDescuento();
+                                        arrayTelevisores[dtv - 1].calcularDesc(descuento);
                                     }
+
                                 } while (!pFactura.equalsIgnoreCase("no"));
+                                fcT.setcTv(arrayTelevisores);
+                                System.out.println("Precio total de la factura: " + fcT.calcularTotal());
 
                             } else {
                                 facturaTelevisores = new Factura[arrayTelevisores.length];

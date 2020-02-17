@@ -17,6 +17,7 @@ public class Factura {
     private Tv televisor;
     private Equipo equipoSonido;
     private double pctDescuento;
+    private double total;
     private Tv cTv[];
     private Equipo cEquipoSonido[];
 
@@ -38,27 +39,32 @@ public class Factura {
         this.pctDescuento = pctDescuento;
     }
 
-    public void capturarFacturaTv(int tipoFactura) {
+    public void capturarFacturaTv() {
         televisor.capturarTv();
     }
-        public void capturarFacturaEquipoSonido(int tipoFactura) {
+
+    public void capturarFacturaEquipoSonido() {
         equipoSonido.capturarEquipo();
     }
 
-    private void capturarDescuento() {
-        String choice;
+    public double calcularTotal() {
+        for (Tv televisores : cTv) {
+            if (televisores != null) {
+                this.total += televisores.getPrecio();
+            }
+        }
+        return this.total;
+    }
+
+    ;
+
+    public double capturarDescuento() {
         Utils uts = new Utils();
         do {
-            System.out.print("¿Tiene algun tipo de descuento el aparato? Escribe si o no: ");
-            choice = uts.getString();
-            if (choice.equalsIgnoreCase("si")) {
-                do {
-                    System.out.println("Dime la cantidad en % de descuento a aplicar: ");
-                    this.pctDescuento = uts.getDouble();
-                } while (this.pctDescuento < 0 || this.pctDescuento > 100);
-
-            }
-        } while (!choice.equalsIgnoreCase("no"));
+            System.out.print("Dime la cantidad en % de descuento a aplicar: ");
+            this.pctDescuento = uts.getDouble();
+        } while (this.pctDescuento <= 0 || this.pctDescuento > 100);
+        return this.pctDescuento;
     }
 
     public String imprimirFacturaTelevisores() {

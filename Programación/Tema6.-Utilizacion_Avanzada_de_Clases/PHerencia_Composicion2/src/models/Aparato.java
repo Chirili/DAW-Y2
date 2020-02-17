@@ -30,24 +30,11 @@ public abstract class Aparato {
         do {
             System.out.print("Introduzca el voltaje del aparato: ");
             this.voltaje = uts.getInt();
-        } while (this.precio <= 0);
+        } while (this.voltaje <= 0);
         do {
             System.out.print("Introduzca el precio del aparato: ");
             this.precio = uts.getInt();
         } while (this.precio <= 0);
-        do {
-            System.out.print("¿Tiene algun descuento el aparato?Escribe si o no: ");
-            choice = uts.getString();
-            if (choice.equalsIgnoreCase("si")) {
-                double descuento;
-                do {
-                    System.out.print("Escribe el porcentaje de descuento del aparato: ");
-                    descuento = uts.getDouble();
-                } while (descuento > 0 && descuento <= 100);
-                this.precio -= calcularDesc(descuento);
-            }
-        } while (!choice.equalsIgnoreCase("no"));
-
     }
 
     public double calcularDesc(double descuento) {
@@ -65,6 +52,14 @@ public abstract class Aparato {
      *
      * @return
      */
+    public boolean isDecuentoAplicado() {
+        return decuentoAplicado;
+    }
+
+    public void setDecuentoAplicado(boolean decuentoAplicado) {
+        this.decuentoAplicado = decuentoAplicado;
+    }
+
     public int getVoltaje() {
         return voltaje;
     }
