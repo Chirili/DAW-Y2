@@ -13,6 +13,7 @@ import Utils.Utils;
  */
 public class Tv extends Aparato {
 
+    private String modelo;
     private double size;
 
     public Tv() {
@@ -24,6 +25,8 @@ public class Tv extends Aparato {
 
         super.capturarAparato();
 
+        System.out.print("Dime el modelo del televisor: ");
+        this.modelo = uts.getString();
         do {
             System.out.print("Dime el tamanio del TV: ");
             this.size = uts.getDouble();
@@ -40,6 +43,14 @@ public class Tv extends Aparato {
      *
      * @return
      */
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
     public double getSize() {
         return size;
     }

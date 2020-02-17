@@ -13,6 +13,7 @@ import Utils.Utils;
  */
 public abstract class Aparato {
 
+    private boolean decuentoAplicado = false;
     private int voltaje;
     private double precio;
 
@@ -50,6 +51,7 @@ public abstract class Aparato {
     }
 
     public double calcularDesc(double descuento) {
+        this.decuentoAplicado = true;
         return this.precio -= this.precio * descuento / 100;
     }
 

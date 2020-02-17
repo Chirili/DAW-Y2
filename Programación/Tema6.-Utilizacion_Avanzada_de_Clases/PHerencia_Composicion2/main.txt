@@ -1,0 +1,21 @@
+cantidad de aparatos
+	cuantos de tipo televisor
+	resto de tipo equipoSonido
+		Gestion de facturas
+		1. Introducir datos a televisores
+			¿Estan todos en una misma factura? si o no
+				si: array de televisores
+				no: array de facturas
+		2. Introducir datos a equipos de sonido
+			¿Estan todos en una misma factura? si o no
+				si: array de televisores
+				no: array de facturas
+		3. Ver factura de televisores.
+			si array de facturasTelevisores == null
+				si array de televisores != null: mostrar la factura con los datos de los televisores
+				sino hay que introducir valores
+			
+		4. Ver factura de equipos de sonido.
+			si array de facturasTelevisores == null
+				si array de televisores != null: mostrar la factura con los datos de los televisores
+				sino hay que introducir valores.

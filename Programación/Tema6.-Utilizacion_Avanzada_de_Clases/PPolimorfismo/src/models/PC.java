@@ -15,10 +15,12 @@ public class PC {
 
     private int memoria;
 
+    //Constructor por defecto
     public PC() {
 
     }
 
+    //Metodo encargado de capturar los datos necesarios del PC
     public void capturar() {
         Utils uts = new Utils();
         System.out.print("Dime la cantidad de memoria del equipo: ");
@@ -33,8 +35,8 @@ public class PC {
     public void setMemoria(int memoria) {
         this.memoria = memoria;
     }
-    
-    public int getMemoria(){
+
+    public int getMemoria() {
         return this.memoria;
     }
 

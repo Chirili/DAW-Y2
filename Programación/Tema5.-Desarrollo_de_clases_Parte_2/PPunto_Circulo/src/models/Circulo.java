@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package models;
+
 import Utils.Utils;
+
 /**
  *
  * @author Andres
@@ -14,22 +16,30 @@ public class Circulo extends Punto {
     private static final double PI = 3.14;
     private double radio;
 
+    //Constructor parametrizado
     public Circulo(int x, int y, double radio) {
         super(x, y);
         this.radio = radio;
     }
-    
-    public Circulo(Punto p){
+
+    //Constructor copia
+    public Circulo(Punto p) {
         super(p);
         this.radio = 0;
     }
-    
-    public void capturarCirculo(){
+
+    //Metodo encargado de capturar los datos relacionados con el circulo
+    public void capturarCirculo() {
         Utils uts = new Utils();
         System.out.print("Dime el valor del radio del circulo: ");
         this.radio = uts.getDouble();
     }
 
+    /**
+     * Getters y setters de circulo
+     *
+     * @return
+     */
     public double obtenerDiametro() {
         return this.radio * 2;
     }
@@ -37,18 +47,11 @@ public class Circulo extends Punto {
     public double obtenerCircunferencia() {
         return obtenerDiametro() * PI;
     }
-    
-    public double obtenerArea(){
+
+    public double obtenerArea() {
         return Math.pow(radio, 2) * PI;
     }
-    
-    
 
-    /**
-     * Getters y setters de circulo
-     *
-     * @return
-     */
     public double getRadio() {
         return radio;
     }
@@ -59,11 +62,11 @@ public class Circulo extends Punto {
 
     @Override
     public String toString() {
-        return super.toString()+
-                "\nValor del radio del circulo: "+this.radio+
-                "\nDiametro del circulo: "+obtenerDiametro()+
-                "\nValor de la circunferencia: "+obtenerCircunferencia()+
-                "\nValor del area del ciruclo: "+obtenerArea();
+        return super.toString()
+                + "\nValor del radio del circulo: " + this.radio
+                + "\nDiametro del circulo: " + obtenerDiametro()
+                + "\nValor de la circunferencia: " + obtenerCircunferencia()
+                + "\nValor del area del ciruclo: " + obtenerArea();
     }
 
 }

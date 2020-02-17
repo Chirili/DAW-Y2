@@ -15,10 +15,12 @@ public class Portatil extends PC {
 
     private double duracionBat;
 
+    //Constructor por defecto
     public Portatil() {
         super();
     }
 
+    //Metodo encargado de capturar los datos relacionados con el portatil
     @Override
     public void capturar() {
         Utils uts = new Utils();
@@ -33,7 +35,7 @@ public class Portatil extends PC {
 
     @Override
     public String toString() {
-        return "Cantidad de memoria del portatil: "+super.getMemoria()+"\nDuracion de la bateria del portatil: "+this.duracionBat;
+        return "Cantidad de memoria del portatil: " + super.getMemoria() + "\nDuracion de la bateria del portatil: " + this.duracionBat;
     }
-    
+
 }
