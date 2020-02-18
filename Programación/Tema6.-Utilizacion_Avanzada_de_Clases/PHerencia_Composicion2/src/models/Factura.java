@@ -56,7 +56,17 @@ public class Factura {
         return this.total;
     }
 
-    ;
+    public void imprimirTelevisores() {
+        int conta = 1;
+        System.out.println("Numero de factura: " + this.numero);
+        System.out.println("Cantidad de televisores comprados: " + cTv.length);
+        for (Tv televisores : cTv) {
+            if (televisores != null) {
+                System.out.println(conta + ". " + "Modelo del televisor: " + televisores.getModelo() + "  Tamaño del televisor: " + televisores.getSize());
+            }
+        }
+        System.out.println("Total de la factura: " + this.calcularTotal());
+    }
 
     public double capturarDescuento() {
         Utils uts = new Utils();
@@ -68,11 +78,12 @@ public class Factura {
     }
 
     public String imprimirFacturaTelevisores() {
-        return "Numero de factura: " + this.numero + "\nCantidad de televisores comprados: " + cTv.length;
+        return "Numero de factura: " + this.numero
+                + "\nCantidad de televisores comprados: " + cTv.length;
     }
 
     private int generateNumero() {
-        return (int) Math.random() * 10000;
+       return (int) (Math.random() * 10000);
     }
 
     /**
