@@ -43,6 +43,7 @@ public class Tv extends Aparato {
      *
      * @return
      */
+    
     public String getModelo() {
         return modelo;
     }

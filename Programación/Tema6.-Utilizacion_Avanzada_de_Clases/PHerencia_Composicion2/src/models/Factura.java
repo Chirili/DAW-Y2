@@ -83,7 +83,7 @@ public class Factura {
     }
 
     private int generateNumero() {
-       return (int) (Math.random() * 10000);
+        return (int) (Math.random() * 10000);
     }
 
     /**
@@ -91,6 +91,22 @@ public class Factura {
      *
      * @return
      */
+    public Tv getTelevisor() {
+        return televisor;
+    }
+
+    public void setTelevisor(Tv televisor) {
+        this.televisor = televisor;
+    }
+
+    public Equipo getEquipoSonido() {
+        return equipoSonido;
+    }
+
+    public void setEquipoSonido(Equipo equipoSonido) {
+        this.equipoSonido = equipoSonido;
+    }
+
     public Tv[] getcTv() {
         return cTv;
     }

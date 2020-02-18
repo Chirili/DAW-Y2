@@ -119,7 +119,7 @@ public class Main {
                                     System.out.print("Eleccion: ");
                                     dtv = uts.getInt();
                                 } while (dtv > arrayTelevisores.length || dtv <= 0);
-                                Aplicamos el descuento al televisor correspondiente
+                                //Aplicamos el descuento al televisor correspondiente
                                 double descuento = fcT.capturarDescuento();
                                 arrayTelevisores[dtv - 1].calcularDesc(descuento);
                                 uts.clearScreen();
@@ -135,9 +135,11 @@ public class Main {
                         for (int i = 0; i < arrayTelevisores.length; i++) {
                             if (arrayTelevisores[i] == null) {
                                 Factura fc1 = new Factura();
+                                Tv tv1 = new Tv();
                                 System.out.println("Factura " + (i + 1));
                                 System.out.println("Numero de factura: " + fc1.getNumero());
-                                fc1.capturarFacturaTv();
+                                System.out.println("Datos del televisor: ");
+                                tv1.capturarTv();
                                 facturaTelevisores[i] = fc1;
                                 System.out.print("Escribe si para salir, y cualquier otra cosa para continuar: ");
                                 pFactura = uts.getString();
@@ -153,7 +155,7 @@ public class Main {
                     break;
                 case 2:
                     uts.clearScreen();
-                    Comprobamos que se han introducido datos en los array para poder o pintar la factura
+                    //Comprobamos que se han introducido datos en los array para poder o pintar la factura
                     for (Tv televisores : arrayTelevisores) {
                         if (televisores != null) {
                             if (facturaTelevisores == null) {
