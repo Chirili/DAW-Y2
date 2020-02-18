@@ -70,7 +70,7 @@ public class Main {
                     pFactura = uts.getString();
                     //Si todos los televisores estan dentro de la misma factura, tenemos un array de televisores, sino tenemos un array de facturas
                     if (pFactura.equalsIgnoreCase("si")) {
-                        //Vamos pidiendo los datos de los televisores mientras que no esten vacios por si el usuario quiere volver a seguir introduciendo datos
+                        //Vamos pidiendo los datos de los televisores mientras que el objeto que está en esa posición no sea null
                         for (int i = 0; i < arrayTelevisores.length; i++) {
                             if (arrayTelevisores[i] == null) {
                                 System.out.println("Televisor " + (i + 1));
@@ -88,6 +88,8 @@ public class Main {
                         do {
                             uts.clearScreen();
                             int contador = 1;
+                            //Aquí recorremos el array para contar la cantidad de televisores sin descuento y con descuento
+                            //Si ya tiene descuento para que vamos a mostrarlo
                             for (Tv televisores : arrayTelevisores) {
                                 if (televisores != null && televisores.isDecuentoAplicado() == true) {
                                     tCDescuento++;
@@ -117,6 +119,7 @@ public class Main {
                                     System.out.print("Eleccion: ");
                                     dtv = uts.getInt();
                                 } while (dtv > arrayTelevisores.length || dtv <= 0);
+                                Aplicamos el descuento al televisor correspondiente
                                 double descuento = fcT.capturarDescuento();
                                 arrayTelevisores[dtv - 1].calcularDesc(descuento);
                                 uts.clearScreen();
@@ -150,6 +153,7 @@ public class Main {
                     break;
                 case 2:
                     uts.clearScreen();
+                    Comprobamos que se han introducido datos en los array para poder o pintar la factura
                     for (Tv televisores : arrayTelevisores) {
                         if (televisores != null) {
                             if (facturaTelevisores == null) {
