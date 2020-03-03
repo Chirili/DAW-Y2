@@ -5,6 +5,8 @@
  */
 package models;
 
+import java.util.StringTokenizer;
+
 /**
  *
  * @author Andres
@@ -53,4 +55,20 @@ public class CD {
     public void deleteCancion(int posicion){
         canciones[posicion] = null;
     }
+    
+    
+    public void manu(String menu){
+        
+          StringTokenizer test= new StringTokenizer(menu , ".");
+            
+        
+       for (int i = 0 ;  i < test.countTokens()+1; i++ ) {
+           
+           System.out.println(i +". "+ test.nextToken());
+           
+}
+  
+        
+    }
+    
 }
