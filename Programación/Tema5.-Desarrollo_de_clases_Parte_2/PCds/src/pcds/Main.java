@@ -33,6 +33,19 @@ public class Main {
             System.out.println("5. Eliminar cancion.");
             System.out.println("0. Salir.");
             choice = uts.getInt();
+            switch(choice){
+                case 1:
+                    Cancion can = new Cancion();
+                    can.capturar();
+                    cd1.setCancionesFinal(can);
+                    break;
+                case 2:
+                    for(Cancion cdE : cd1.getCanciones()){
+                        
+                    }
+                    break;
+            
+        }
             
         } while (choice != 0);
     }

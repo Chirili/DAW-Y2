@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package models;
-
+import Utils.Utils;
 /**
  *
  * @author Andres
@@ -24,6 +24,14 @@ public class Cancion {
     public Cancion(String nombre, int duracion) {
         this.nombre = nombre;
         this.duracion = duracion;
+    }
+    
+    public void capturar(){
+        Utils uts = new Utils();
+        System.out.print("Dime el nombre de la cancion: ");
+        this.nombre = uts.getString();
+        System.out.print("Dime la duracion de la cancion: ");
+        this.duracion = uts.getInt();
     }
 
     @Override
