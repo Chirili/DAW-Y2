@@ -128,18 +128,21 @@ public class Main {
                         System.out.println("0. Salir");
                         System.out.print("Eleccion: ");
                         choice = uts.getInt();
-                        count--;
-                        int cancionEncontrada = 0;
+                        int cEncontrada = 1;
                         for (Cancion cans : cd1.getCanciones()) {
-                            if (cans != null) {
-                                if ((count - 1) == choice) {
-                                    System.out.println(cd1.getCancionFrom(cancionEncontrada).toString());
-                                } else {
-                                    count--;
-                                }
+                            if(cans != null && choice == 1){
+                                System.out.println(cd1.getCancionFrom(choice -1).toString());
+                                break;
                             }
-                            count ++;
-                            cancionEncontrada++;
+                            if (cans != null) {
+                                if ((count) == choice) {
+                                    System.out.println(cd1.getCancionFrom(cEncontrada).toString());
+                                }else{
+                                    count --;
+                                }
+                            }else{
+                                cEncontrada++;
+                            }
                         }
                     } while (choice != 0);
 
