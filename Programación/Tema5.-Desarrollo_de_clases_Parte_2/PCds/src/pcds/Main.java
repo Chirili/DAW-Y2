@@ -128,28 +128,43 @@ public class Main {
                         System.out.println("0. Salir");
                         System.out.print("Eleccion: ");
                         choice = uts.getInt();
-                        int cEncontrada = 1;
+                        count = 0;
                         for (Cancion cans : cd1.getCanciones()) {
-                            if(cans != null && choice == 1){
-                                System.out.println(cd1.getCancionFrom(choice -1).toString());
-                                break;
-                            }
                             if (cans != null) {
-                                if ((count) == choice) {
-                                    System.out.println(cd1.getCancionFrom(cEncontrada).toString());
-                                }else{
-                                    count --;
+                                count++;
+                                if (count == choice) {
+                                    System.out.println(cans.toString());
                                 }
-                            }else{
-                                cEncontrada++;
                             }
                         }
                     } while (choice != 0);
-
+                    choice++;
                     break;
                 case 6:
-                    
-                    break;
+                    System.out.println("Elige de la siguiente lista la cancion que quieres eliminar: ");
+                    do {
+                        int count = 1;
+                        for (Cancion cans : cd1.getCanciones()) {
+                            if (cans != null) {
+                                System.out.println(count + ". " + cans.getNombre());
+                                count++;
+                            }
+                        }
+                        System.out.println("0. Salir");
+                        System.out.print("Eleccion: ");
+                        choice = uts.getInt();
+                        count = 0;
+                        for (int i = 0; i < cd1.getCanciones().length; i++) {
+                            if (cd1.getCanciones()[i] != null) {
+                                count++;
+                                if (count == choice) {
+                                    cd1.deleteCancion(i);
+                                    break;
+                                }
+                            }
+                        }
+                    } while (choice != 0);
+                    choice++;
             }
         } while (choice != 0);
     }
