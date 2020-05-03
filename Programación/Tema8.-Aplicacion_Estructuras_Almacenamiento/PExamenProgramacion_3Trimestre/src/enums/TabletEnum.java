@@ -40,7 +40,12 @@ public enum TabletEnum {
         return precio;
     }
 
+<<<<<<< HEAD
     public static Stream<TabletEnum> stream() {
         return Stream.of(TabletEnum.values());
+=======
+    public Stream<Color> Stream() {
+        return Stream.of(Color.values());
+>>>>>>> 0e7f65b... Added some exercises and  java projects
     }
 }

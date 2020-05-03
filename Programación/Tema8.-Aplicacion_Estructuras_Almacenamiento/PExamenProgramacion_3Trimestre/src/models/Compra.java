@@ -5,23 +5,34 @@
  */
 package models;
 
+<<<<<<< HEAD
 import java.io.Serializable;
 import models.productos.Producto;
+=======
+>>>>>>> 0e7f65b... Added some exercises and  java projects
 import java.util.ArrayList;
 
 /**
  *
  * @author Andres
  */
+<<<<<<< HEAD
 public class Compra implements Serializable{
 
     private static int codCompra = 1;
     private static final long serialVersionUID = -1781182213535852645L;
 
+=======
+public class Compra {
+
+    private static int codCompra = 1;
+    private String clase_producto;
+>>>>>>> 0e7f65b... Added some exercises and  java projects
     private ArrayList<Producto> productos;
 
     //Constructor por defecto
     public Compra() {
+<<<<<<< HEAD
         this.productos = new ArrayList<Producto>();
         incrementCodCompra();
     }
@@ -30,6 +41,18 @@ public class Compra implements Serializable{
     public Compra(ArrayList<Producto> products){
         this.productos = products;
         incrementCodCompra();
+=======
+        this.clase_producto = "";
+        this.productos = new ArrayList<Producto>();
+        incrementCodCompra();
+    }
+
+    
+    //Constructor parametrizado
+    public Compra(String clase_producto){
+        this.clase_producto = clase_producto;
+        this.productos = new ArrayList<Producto>();
+>>>>>>> 0e7f65b... Added some exercises and  java projects
     }
     
     //Metodo encargado de incrementar el atributo estatico
@@ -54,6 +77,17 @@ public class Compra implements Serializable{
         Compra.codCompra = codCompra;
     }
 
+<<<<<<< HEAD
+=======
+    public String getClase_producto() {
+        return clase_producto;
+    }
+
+    public void setClase_producto(String clase_producto) {
+        this.clase_producto = clase_producto;
+    }
+
+>>>>>>> 0e7f65b... Added some exercises and  java projects
     public ArrayList<Producto> getProductos() {
         return productos;
     }
