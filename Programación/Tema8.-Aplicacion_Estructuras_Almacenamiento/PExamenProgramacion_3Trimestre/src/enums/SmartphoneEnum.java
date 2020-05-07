@@ -40,8 +40,8 @@ public enum SmartphoneEnum {
         return precio;
     }
 
-    public Stream<Color> Stream() {
-        return Stream.of(Color.values());
+    public static Stream<SmartphoneEnum> stream() {
+        return Stream.of(SmartphoneEnum.values());
     }
 
 }

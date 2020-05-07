@@ -3,13 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package models;
+package models.productos.tipos;
+
+import java.io.Serializable;
+import models.productos.Producto;
 
 /**
  *
  * @author Andres
  */
-public class Smartphone extends Producto {
+public class Smartphone extends Producto implements Serializable{
+
+    private static final long serialVersionUID = 4826740648270740694L;
 
     private boolean hasNFC;
     private int batteryCapacity;
@@ -42,16 +47,17 @@ public class Smartphone extends Producto {
      * @param proveedor 
      */
     public Smartphone(boolean hasNFC, int batteryCapacity, double precio, String color, String modelo, String proveedor) {
-        super(precio, color, modelo, proveedor);
+        super(precio, color, modelo, proveedor, "Smartphone");
         this.hasNFC = hasNFC;
         this.batteryCapacity = batteryCapacity;
     }
 
     @Override
     public String toString() {
-        return super.toString()+
-                "\nNFC"+((this.isHasNFC())? "Tiene NFC":"No tiene NFC")+
-                "\nCapacidad de la bateria: "+this.getBatteryCapacity();
+        return "______________________________\n"+"Smartphone: "+super.toString()+
+                "\nNFC: "+((this.isHasNFC())? "Tiene NFC":"No tiene NFC")+
+                "\nCapacidad de la bateria: "+this.getBatteryCapacity()+
+                "\n______________________________\n";
     }
 
     /**

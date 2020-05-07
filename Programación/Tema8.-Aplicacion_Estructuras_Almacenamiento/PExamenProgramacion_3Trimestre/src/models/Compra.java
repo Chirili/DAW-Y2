@@ -5,30 +5,31 @@
  */
 package models;
 
+import java.io.Serializable;
+import models.productos.Producto;
 import java.util.ArrayList;
 
 /**
  *
  * @author Andres
  */
-public class Compra {
+public class Compra implements Serializable{
 
     private static int codCompra = 1;
-    private String clase_producto;
+    private static final long serialVersionUID = -1781182213535852645L;
+
     private ArrayList<Producto> productos;
 
     //Constructor por defecto
     public Compra() {
-        this.clase_producto = "";
         this.productos = new ArrayList<Producto>();
         incrementCodCompra();
     }
-
     
     //Constructor parametrizado
-    public Compra(String clase_producto){
-        this.clase_producto = clase_producto;
-        this.productos = new ArrayList<Producto>();
+    public Compra(ArrayList<Producto> products){
+        this.productos = products;
+        incrementCodCompra();
     }
     
     //Metodo encargado de incrementar el atributo estatico
@@ -51,14 +52,6 @@ public class Compra {
 
     public static void setCodCompra(int codCompra) {
         Compra.codCompra = codCompra;
-    }
-
-    public String getClase_producto() {
-        return clase_producto;
-    }
-
-    public void setClase_producto(String clase_producto) {
-        this.clase_producto = clase_producto;
     }
 
     public ArrayList<Producto> getProductos() {

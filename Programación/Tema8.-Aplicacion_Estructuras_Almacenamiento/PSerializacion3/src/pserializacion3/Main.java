@@ -95,14 +95,13 @@ public class Main {
         for (int x = 0; x < datos.length; x++) {
             System.out.print("|");
             for (int y = 0; y < datos[x].length; y++) {
-                System.out.print(datos[x][y]);
+                System.out.print(String.format("|%-2s|", datos[x][y]));
                 if (y != datos[x].length - 1) {
                     System.out.print("\t");
                 }
             }
             System.out.println("|");
         }
-
     }
 
     private static String contarTipo(String tipo, String calificacion, ArrayList<opositor> opos) {

@@ -3,13 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package models;
+package models.productos.tipos;
+
+import java.io.Serializable;
+import models.productos.Producto;
 
 /**
  *
  * @author Andres
  */
-public class Tablet extends Producto {
+public class Tablet extends Producto implements Serializable{
+
+    private static final long serialVersionUID = 749794077791079870L;
 
     private boolean hasIConnection;
 
@@ -35,14 +40,15 @@ public class Tablet extends Producto {
      * @param proveedor
      */
     public Tablet(boolean hasIConnection, double precio, String color, String modelo, String proveedor) {
-        super(precio, color, modelo, proveedor);
+        super(precio, color, modelo, proveedor,"Tablet");
         this.hasIConnection = hasIConnection;
     }
 
     @Override
     public String toString() {
-        return super.toString()
-                + "\nConexion a internet" + ((this.isHasIConnection()) ? "Tiene Conexion a internet" : "No tiene Conexion a internet");
+        return "______________________________\n"+"Tablet: "+super.toString()
+                + "\nConexion a internet: " + ((this.isHasIConnection()) ? "Tiene Conexion." : "No tiene Conexion.")+
+                "\n______________________________\n";
     }
 
     /**

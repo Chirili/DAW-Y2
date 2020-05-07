@@ -40,7 +40,7 @@ public enum TabletEnum {
         return precio;
     }
 
-    public Stream<Color> Stream() {
-        return Stream.of(Color.values());
+    public static Stream<TabletEnum> stream() {
+        return Stream.of(TabletEnum.values());
     }
 }

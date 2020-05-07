@@ -5,13 +5,16 @@
  */
 package models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Andres
  */
-public class Cliente {
+public class Cliente implements Serializable{
+
+    private static final long serialVersionUID = -7581786887875051021L;
 
     private String nombre;
     private String dni;
@@ -51,7 +54,8 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Nombre: " + this.getNombre()
+        return "\tDatos del cliente\n______________________________\n"
+                +"Nombre: " + this.getNombre()
                 + "\nDNI: " + this.getDni()
                 + "\nCodigo de cliente: " + this.getCod();
     }
