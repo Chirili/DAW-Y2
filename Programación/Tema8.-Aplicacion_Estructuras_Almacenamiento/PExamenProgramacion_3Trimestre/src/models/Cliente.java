@@ -5,23 +5,16 @@
  */
 package models;
 
-<<<<<<< HEAD
 import java.io.Serializable;
-=======
->>>>>>> 0e7f65b... Added some exercises and  java projects
 import java.util.ArrayList;
 
 /**
  *
  * @author Andres
  */
-<<<<<<< HEAD
 public class Cliente implements Serializable{
 
     private static final long serialVersionUID = -7581786887875051021L;
-=======
-public class Cliente {
->>>>>>> 0e7f65b... Added some exercises and  java projects
 
     private String nombre;
     private String dni;
@@ -61,12 +54,8 @@ public class Cliente {
 
     @Override
     public String toString() {
-<<<<<<< HEAD
         return "\tDatos del cliente\n______________________________\n"
                 +"Nombre: " + this.getNombre()
-=======
-        return "Nombre: " + this.getNombre()
->>>>>>> 0e7f65b... Added some exercises and  java projects
                 + "\nDNI: " + this.getDni()
                 + "\nCodigo de cliente: " + this.getCod();
     }
